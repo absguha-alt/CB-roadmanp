@@ -1,0 +1,1463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Corporate Benefit Roadmap 2026–2030</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<style>
+:root {
+  --navy:#0B1E3D;--navy-mid:#122547;--navy-light:#1A3260;
+  --gold:#C8963E;--gold-light:#E8B86D;--gold-pale:#F5E6C8;
+  --teal:#0E7C6A;--teal-light:#1AA88E;--teal-pale:#D4F0EA;
+  --purple:#5B4BA8;--purple-light:#7B6FC8;--purple-pale:#E8E5F8;
+  --amber:#C06B18;--amber-light:#E08A35;--amber-pale:#FDF0DC;
+  --red:#B02A2A;--red-pale:#FDEAEA;
+  --slate:#5C6E84;--slate-light:#8EA4BC;--slate-pale:#EEF2F6;
+  --white:#FFFFFF;--off-white:#F7F8FA;
+  --border:#D8DDE5;--border-light:#EEF2F6;
+  --text-primary:#0B1E3D;--text-secondary:#4A5E72;--text-muted:#8EA4BC;
+  --shadow-sm:0 1px 4px rgba(11,30,61,0.08);
+  --shadow-md:0 4px 16px rgba(11,30,61,0.12);
+  --shadow-lg:0 8px 32px rgba(11,30,61,0.16);
+  --radius:10px;--radius-lg:16px;--radius-xl:24px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',sans-serif;background:var(--off-white);color:var(--text-primary);min-height:100vh;overflow-x:hidden}
+
+/* ── HEADER ── */
+.page-header{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-light) 60%,#1E4080 100%);position:relative;overflow:hidden}
+.header-geo{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.header-geo::before{content:'';position:absolute;width:600px;height:600px;border-radius:50%;border:1px solid rgba(200,150,62,0.15);top:-200px;right:-100px}
+.header-geo::after{content:'';position:absolute;width:400px;height:400px;border-radius:50%;border:1px solid rgba(200,150,62,0.1);top:-100px;right:100px}
+.header-geo-tri{position:absolute;bottom:0;right:200px;width:0;height:0;border-left:80px solid transparent;border-right:0 solid transparent;border-bottom:60px solid rgba(200,150,62,0.06)}
+.header-accent{position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold) 0%,var(--gold-light) 40%,var(--teal-light) 100%)}
+.header-inner{position:relative;z-index:1;max-width:1400px;margin:0 auto;padding:2.5rem 2.5rem 2rem;display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:end}
+.header-left h1{font-family:'DM Serif Display',serif;font-size:2rem;color:var(--white);letter-spacing:-0.02em;line-height:1.2;margin-bottom:0.4rem}
+.header-left h1 em{font-style:italic;color:var(--gold-light)}
+.header-subtitle{font-size:13px;color:rgba(255,255,255,0.55);font-weight:400;letter-spacing:0.04em;text-transform:uppercase}
+.header-meta{display:flex;gap:1.5rem;align-items:flex-end}
+.meta-pill{text-align:center}
+.meta-pill .num{font-family:'DM Serif Display',serif;font-size:1.8rem;color:var(--gold-light);line-height:1}
+.meta-pill .lbl{font-size:10px;color:rgba(255,255,255,0.45);text-transform:uppercase;letter-spacing:0.06em;margin-top:3px}
+.meta-divider{width:1px;height:40px;background:rgba(255,255,255,0.12)}
+
+/* ── NAV TABS ── */
+.nav-bar{background:var(--white);border-bottom:1px solid var(--border-light);box-shadow:var(--shadow-sm);position:sticky;top:0;z-index:50}
+.nav-bar-inner{max-width:1400px;margin:0 auto;padding:0 2.5rem;display:flex;align-items:stretch}
+.nav-tab{display:flex;align-items:center;gap:8px;padding:0 20px;height:50px;cursor:pointer;border-bottom:2px solid transparent;font-size:13px;font-weight:500;color:var(--text-secondary);transition:all 0.2s;user-select:none;white-space:nowrap}
+.nav-tab:hover{color:var(--text-primary);background:var(--off-white)}
+.nav-tab.active{border-bottom-color:var(--navy);color:var(--navy)}
+.nav-tab .tab-icon{width:22px;height:22px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:12px;background:var(--off-white)}
+.nav-tab.active .tab-icon{background:var(--navy);color:white}
+.nav-actions{margin-left:auto;display:flex;align-items:center;gap:8px;padding:8px 0}
+
+/* ── BUTTONS ── */
+.btn{display:inline-flex;align-items:center;gap:6px;padding:7px 16px;border-radius:var(--radius);font-size:12px;font-weight:500;font-family:'DM Sans',sans-serif;cursor:pointer;border:1px solid transparent;transition:all 0.15s}
+.btn-outline{background:var(--white);border-color:var(--border);color:var(--text-secondary)}
+.btn-outline:hover{background:var(--off-white);color:var(--text-primary);border-color:var(--slate-light)}
+.btn-primary{background:var(--navy);color:var(--white);border-color:var(--navy)}
+.btn-primary:hover{background:var(--navy-light)}
+.btn-gold{background:var(--gold);color:var(--white);border-color:var(--gold)}
+.btn-gold:hover{background:var(--gold-light)}
+
+/* ── MAIN ── */
+.main{max-width:1400px;margin:0 auto;padding:2rem 2.5rem 4rem}
+.page-section{display:none}
+.page-section.active{display:block}
+
+/* ── SUMMARY CARDS ── */
+.summary-row{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-bottom:2rem}
+.sum-card{background:var(--white);border:1px solid var(--border-light);border-radius:var(--radius-lg);padding:1.25rem 1.25rem 1rem;box-shadow:var(--shadow-sm);transition:box-shadow 0.2s,transform 0.2s;position:relative;overflow:hidden}
+.sum-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
+.sum-card-2026::before{background:linear-gradient(90deg,#8EA4BC,#B0C4D8)}
+.sum-card-2027::before{background:linear-gradient(90deg,var(--teal),var(--teal-light))}
+.sum-card-2028::before{background:linear-gradient(90deg,var(--purple),var(--purple-light))}
+.sum-card-2029::before{background:linear-gradient(90deg,var(--gold),var(--gold-light))}
+.sum-card-2030::before{background:linear-gradient(90deg,var(--navy),#1A3260)}
+.sum-card:hover{box-shadow:var(--shadow-md);transform:translateY(-1px)}
+.sum-year{font-family:'DM Serif Display',serif;font-size:1.5rem;color:var(--text-primary);line-height:1;margin-bottom:8px}
+.sum-label{font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:10px}
+.sum-stats{display:flex;flex-direction:column;gap:4px}
+.sum-stat{display:flex;justify-content:space-between;align-items:center;font-size:11px}
+.sum-stat-lbl{color:var(--text-secondary)}
+.sum-stat-val{font-weight:600;font-size:12px}
+.sum-budget-row{margin-top:10px;padding-top:8px;border-top:1px solid var(--border-light);font-size:11px;color:var(--text-muted);display:flex;justify-content:space-between;align-items:center}
+.sum-budget-val{font-size:13px;font-weight:600;color:var(--gold);font-family:'DM Serif Display',serif}
+
+/* ── LEGEND ── */
+.legend-row{display:flex;align-items:center;flex-wrap:wrap;gap:16px;margin-bottom:1.25rem}
+.legend-item{display:flex;align-items:center;gap:6px;font-size:11px;color:var(--text-secondary)}
+.legend-badge{height:18px;padding:0 8px;border-radius:9px;font-size:10px;display:flex;align-items:center;font-weight:500}
+
+/* ── TABLE ── */
+.table-wrapper{background:var(--white);border:1px solid var(--border);border-radius:var(--radius-xl);overflow:hidden;box-shadow:var(--shadow-md)}
+.table-toolbar{display:flex;align-items:center;gap:12px;padding:1rem 1.5rem;border-bottom:1px solid var(--border-light)}
+.table-toolbar-title{font-size:13px;font-weight:500;color:var(--text-primary)}
+.table-toolbar-sub{font-size:11px;color:var(--text-muted);margin-left:4px}
+.search-box{display:flex;align-items:center;gap:8px;padding:6px 12px;border:1px solid var(--border);border-radius:var(--radius);background:var(--off-white);margin-left:auto}
+.search-box svg{width:14px;height:14px;color:var(--text-muted);flex-shrink:0}
+.search-box input{border:none;background:none;outline:none;font-size:12px;color:var(--text-primary);font-family:'DM Sans',sans-serif;width:160px}
+.search-box input::placeholder{color:var(--text-muted)}
+.table-scroll{overflow-x:auto}
+table{width:100%;border-collapse:collapse;min-width:1100px}
+thead th{padding:10px 12px;text-align:left;font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;color:var(--text-muted);background:var(--off-white);border-bottom:1px solid var(--border);white-space:nowrap}
+thead th.yr-col{text-align:center;min-width:130px}
+.yr-col-header{display:flex;flex-direction:column;align-items:center;gap:2px}
+.yr-col-header .yr-num{font-size:14px;font-weight:600;color:var(--text-primary);font-family:'DM Serif Display',serif;letter-spacing:0;text-transform:none}
+.yr-col-header .yr-sub{font-size:9px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.05em}
+tbody tr{border-bottom:1px solid var(--border-light);transition:background 0.1s}
+tbody tr:last-child{border-bottom:none}
+tbody tr:hover td{background:#F9FAFB}
+tbody tr.section-head td{background:var(--navy);padding:6px 12px;font-size:10px;font-weight:600;color:rgba(255,255,255,0.7);letter-spacing:0.1em;text-transform:uppercase}
+tbody tr.section-head td:first-child{color:var(--gold-light);font-size:11px}
+.layer-cell{padding:0 12px;width:130px;vertical-align:top;padding-top:12px}
+.layer-badge{display:inline-flex;align-items:center;font-size:10px;font-weight:600;padding:3px 8px;border-radius:6px;white-space:nowrap;letter-spacing:0.02em}
+.lb-engagement{background:#EEF6FF;color:#1A6AB5}
+.lb-sales{background:#FFF4E6;color:#A05A10}
+.lb-product{background:#EFF9F4;color:#0B6B47}
+.lb-pas{background:#F4F0FF;color:#4A3A96}
+.lb-data{background:#F0F6FF;color:#1A5C9E}
+.lb-ai{background:#FFF0F8;color:#9B2A6A}
+.lb-docmgmt{background:#F5F0E8;color:#705A28}
+.lb-decomm{background:#FFF0EE;color:#8B2020}
+.init-cell{padding:10px 12px;vertical-align:middle}
+.init-name{font-size:13px;font-weight:500;color:var(--text-primary);display:flex;align-items:center;gap:6px;cursor:pointer}
+.init-name:hover{color:var(--navy-light)}
+.edit-icon{opacity:0;font-size:11px;color:var(--text-muted);background:var(--off-white);border:1px solid var(--border);padding:2px 7px;border-radius:5px;cursor:pointer;white-space:nowrap;transition:opacity 0.15s}
+tr:hover .edit-icon{opacity:1}
+.init-desc{font-size:11px;color:var(--text-muted);margin-top:2px}
+.obj-dots{display:flex;gap:4px;align-items:center;margin-top:4px}
+.obj-dot{width:6px;height:6px;border-radius:50%}
+.dot-cx{background:var(--teal)}
+.dot-ce{background:var(--purple)}
+.dot-ms{background:var(--amber)}
+.status-cell{padding:8px 10px;text-align:center;vertical-align:middle}
+.badge{display:inline-block;font-size:10px;font-weight:600;padding:4px 10px;border-radius:20px;white-space:nowrap;cursor:pointer;transition:transform 0.1s,box-shadow 0.1s;letter-spacing:0.02em;min-width:72px;text-align:center}
+.badge:hover{transform:scale(1.05);box-shadow:0 2px 8px rgba(0,0,0,0.12)}
+.b-wip{background:#E0EEFF;color:#1A4E96;border:1px solid #B5D0F8}
+.b-inv{background:#EEF0F2;color:#4A5E72;border:1px solid #D0D8E0}
+.b-q1{background:#D6F5E8;color:#0B5E3A;border:1px solid #7FD9B3}
+.b-q2{background:#C8F0E0;color:#0A5232;border:1px solid #60CFA0}
+.b-q3{background:#BAE8D5;color:#094A2C;border:1px solid #40BD88}
+.b-q4{background:#A8E0C8;color:#083E24;border:1px solid #28AA70}
+.b-ss{background:#E8E4FF;color:#3A2A88;border:1px solid #BDB0F5}
+.b-sunset{background:#FEE8D8;color:#8B3A10;border:1px solid #F5B080}
+.b-closed{background:#FFE0E0;color:#7A1010;border:1px solid #F5A0A0}
+.b-na{background:transparent;color:var(--text-muted);border:1px solid transparent;font-size:10px}
+.budget-cell{padding:6px 8px;text-align:center;vertical-align:middle}
+.budget-input{width:105px;font-size:12px;text-align:center;padding:5px 8px;border:1px solid var(--border);border-radius:7px;background:var(--off-white);color:var(--text-primary);font-family:'DM Sans',sans-serif;transition:border-color 0.15s,background 0.15s}
+.budget-input:focus{outline:none;border-color:var(--gold);background:#FFFBF3}
+.budget-input:not(:placeholder-shown){background:var(--white);border-color:var(--gold-pale);color:var(--amber);font-weight:500}
+.budget-input::placeholder{color:var(--text-muted);font-weight:400}
+.decomm-row td{background:#FFF8F6}
+.info-banner{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:2rem}
+.info-card{background:var(--white);border:1px solid var(--border-light);border-radius:var(--radius-lg);padding:1.25rem;box-shadow:var(--shadow-sm);display:flex;align-items:flex-start;gap:12px}
+.info-icon{width:40px;height:40px;border-radius:var(--radius);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:18px}
+.info-icon-teal{background:var(--teal-pale)}
+.info-icon-purple{background:var(--purple-pale)}
+.info-icon-amber{background:var(--amber-pale)}
+.info-content h4{font-size:13px;font-weight:600;color:var(--text-primary);margin-bottom:3px}
+.info-content p{font-size:12px;color:var(--text-secondary);line-height:1.5}
+
+/* ══ HEATMAP TAB ══ */
+.heatmap-header{margin-bottom:2rem}
+.heatmap-header h2{font-family:'DM Serif Display',serif;font-size:1.4rem;color:var(--text-primary);margin-bottom:0.3rem}
+.heatmap-header p{font-size:13px;color:var(--text-secondary)}
+.heatmap-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-bottom:2.5rem}
+.hm-card{background:var(--white);border:1px solid var(--border-light);border-radius:var(--radius-xl);padding:1.5rem;box-shadow:var(--shadow-sm);overflow:hidden;position:relative}
+.hm-card-header{display:flex;align-items:center;gap:12px;margin-bottom:1.25rem}
+.hm-obj-badge{display:flex;align-items:center;gap:8px;padding:8px 14px;border-radius:30px;font-size:13px;font-weight:600}
+.hm-obj-badge.cx{background:var(--teal-pale);color:var(--teal)}
+.hm-obj-badge.ce{background:var(--purple-pale);color:var(--purple)}
+.hm-obj-badge.ms{background:var(--amber-pale);color:var(--amber)}
+.hm-count{margin-left:auto;font-family:'DM Serif Display',serif;font-size:2rem;color:var(--text-muted)}
+
+/* heatmap matrix */
+.hm-matrix{display:flex;flex-direction:column;gap:3px}
+.hm-row{display:flex;align-items:center;gap:3px}
+.hm-year-label{width:36px;font-size:10px;font-weight:600;color:var(--text-muted);text-align:right;flex-shrink:0}
+.hm-cells{display:flex;gap:3px;flex:1}
+.hm-cell{flex:1;height:32px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;cursor:default;transition:transform 0.15s,box-shadow 0.15s;position:relative}
+.hm-cell:hover{transform:scale(1.08);box-shadow:var(--shadow-md);z-index:2}
+.hm-cell .hm-num{font-size:13px;font-weight:700}
+.hm-cell-label{position:absolute;bottom:-18px;left:50%;transform:translateX(-50%);font-size:8px;color:var(--text-muted);white-space:nowrap;opacity:0;pointer-events:none;transition:opacity 0.15s}
+.hm-cell:hover .hm-cell-label{opacity:1}
+/* intensity classes per objective */
+.cx-0{background:#F0FAF7;color:#B0D8CE}
+.cx-1{background:#C2EBE0;color:#0B6B47}
+.cx-2{background:#7FD4BC;color:#085237}
+.cx-3{background:#3AB89E;color:#fff}
+.cx-4{background:#0E7C6A;color:#fff}
+.cx-5{background:#074F44;color:#fff}
+.ce-0{background:#F3F0FF;color:#C0B8E8}
+.ce-1{background:#D8D2F8;color:#3A2A88}
+.ce-2{background:#B8AEEE;color:#2A1A78}
+.ce-3{background:#8878D8;color:#fff}
+.ce-4{background:#5B4BA8;color:#fff}
+.ce-5{background:#3A2A88;color:#fff}
+.ms-0{background:#FFF8EE;color:#E0C898}
+.ms-1{background:#FAE0B0;color:#8B5A10}
+.ms-2{background:#F0C070;color:#6B4008}
+.ms-3{background:#E8A030;color:#fff}
+.ms-4{background:#C06B18;color:#fff}
+.ms-5{background:#8B4A08;color:#fff}
+
+.hm-legend{display:flex;align-items:center;gap:6px;margin-top:1rem;justify-content:flex-end}
+.hm-legend-label{font-size:10px;color:var(--text-muted)}
+.hm-legend-scale{display:flex;gap:2px}
+.hm-legend-box{width:14px;height:14px;border-radius:3px}
+
+/* ── Full heatmap matrix (initiative × year) ── */
+.full-hm-wrap{background:var(--white);border:1px solid var(--border-light);border-radius:var(--radius-xl);box-shadow:var(--shadow-md);overflow:hidden;margin-bottom:2rem}
+.full-hm-header{padding:1.25rem 1.5rem;border-bottom:1px solid var(--border-light);display:flex;align-items:center;gap:12px}
+.full-hm-header h3{font-family:'DM Serif Display',serif;font-size:1.1rem;color:var(--text-primary)}
+.full-hm-scroll{overflow-x:auto}
+.full-hm-table{border-collapse:collapse;min-width:800px;width:100%}
+.full-hm-table th{padding:8px 10px;font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;color:var(--text-muted);background:var(--off-white);border-bottom:1px solid var(--border);text-align:center;white-space:nowrap}
+.full-hm-table th:first-child{text-align:left;width:220px}
+.full-hm-table th:nth-child(2){width:80px;text-align:left}
+.full-hm-table td{padding:6px 8px;border-bottom:1px solid var(--border-light);font-size:12px;vertical-align:middle}
+.full-hm-table tr:last-child td{border-bottom:none}
+.full-hm-table tr:hover td{background:#FAFBFC}
+.fhm-cell{display:flex;align-items:center;justify-content:center;height:28px;border-radius:6px;font-size:10px;font-weight:600;cursor:default;transition:transform 0.12s}
+.fhm-cell:hover{transform:scale(1.1)}
+.obj-chip{display:inline-flex;align-items:center;gap:3px;font-size:9px;font-weight:600;padding:2px 6px;border-radius:9px}
+.chip-cx{background:var(--teal-pale);color:var(--teal)}
+.chip-ce{background:var(--purple-pale);color:var(--purple)}
+.chip-ms{background:var(--amber-pale);color:var(--amber)}
+
+/* ══ ANALYTICS TAB ══ */
+.analytics-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;margin-bottom:2rem}
+.analytics-grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-bottom:2rem}
+.an-card{background:var(--white);border:1px solid var(--border-light);border-radius:var(--radius-xl);padding:1.5rem;box-shadow:var(--shadow-sm)}
+.an-card-full{background:var(--white);border:1px solid var(--border-light);border-radius:var(--radius-xl);padding:1.5rem;box-shadow:var(--shadow-sm);margin-bottom:1.5rem}
+.an-card h3{font-family:'DM Serif Display',serif;font-size:1.1rem;color:var(--text-primary);margin-bottom:0.3rem}
+.an-card-full h3{font-family:'DM Serif Display',serif;font-size:1.1rem;color:var(--text-primary);margin-bottom:0.3rem}
+.an-sub{font-size:11px;color:var(--text-muted);margin-bottom:1.25rem}
+
+/* progress bar */
+.prog-item{margin-bottom:14px}
+.prog-label{display:flex;justify-content:space-between;align-items:center;margin-bottom:5px;font-size:12px}
+.prog-name{color:var(--text-secondary);font-weight:500}
+.prog-val{color:var(--text-muted);font-size:11px}
+.prog-track{height:8px;background:var(--off-white);border-radius:4px;overflow:hidden;border:1px solid var(--border-light)}
+.prog-fill{height:100%;border-radius:4px;transition:width 1s ease}
+
+/* KPI strip */
+.kpi-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:2rem}
+.kpi-card{background:var(--white);border:1px solid var(--border-light);border-radius:var(--radius-lg);padding:1.25rem;box-shadow:var(--shadow-sm);text-align:center;position:relative;overflow:hidden}
+.kpi-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px}
+.kpi-card:nth-child(1)::after{background:var(--teal)}
+.kpi-card:nth-child(2)::after{background:var(--purple)}
+.kpi-card:nth-child(3)::after{background:var(--gold)}
+.kpi-card:nth-child(4)::after{background:var(--red)}
+.kpi-num{font-family:'DM Serif Display',serif;font-size:2.2rem;color:var(--text-primary);line-height:1;margin-bottom:4px}
+.kpi-label{font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.05em}
+.kpi-delta{font-size:11px;margin-top:6px;font-weight:500}
+.kpi-up{color:var(--teal)}
+.kpi-down{color:var(--red)}
+
+/* Gantt/timeline */
+.timeline-wrap{overflow-x:auto}
+.tl-table{border-collapse:collapse;width:100%;min-width:900px}
+.tl-table td,.tl-table th{border:none;padding:4px 6px}
+.tl-label{font-size:11px;color:var(--text-secondary);white-space:nowrap;padding-right:12px;font-weight:500;width:200px}
+.tl-layer-label{font-size:9px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.05em;width:80px}
+.tl-qcell{width:40px;text-align:center}
+.tl-qhead{font-size:9px;color:var(--text-muted);text-align:center;padding-bottom:8px;font-weight:600;letter-spacing:0.04em;text-transform:uppercase}
+.tl-bar{height:18px;border-radius:9px;display:block;margin:0 2px;transition:opacity 0.2s}
+.tl-bar:hover{opacity:0.8}
+.tl-yr-head{font-size:11px;font-weight:600;color:var(--text-primary);text-align:center;padding:8px 0 2px;font-family:'DM Serif Display',serif}
+.tl-yr-sep{border-left:2px solid var(--border);padding-left:8px}
+
+/* ── MODAL ── */
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(11,30,61,0.5);z-index:200;backdrop-filter:blur(3px);align-items:center;justify-content:center}
+.modal-overlay.open{display:flex}
+.modal{background:var(--white);border-radius:var(--radius-xl);padding:2rem;width:520px;max-width:95vw;max-height:90vh;overflow-y:auto;box-shadow:var(--shadow-lg);animation:modalIn 0.25s ease}
+@keyframes modalIn{from{opacity:0;transform:translateY(12px) scale(0.98)}to{opacity:1;transform:none}}
+.modal-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.5rem}
+.modal-header h3{font-family:'DM Serif Display',serif;font-size:1.25rem;color:var(--text-primary)}
+.modal-close{width:32px;height:32px;border-radius:50%;background:var(--off-white);border:1px solid var(--border);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:16px;color:var(--text-secondary);transition:background 0.15s}
+.modal-close:hover{background:var(--border-light)}
+.modal-section{margin-bottom:1.25rem}
+.modal-section label{display:block;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;color:var(--text-muted);margin-bottom:6px}
+.modal-section input,.modal-section select,.modal-section textarea{width:100%;padding:9px 12px;border:1px solid var(--border);border-radius:var(--radius);font-size:13px;color:var(--text-primary);font-family:'DM Sans',sans-serif;background:var(--off-white);transition:border-color 0.15s,background 0.15s}
+.modal-section input:focus,.modal-section select:focus,.modal-section textarea:focus{outline:none;border-color:var(--navy);background:var(--white)}
+.modal-section textarea{resize:vertical;min-height:60px}
+.modal-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.obj-check-row{display:flex;gap:12px;flex-wrap:wrap}
+.obj-check{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--text-secondary);cursor:pointer;padding:6px 12px;border:1px solid var(--border);border-radius:var(--radius);transition:all 0.15s;user-select:none}
+.obj-check input{display:none}
+.obj-check:has(input:checked).oc-cx{background:var(--teal-pale);border-color:var(--teal-light);color:var(--teal)}
+.obj-check:has(input:checked).oc-ce{background:var(--purple-pale);border-color:var(--purple-light);color:var(--purple)}
+.obj-check:has(input:checked).oc-ms{background:var(--amber-pale);border-color:var(--amber-light);color:var(--amber)}
+.obj-check:hover{background:var(--off-white)}
+.modal-actions{display:flex;gap:8px;justify-content:flex-end;margin-top:1.5rem;padding-top:1.25rem;border-top:1px solid var(--border-light)}
+.btn-save{background:var(--navy);color:var(--white);padding:9px 24px;border-radius:var(--radius);border:none;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;cursor:pointer;transition:background 0.15s}
+.btn-save:hover{background:var(--navy-light)}
+.btn-cancel{background:var(--off-white);color:var(--text-secondary);padding:9px 20px;border-radius:var(--radius);border:1px solid var(--border);font-family:'DM Sans',sans-serif;font-size:13px;cursor:pointer;transition:background 0.15s}
+.btn-cancel:hover{background:var(--border-light)}
+.btn-danger{background:var(--red-pale);color:var(--red);padding:9px 16px;border-radius:var(--radius);border:1px solid #F5A0A0;font-family:'DM Sans',sans-serif;font-size:13px;cursor:pointer;margin-right:auto;transition:background 0.15s}
+.btn-danger:hover{background:#FFDCDC}
+
+/* FOOTER */
+.page-footer{background:var(--navy);color:rgba(255,255,255,0.4);text-align:center;padding:1.25rem;font-size:11px;letter-spacing:0.04em}
+.page-footer span{color:var(--gold-light)}
+
+@media print{.nav-bar,.table-toolbar,.modal-overlay,.page-footer{display:none}.page-header{-webkit-print-color-adjust:exact;print-color-adjust:exact}.badge{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+
+/* ══ TIMELINE TAB ══ */
+.tl-page-header{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:1.75rem;flex-wrap:wrap;gap:1rem}
+.tl-page-header h2{font-family:'DM Serif Display',serif;font-size:1.4rem;color:var(--text-primary);margin-bottom:3px}
+.tl-page-header p{font-size:13px;color:var(--text-secondary)}
+.tl-controls{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.tl-filter-btn{padding:5px 12px;border-radius:20px;border:1px solid var(--border);font-size:11px;font-weight:500;font-family:'DM Sans',sans-serif;cursor:pointer;background:var(--white);color:var(--text-secondary);transition:all 0.15s}
+.tl-filter-btn.on{background:var(--navy);color:var(--white);border-color:var(--navy)}
+
+/* Year scrollable gantt */
+.gantt-outer{background:var(--white);border:1px solid var(--border);border-radius:var(--radius-xl);box-shadow:var(--shadow-md);overflow:hidden;margin-bottom:2rem}
+.gantt-top-bar{padding:1rem 1.5rem;border-bottom:1px solid var(--border-light);display:flex;align-items:center;gap:1rem}
+.gantt-top-bar h3{font-family:'DM Serif Display',serif;font-size:1.1rem;color:var(--text-primary)}
+.gantt-scroll-area{overflow-x:auto;overflow-y:visible}
+.gantt-canvas-wrap{display:flex;min-width:1200px}
+
+/* Left labels pane */
+.gantt-labels{flex-shrink:0;width:200px;border-right:1px solid var(--border-light)}
+.gantt-labels-top{height:72px;border-bottom:1px solid var(--border-light);background:var(--off-white);display:flex;align-items:flex-end;padding:0 12px 8px;font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;color:var(--text-muted)}
+.gantt-label-row{display:flex;align-items:center;padding:0 12px;border-bottom:1px solid var(--border-light);gap:8px;position:relative}
+.gantt-label-row:last-child{border-bottom:none}
+.gantt-section-row{background:var(--navy);padding:6px 12px;display:flex;align-items:center;gap:8px}
+.gantt-section-name{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:var(--gold-light)}
+.gantt-init-name{font-size:11px;color:var(--text-primary);font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;flex:1}
+.gantt-layer-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
+
+/* Timeline grid pane */
+.gantt-grid{flex:1;position:relative}
+.gantt-yr-headers{height:32px;display:flex;border-bottom:1px solid var(--border-light);background:var(--navy)}
+.gantt-yr-head{flex:1;display:flex;align-items:center;justify-content:center;font-family:'DM Serif Display',serif;font-size:13px;color:rgba(255,255,255,0.9);border-right:1px solid rgba(255,255,255,0.12)}
+.gantt-yr-head:last-child{border-right:none}
+.gantt-q-headers{height:40px;display:flex;border-bottom:1px solid var(--border-light);background:var(--off-white)}
+.gantt-q-cell{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;border-right:1px solid var(--border-light);font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;color:var(--text-muted);position:relative}
+.gantt-q-cell.q1{border-left:2px solid var(--border)}
+.gantt-q-cell .review-marker{position:absolute;top:-2px;display:flex;flex-direction:column;align-items:center;gap:1px}
+.review-flag{width:0;height:0;border-left:5px solid transparent;border-right:5px solid transparent;border-top:8px solid var(--gold)}
+.review-label{font-size:8px;color:var(--gold);font-weight:600;white-space:nowrap}
+.gantt-rows-wrap{position:relative}
+.gantt-bar-row{display:flex;align-items:center;padding:4px 0;border-bottom:1px solid var(--border-light);position:relative;min-height:38px}
+.gantt-bar-row:last-child{border-bottom:none}
+.gantt-bar-row.section-spacer{background:var(--navy);min-height:28px}
+.gantt-q-bg{position:absolute;top:0;bottom:0;border-right:1px solid var(--border-light)}
+.gantt-q-bg.yr-start{border-right-color:var(--border)}
+.gantt-bar{position:absolute;height:22px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:600;color:white;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;padding:0 8px;cursor:pointer;transition:opacity 0.15s,transform 0.15s;box-shadow:0 1px 3px rgba(0,0,0,0.15)}
+.gantt-bar:hover{opacity:0.88;transform:scaleY(1.08)}
+.gantt-milestone{position:absolute;width:14px;height:14px;transform:rotate(45deg);cursor:pointer;transition:transform 0.15s}
+.gantt-milestone:hover{transform:rotate(45deg) scale(1.3)}
+.milestone-tooltip{display:none;position:absolute;top:-36px;left:50%;transform:translateX(-50%);background:var(--navy);color:white;font-size:10px;padding:4px 8px;border-radius:6px;white-space:nowrap;pointer-events:none;z-index:10}
+.gantt-milestone:hover .milestone-tooltip{display:block}
+
+/* milestone modal */
+.ms-modal{background:var(--white);border-radius:var(--radius-xl);padding:1.75rem;width:500px;max-width:95vw;box-shadow:var(--shadow-lg);animation:modalIn 0.2s ease}
+.ms-tag{display:inline-flex;align-items:center;gap:4px;padding:3px 10px;border-radius:12px;font-size:11px;font-weight:500;margin-bottom:12px}
+
+/* Milestone list view */
+.ml-outer{background:var(--white);border:1px solid var(--border);border-radius:var(--radius-xl);box-shadow:var(--shadow-md);overflow:hidden;margin-bottom:2rem}
+.ml-header{padding:1rem 1.5rem;border-bottom:1px solid var(--border-light);display:flex;align-items:center;gap:1rem}
+.ml-header h3{font-family:'DM Serif Display',serif;font-size:1.1rem;color:var(--text-primary)}
+.ml-body{display:grid;grid-template-columns:repeat(5,1fr);border-top:1px solid var(--border-light)}
+.ml-year-col{border-right:1px solid var(--border-light);padding:1rem}
+.ml-year-col:last-child{border-right:none}
+.ml-year-title{font-family:'DM Serif Display',serif;font-size:1rem;color:var(--text-primary);margin-bottom:12px;padding-bottom:8px;border-bottom:2px solid var(--border-light)}
+.ml-item{margin-bottom:10px;padding:8px 10px;border-radius:var(--radius);border-left:3px solid;font-size:11px}
+.ml-item-title{font-weight:600;color:var(--text-primary);margin-bottom:2px}
+.ml-item-sub{color:var(--text-secondary);font-size:10px}
+.ml-item-q{display:inline-block;font-size:9px;font-weight:700;padding:1px 5px;border-radius:4px;margin-top:3px}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="page-header">
+  <div class="header-geo"><div class="header-geo-tri"></div></div>
+  <div class="header-inner">
+    <div class="header-left">
+      <div class="header-subtitle">Corporate &amp; Investment Banking · Benefits Technology</div>
+      <h1>Corporate Benefit<br><em>Roadmap</em></h1>
+      <div class="header-subtitle" style="margin-top:0.5rem">2026 – 2030 &nbsp;·&nbsp; Strategic Initiatives &amp; Investment Plan &nbsp;·&nbsp; Exco Planning View</div>
+    </div>
+    <div class="header-meta">
+      <div class="meta-pill"><div class="num" id="totalInitiatives">25</div><div class="lbl">Initiatives</div></div>
+      <div class="meta-divider"></div>
+      <div class="meta-pill"><div class="num">5</div><div class="lbl">Year horizon</div></div>
+      <div class="meta-divider"></div>
+      <div class="meta-pill"><div class="num">3</div><div class="lbl">Objectives</div></div>
+      <div class="meta-divider"></div>
+      <div class="meta-pill" style="text-align:right">
+        <div style="display:flex;gap:6px;align-items:center;justify-content:flex-end">
+          <button class="btn btn-gold" onclick="window.print()" style="font-size:11px;padding:6px 14px">🖨 Print</button>
+          <button class="btn btn-outline" onclick="exportJSON()" style="font-size:11px;padding:6px 14px;background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.2);color:white">⬇ JSON</button>
+        </div>
+        <div class="lbl" style="margin-top:4px" id="lastSaved">Auto-saves locally</div>
+      </div>
+    </div>
+  </div>
+  <div class="header-accent"></div>
+</header>
+
+<!-- NAV TABS -->
+<nav class="nav-bar">
+  <div class="nav-bar-inner">
+    <div class="nav-tab active" id="navTab-roadmap" onclick="switchTab('roadmap')">
+      <div class="tab-icon">📋</div> Roadmap
+    </div>
+    <div class="nav-tab" id="navTab-heatmap" onclick="switchTab('heatmap')">
+      <div class="tab-icon">🔥</div> Objectives Heatmap
+    </div>
+    <div class="nav-tab" id="navTab-analytics" onclick="switchTab('analytics')">
+      <div class="tab-icon">📊</div> Analytics &amp; Insights
+    </div>
+    <div class="nav-tab" id="navTab-timeline" onclick="switchTab('timeline')">
+      <div class="tab-icon">🗓</div> Timeline &amp; Milestones
+    </div>
+    <div class="nav-actions">
+      <span style="font-size:11px;color:var(--text-muted)">Filter:</span>
+      <button class="btn btn-outline" id="fBtn-cx" onclick="toggleFilter('cx')" style="font-size:11px;border-left:3px solid var(--teal)">① Client Exp.</button>
+      <button class="btn btn-outline" id="fBtn-ce" onclick="toggleFilter('ce')" style="font-size:11px;border-left:3px solid var(--purple)">② Cost Eff.</button>
+      <button class="btn btn-outline" id="fBtn-ms" onclick="toggleFilter('ms')" style="font-size:11px;border-left:3px solid var(--amber)">③ Mkt Share</button>
+      <div style="width:1px;height:20px;background:var(--border);margin:0 4px"></div>
+      <button class="btn btn-outline" onclick="addRow()" style="font-size:11px">+ Add</button>
+      <button class="btn btn-outline" onclick="pushToCloud()" style="font-size:11px">💾 Save</button>
+    </div>
+  </div>
+</nav>
+
+<!-- MAIN -->
+<main class="main">
+
+<!-- ═══ TAB 1: ROADMAP ═══ -->
+<section class="page-section active" id="section-roadmap">
+  <div class="summary-row" id="summaryRow"></div>
+  <div class="info-banner">
+    <div class="info-card"><div class="info-icon info-icon-teal">🎯</div><div class="info-content"><h4>2029 Steady State Target</h4><p>Product and PAS consolidation complete. Single LCB instance. All initiatives in maintenance mode by 2029.</p></div></div>
+    <div class="info-card"><div class="info-icon info-icon-amber">⚠️</div><div class="info-content"><h4>Mid-2028 Decommissioning</h4><p>LCU, BPC (FA) and BPC (Admin) sunset mid-2028. Instances consolidated onto single LCB platform.</p></div></div>
+    <div class="info-card"><div class="info-icon info-icon-purple">✏️</div><div class="info-content"><h4>Editable Roadmap</h4><p>Click any status badge to cycle. Click initiative name to edit details and budget inline.</p></div></div>
+  </div>
+  <div class="legend-row">
+    <strong style="font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.05em">Status:</strong>
+    <div class="legend-item"><span class="legend-badge b-wip">In Progress</span></div>
+    <div class="legend-item"><span class="legend-badge b-inv">Investigation</span></div>
+    <div class="legend-item"><span class="legend-badge b-q1">Complete Q1</span></div>
+    <div class="legend-item"><span class="legend-badge b-q2">Complete Q2</span></div>
+    <div class="legend-item"><span class="legend-badge b-q3">Complete Q3</span></div>
+    <div class="legend-item"><span class="legend-badge b-q4">Complete Q4</span></div>
+    <div class="legend-item"><span class="legend-badge b-ss">Steady State</span></div>
+    <div class="legend-item"><span class="legend-badge b-sunset">Sunset</span></div>
+    <div class="legend-item"><span class="legend-badge b-closed">Closed</span></div>
+    <div style="margin-left:auto;display:flex;align-items:center;gap:12px">
+      <div class="legend-item"><span class="obj-dot dot-cx" style="width:8px;height:8px"></span> Client Exp.</div>
+      <div class="legend-item"><span class="obj-dot dot-ce" style="width:8px;height:8px"></span> Cost Eff.</div>
+      <div class="legend-item"><span class="obj-dot dot-ms" style="width:8px;height:8px"></span> Mkt Share</div>
+    </div>
+  </div>
+  <div class="table-wrapper">
+    <div class="table-toolbar">
+      <span class="table-toolbar-title">Initiative Roadmap</span>
+      <span class="table-toolbar-sub" id="visibleCount">Showing all 25 initiatives</span>
+      <div style="margin-left:auto;display:flex;gap:8px;align-items:center">
+        <div class="search-box">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          <input type="text" id="searchInput" placeholder="Search initiatives…" oninput="filterSearch()">
+        </div>
+      </div>
+    </div>
+    <div class="table-scroll">
+      <table id="roadmapTable">
+        <thead><tr>
+          <th style="width:118px">Layer</th>
+          <th style="min-width:200px">Initiative</th>
+          <th class="yr-col"><div class="yr-col-header"><span class="yr-num">2026</span><span class="yr-sub">Budget (R)</span></div></th>
+          <th class="yr-col"><div class="yr-col-header"><span class="yr-num">2027</span><span class="yr-sub">Budget (R)</span></div></th>
+          <th class="yr-col"><div class="yr-col-header"><span class="yr-num">2028</span><span class="yr-sub">Budget (R)</span></div></th>
+          <th class="yr-col"><div class="yr-col-header"><span class="yr-num">2029</span><span class="yr-sub">Budget (R)</span></div></th>
+          <th class="yr-col"><div class="yr-col-header"><span class="yr-num">2030</span><span class="yr-sub">Budget (R)</span></div></th>
+        </tr></thead>
+        <tbody id="roadmapBody"></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TAB 2: HEATMAP ═══ -->
+<section class="page-section" id="section-heatmap">
+  <div class="heatmap-header">
+    <h2>Objectives Heatmap</h2>
+    <p>Initiative intensity mapped across enterprise objectives and years — darker cells indicate higher delivery concentration</p>
+  </div>
+
+  <!-- 3 objective spotlight cards -->
+  <div class="heatmap-grid" id="hmGrid"></div>
+
+  <!-- Full initiative × year heatmap -->
+  <div class="full-hm-wrap">
+    <div class="full-hm-header">
+      <h3>Initiative × Year Delivery Matrix</h3>
+      <span style="font-size:11px;color:var(--text-muted);margin-left:8px">Colour intensity = delivery progress per year</span>
+      <div style="margin-left:auto;display:flex;gap:6px">
+        <button class="btn btn-outline" style="font-size:11px" onclick="renderHeatmap()">↻ Refresh</button>
+      </div>
+    </div>
+    <div class="full-hm-scroll">
+      <table class="full-hm-table" id="fullHmTable">
+        <thead><tr>
+          <th>Initiative</th>
+          <th>Objectives</th>
+          <th style="text-align:center">2026</th>
+          <th style="text-align:center">2027</th>
+          <th style="text-align:center">2028</th>
+          <th style="text-align:center">2029</th>
+          <th style="text-align:center">2030</th>
+        </tr></thead>
+        <tbody id="fullHmBody"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Objective coverage bar chart -->
+  <div class="an-card-full">
+    <h3>Objective Coverage by Layer</h3>
+    <div class="an-sub">Number of initiatives per layer mapped to each enterprise objective</div>
+    <div style="position:relative;height:280px"><canvas id="coverageChart" role="img" aria-label="Grouped bar chart showing objective coverage by layer"></canvas></div>
+  </div>
+</section>
+
+<!-- ═══ TAB 3: ANALYTICS ═══ -->
+<section class="page-section" id="section-analytics">
+  <!-- KPI strip -->
+  <div class="kpi-strip" id="kpiStrip"></div>
+
+  <div class="analytics-grid">
+    <!-- Delivery by year -->
+    <div class="an-card">
+      <h3>Delivery Pipeline by Year</h3>
+      <div class="an-sub">Initiatives completing per year (Q1–Q4)</div>
+      <div style="position:relative;height:240px"><canvas id="deliveryChart" role="img" aria-label="Bar chart of delivery counts by year"></canvas></div>
+    </div>
+
+    <!-- Status distribution donut -->
+    <div class="an-card">
+      <h3>Current Status Distribution</h3>
+      <div class="an-sub">Breakdown of 2026 initiative statuses</div>
+      <div style="position:relative;height:240px"><canvas id="statusDonut" role="img" aria-label="Donut chart of status distribution"></canvas></div>
+    </div>
+  </div>
+
+  <!-- Gantt-style timeline -->
+  <div class="an-card-full">
+    <h3>Delivery Timeline — Gantt View</h3>
+    <div class="an-sub">Initiative status bar across all 5 years (click any bar to view details)</div>
+    <div class="timeline-wrap" id="ganttWrap"></div>
+  </div>
+
+  <div class="analytics-grid">
+    <!-- Layer completion progress -->
+    <div class="an-card">
+      <h3>Layer Completion Progress</h3>
+      <div class="an-sub">% of initiatives reaching steady state by 2029</div>
+      <div id="progressBars"></div>
+    </div>
+
+    <!-- Decommission countdown -->
+    <div class="an-card">
+      <h3>Decommission Plan</h3>
+      <div class="an-sub">Systems sunset and closure timeline</div>
+      <div id="decommPlan"></div>
+    </div>
+  </div>
+
+  <!-- Objective alignment radar -->
+  <div class="an-card-full">
+    <h3>Objective Alignment by Year</h3>
+    <div class="an-sub">How many delivering initiatives touch each enterprise objective each year</div>
+    <div style="position:relative;height:300px"><canvas id="radarChart" role="img" aria-label="Radar chart of objective alignment per year"></canvas></div>
+  </div>
+</section>
+
+<!-- ═══ TAB 4: TIMELINE & MILESTONES ═══ -->
+<section class="page-section" id="section-timeline">
+  <div class="tl-page-header">
+    <div>
+      <h2>Timeline &amp; Milestones</h2>
+      <p>Full Gantt view across 2026–2030 with quarterly reviews, delivery milestones and decommission events</p>
+    </div>
+    <div class="tl-controls">
+      <span style="font-size:11px;color:var(--text-muted)">Show layers:</span>
+      <button class="tl-filter-btn on" id="tlf-all" onclick="tlFilter('all')">All</button>
+      <button class="tl-filter-btn" id="tlf-Engagement Layer" onclick="tlFilter('Engagement Layer')">Engagement</button>
+      <button class="tl-filter-btn" id="tlf-Sales & Servicing" onclick="tlFilter('Sales & Servicing')">Sales</button>
+      <button class="tl-filter-btn" id="tlf-Product" onclick="tlFilter('Product')">Product</button>
+      <button class="tl-filter-btn" id="tlf-PAS" onclick="tlFilter('PAS')">PAS</button>
+      <button class="tl-filter-btn" id="tlf-DATA" onclick="tlFilter('DATA')">Data</button>
+      <button class="tl-filter-btn" id="tlf-AI" onclick="tlFilter('AI')">AI</button>
+      <button class="tl-filter-btn" id="tlf-Decommissioning" onclick="tlFilter('Decommissioning')">Decomm.</button>
+    </div>
+  </div>
+
+  <!-- Gantt chart -->
+  <div class="gantt-outer">
+    <div class="gantt-top-bar">
+      <h3>Delivery Gantt — 2026 to 2030</h3>
+      <span style="font-size:11px;color:var(--text-muted)">Bars span active delivery quarters · ◆ = milestone · ▼ = Exco review gate</span>
+      <div style="margin-left:auto;display:flex;gap:8px;align-items:center">
+        <div style="display:flex;gap:6px;align-items:center;font-size:11px;color:var(--text-muted)">
+          <span style="display:inline-block;width:24px;height:8px;background:#3AB89E;border-radius:4px"></span>In progress
+          <span style="display:inline-block;width:24px;height:8px;background:#8878D8;border-radius:4px"></span>Steady state
+          <span style="display:inline-block;width:24px;height:8px;background:#E25B3A;border-radius:4px"></span>Sunset
+          <span style="width:12px;height:12px;transform:rotate(45deg);display:inline-block;background:var(--gold);border-radius:2px"></span>Milestone
+        </div>
+      </div>
+    </div>
+    <div class="gantt-scroll-area">
+      <div id="ganttMain" style="min-width:1100px"></div>
+    </div>
+  </div>
+
+  <!-- Milestone list by year -->
+  <div class="ml-outer">
+    <div class="ml-header">
+      <h3>Key Milestones by Year</h3>
+      <span style="font-size:11px;color:var(--text-muted);margin-left:8px">Completion events, review gates and decommission moments</span>
+    </div>
+    <div class="ml-body" id="mlBody"></div>
+  </div>
+
+  <!-- Review gates timeline strip -->
+  <div class="an-card-full">
+    <h3>Exco Review Gates &amp; Governance Checkpoints</h3>
+    <div class="an-sub">Annual review cadence with delivery confirmation gates per year — click any gate to see initiatives due</div>
+    <div id="reviewGates" style="margin-top:1rem"></div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="page-footer">
+  Corporate Benefit Roadmap &nbsp;·&nbsp; <span>Exco Planning View</span> &nbsp;·&nbsp; Confidential &amp; Commercially Sensitive &nbsp;·&nbsp; 2026–2030
+</footer>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="editModal">
+  <div class="modal">
+    <div class="modal-header">
+      <h3 id="modalTitle">Edit Initiative</h3>
+      <button class="modal-close" onclick="closeModal()">✕</button>
+    </div>
+    <div class="modal-section">
+      <label>Layer / Domain</label>
+      <select id="mLayer">
+        <option>Engagement Layer</option><option>Sales &amp; Servicing</option>
+        <option>Product</option><option>PAS</option><option>DATA</option>
+        <option>AI</option><option>Document Management</option><option>Decommissioning</option>
+      </select>
+    </div>
+    <div class="modal-grid">
+      <div class="modal-section" style="grid-column:1/-1"><label>Initiative Name</label><input type="text" id="mName" placeholder="e.g. SSP Front End"></div>
+      <div class="modal-section" style="grid-column:1/-1"><label>Description / Notes</label><textarea id="mDesc" placeholder="Optional context, dependencies, or notes…"></textarea></div>
+    </div>
+    <div class="modal-section">
+      <label>Enterprise Objectives</label>
+      <div class="obj-check-row">
+        <label class="obj-check oc-cx"><input type="checkbox" id="mCX"> ① Client Experience</label>
+        <label class="obj-check oc-ce"><input type="checkbox" id="mCE"> ② Cost Efficiency</label>
+        <label class="obj-check oc-ms"><input type="checkbox" id="mMS"> ③ Market Share</label>
+      </div>
+    </div>
+    <div class="modal-grid">
+      <div class="modal-section"><label>2026 Status</label><select id="mS26"></select></div>
+      <div class="modal-section"><label>2026 Budget (R)</label><input type="text" id="mB26" placeholder="e.g. R 1.2M"></div>
+      <div class="modal-section"><label>2027 Status</label><select id="mS27"></select></div>
+      <div class="modal-section"><label>2027 Budget (R)</label><input type="text" id="mB27" placeholder="e.g. R 2.5M"></div>
+      <div class="modal-section"><label>2028 Status</label><select id="mS28"></select></div>
+      <div class="modal-section"><label>2028 Budget (R)</label><input type="text" id="mB28" placeholder="e.g. R 3.0M"></div>
+      <div class="modal-section"><label>2029 Status</label><select id="mS29"></select></div>
+      <div class="modal-section"><label>2029 Budget (R)</label><input type="text" id="mB29" placeholder="e.g. R 1.5M"></div>
+      <div class="modal-section"><label>2030 Status</label><select id="mS30"></select></div>
+      <div class="modal-section"><label>2030 Budget (R)</label><input type="text" id="mB30" placeholder="e.g. R 0.5M"></div>
+    </div>
+    <div class="modal-actions">
+      <button class="btn-danger" id="deleteBtn" onclick="deleteRow()">🗑 Delete</button>
+      <button class="btn-cancel" onclick="closeModal()">Cancel</button>
+      <button class="btn-save" onclick="saveModal()">Save Changes</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// ═══ DATA ═══════════════════════════════════════════
+const STATUSES=[
+  {val:'wip',label:'In Progress',cls:'b-wip',score:1},
+  {val:'inv',label:'Investigation',cls:'b-inv',score:0.5},
+  {val:'q1',label:'Complete Q1',cls:'b-q1',score:2},
+  {val:'q2',label:'Complete Q2',cls:'b-q2',score:2},
+  {val:'q3',label:'Complete Q3',cls:'b-q3',score:2},
+  {val:'q4',label:'Complete Q4',cls:'b-q4',score:2},
+  {val:'ss',label:'Steady State',cls:'b-ss',score:3},
+  {val:'sunset',label:'Sunset',cls:'b-sunset',score:1},
+  {val:'closed',label:'Closed',cls:'b-closed',score:0},
+  {val:'na',label:'—',cls:'b-na',score:0},
+];
+const sMap=Object.fromEntries(STATUSES.map(s=>[s.val,s]));
+
+const LAYER_CLASS={'Engagement Layer':'lb-engagement','Sales & Servicing':'lb-sales','Product':'lb-product','PAS':'lb-pas','DATA':'lb-data','AI':'lb-ai','Document Management':'lb-docmgmt','Decommissioning':'lb-decomm'};
+
+const DEFAULT_OBJS={'SSP Front end':['cx','ms'],'Contact Center Front end':['cx'],'Quotes':['cx','ms'],'Billing':['cx','ce'],'Ignite':['cx','ms'],'CAL':['ce'],'ESP':['ce'],'LHR (Product)':['cx','ce'],'Investment':['cx','ms'],'Wellness':['cx','ms'],'Financial Literacy':['cx','ms'],'SBG Fund':['ms'],'Cpr Sel to Ignite':['ce'],'IFP':['cx','ms'],'Annuities':['cx','ms'],'LHR (PAS)':['ce'],'Workflow (STPs)':['ce'],'ODS':['ce'],'MI':['ce','cx'],'Reports':['cx','ce'],'OCR':['ce'],'Single location for documents':['cx','ce'],'LCU Sunset':['ce'],'BPC (FA) Sunset':['ce'],'BPC (Admin) Sunset':['ce']};
+
+let data=[
+  {layer:'Engagement Layer',name:'SSP Front end',desc:'Self-service portal — client-facing digital front end',objs:['cx','ms'],yr26:'wip',yr27:'q2',yr28:'ss',yr29:'ss',yr30:'ss',b26:'',b27:'',b28:'',b29:'',b30:''},
+  {layer:'Engagement Layer',name:'Contact Center Front end',desc:'Agent desktop modernisation for contact centre',objs:['cx'],yr26:'wip',yr27:'q2',yr28:'ss',yr29:'ss',yr30:'ss',b26:'',b27:'',b28:'',b29:'',b30:''},
+  {layer:'Sales & Servicing',name:'Quotes',desc:'Digital quoting engine for new business',objs:['cx','ms'],yr26:'wip',yr27:'q2',yr28:'ss',yr29:'ss',yr30:'ss',b26:'',b27:'',b28:'',b29:'',b30:''},
+  {layer:'Sales & Servicing',name:'Billing',desc:'Automated billing and reconciliation',objs:['cx','ce'],yr26:'wip',yr27:'q2',yr28:'ss',yr29:'ss',yr30:'ss',b26:'',b27:'',b28:'',b29:'',b30:''},
+  {layer:'Sales & Servicing',name:'BCD',desc:'',objs:['cx','ce'],yr26:'wip',yr27:'na',yr28:'na',yr29:'na',yr30:'na',b26:'',b27:'',b28:'',b29:'',b30:''},
+  {layer:'Product',name:'Ignite',desc:'Core product platform modernisation',objs:['cx','ms'],yr26:'wip',yr27:'q2',yr28:'ss',yr29:'ss',yr30:'ss',b26:'',b27:'',b28:'',b29:'',b30:''},
+  {layer:'Product',name:'CAL',desc:'Corporate Annuities Launch',objs:['ce'],yr26:'wip',yr27:'q3',yr28:'ss',yr29:'ss',yr30:'ss',b26:'',b27:'',b28:'',b29:'',b30:''},
+  {layer:'Product',name:'ESP',desc:'Employee Share Plan product integration',objs:['ce'],yr26:'wip',yr27:'q3',yr28:'ss',yr29:'ss',yr30:'ss',b26:'',b27:'',b28:'',b29:'',b30:''},
+  {layer:'Product',name:'LHR (Product)',desc:'Life and Health Risk — product layer',objs:['cx','ce'],yr26:'wip',yr27:'q1',yr28:'ss',yr29:'ss',yr30:'ss',b26:'',b27:'',b28:'',b29:'',b30:''},
+  {layer:'Product',name:'Investment',desc:'Investment product suite enhancements',objs:['cx','ms'],yr26:'wip',yr27:'q3',yr28:'ss',yr29:'ss',yr30:'ss',b26:'',b27:'',b28:'',b29:'',b30:''},
+  {layer:'Product',name:'Wellness',desc:'Wellness benefit integration and member portal',objs:['cx','ms'],yr26:'wip',yr27:'q1',yr28:'ss',yr29:'ss',yr30:'ss',b26:'',b27:'',b28:'',b29:'',b30:''},
+  {layer:'Product',name:'Financial Literacy',desc:'Financial literacy programme and digital content',objs:['cx','ms'],yr26:'wip',yr27:'q2',yr28:'ss',yr29:'ss',yr30:'ss',b26:'',b27:'',b28:'',b29:'',b30:''},
+  {layer:'Product',name:'SBG Fund',desc:'Standard Bank Group fund administration',objs:['ms'],yr26:'wip',yr27:'q1',yr28:'ss',yr29:'ss',yr30:'ss',b26:'',b27:'',b28:'',b29:'',b30:''},
+  {layer:'PAS',name:'Cpr Sel to Ignite',desc:'PAS consolidation — migrate onto single LCB instance',objs:['ce'],yr26:'wip',yr27:'q4',yr28:'ss',yr29:'ss',yr30:'ss',b26:'',b27:'',b28:'',b29:'',b30:''},
+  {layer:'PAS',name:'IFP',desc:'Individual Financial Planning administration migration',objs:['cx','ms'],yr26:'wip',yr27:'q4',yr28:'ss',yr29:'ss',yr30:'ss',b26:'',b27:'',b28:'',b29:'',b30:''},
+  {layer:'PAS',name:'Annuities',desc:'Annuities policy administration on consolidated platform',objs:['cx','ms'],yr26:'wip',yr27:'na',yr28:'q1',yr29:'ss',yr30:'ss',b26:'',b27:'',b28:'',b29:'',b30:''},
+  {layer:'PAS',name:'LHR (PAS)',desc:'Life and Health Risk — policy admin migration',objs:['ce'],yr26:'wip',yr27:'na',yr28:'q1',yr29:'ss',yr30:'ss',b26:'',b27:'',b28:'',b29:'',b30:''},
+  {layer:'PAS',name:'Workflow (STPs)',desc:'Straight-through processing workflow automation',objs:['ce'],yr26:'wip',yr27:'na',yr28:'q1',yr29:'ss',yr30:'ss',b26:'',b27:'',b28:'',b29:'',b30:''},
+  {layer:'DATA',name:'ODS',desc:'Operational Data Store — unified data layer',objs:['ce'],yr26:'wip',yr27:'na',yr28:'q1',yr29:'ss',yr30:'ss',b26:'',b27:'',b28:'',b29:'',b30:''},
+  {layer:'DATA',name:'MI',desc:'Management Information reporting platform',objs:['ce','cx'],yr26:'wip',yr27:'na',yr28:'q1',yr29:'ss',yr30:'ss',b26:'',b27:'',b28:'',b29:'',b30:''},
+  {layer:'DATA',name:'Reports',desc:'Self-service and automated reports distribution',objs:['cx','ce'],yr26:'wip',yr27:'na',yr28:'q1',yr29:'ss',yr30:'ss',b26:'',b27:'',b28:'',b29:'',b30:''},
+  {layer:'AI',name:'OCR',desc:'AI-powered optical character recognition',objs:['ce'],yr26:'inv',yr27:'q1',yr28:'q1',yr29:'ss',yr30:'ss',b26:'',b27:'',b28:'',b29:'',b30:''},
+  {layer:'Document Management',name:'Single location for documents',desc:'Centralised document repository across all products',objs:['cx','ce'],yr26:'wip',yr27:'na',yr28:'q1',yr29:'ss',yr30:'ss',b26:'',b27:'',b28:'',b29:'',b30:''},
+  {layer:'Decommissioning',name:'LCU Sunset',desc:'Legacy LCU instance shutdown mid-2028',objs:['ce'],yr26:'na',yr27:'na',yr28:'sunset',yr29:'closed',yr30:'closed',b26:'',b27:'',b28:'',b29:'',b30:''},
+  {layer:'Decommissioning',name:'BPC (FA) Sunset',desc:'BPC for Financial Advisers — decommission mid-2028',objs:['ce'],yr26:'na',yr27:'na',yr28:'sunset',yr29:'closed',yr30:'closed',b26:'',b27:'',b28:'',b29:'',b30:''},
+  {layer:'Decommissioning',name:'BPC (Admin) Sunset',desc:'BPC for Operations/Admin — decommission mid-2028',objs:['ce'],yr26:'na',yr27:'na',yr28:'sunset',yr29:'closed',yr30:'closed',b26:'',b27:'',b28:'',b29:'',b30:''},
+];
+
+let activeFilters={cx:false,ce:false,ms:false};
+let editIdx=-1;
+let searchQuery='';
+let charts={};
+
+// ── helpers ─────────────────────────────────────────
+function getObjs(row){return row.objs&&row.objs.length?row.objs:(DEFAULT_OBJS[row.name]||[])}
+function statusScore(val){return (sMap[val]||sMap['na']).score}
+function isComplete(val){return ['q1','q2','q3','q4'].includes(val)}
+function isSteady(val){return val==='ss'}
+function isActive(val){return !['na','closed'].includes(val)}
+
+// ── Tab switching ───────────────────────────────────
+function switchTab(tab){
+  document.querySelectorAll('.page-section').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('.nav-tab').forEach(t=>t.classList.remove('active'));
+  document.getElementById('section-'+tab).classList.add('active');
+  document.getElementById('navTab-'+tab).classList.add('active');
+  if(tab==='heatmap') renderHeatmap();
+  if(tab==='analytics') renderAnalytics();
+  if(tab==='timeline') renderTimeline();
+}
+
+// ══════════════════════════════════════════════════════
+// npoint.io SHARED CLOUD STORAGE  (no account needed!)
+// ──────────────────────────────────────────────────────
+// SETUP — takes 30 seconds:
+//  1. Open https://www.npoint.io in your browser
+//  2. Click "Create JSON Bin"
+//  3. In the editor, type:  []
+//  4. Click "Save"
+//  5. Copy the 8-character ID from the URL
+//     e.g. if URL is  npoint.io/documents/a1b2c3d4  → ID is  a1b2c3d4
+//  6. Paste it below, then push to GitHub — done!
+// ══════════════════════════════════════════════════════
+
+const NPOINT_ID = 'a7437a7281da67540c83';  // Corporate Benefit Roadmap shared bin
+
+const NPOINT_BASE = 'https://api.npoint.io';
+const isConfigured = () => !NPOINT_ID.includes('PASTE');
+
+function setStatus(msg, type='idle'){
+  const el = document.getElementById('lastSaved');
+  if(!el) return;
+  const colors = {idle:'rgba(255,255,255,0.45)', saving:'#E8B86D', ok:'#1AA88E', err:'#F97316'};
+  el.textContent = msg;
+  el.style.color = colors[type] || colors.idle;
+}
+
+async function loadFromCloud(){
+  if(!isConfigured()){
+    const s = localStorage.getItem('cb_roadmap_v3');
+    if(s){ try{ data = JSON.parse(s); }catch(e){} }
+    setStatus('⚠ npoint not configured — local only', 'err');
+    showSetupBanner();
+    renderTable(); renderSummary();
+    return;
+  }
+  setStatus('⟳ Loading shared data…', 'saving');
+  try {
+    const res = await fetch(`${NPOINT_BASE}/${NPOINT_ID}`);
+    if(!res.ok) throw new Error('HTTP '+res.status);
+    const json = await res.json();
+    if(Array.isArray(json) && json.length > 0){
+      data = json;
+      setStatus('✓ Shared data loaded', 'ok');
+    } else {
+      // Bin empty — seed it with default data
+      setStatus('↑ Seeding shared bin…', 'saving');
+      await pushToCloud();
+    }
+  } catch(e){
+    const s = localStorage.getItem('cb_roadmap_v3');
+    if(s){ try{ data = JSON.parse(s); }catch(e2){} }
+    setStatus('⚠ Cloud load failed — using local cache', 'err');
+    console.warn('npoint load error:', e);
+  }
+  renderTable(); renderSummary();
+}
+
+async function pushToCloud(){
+  if(!isConfigured()){
+    localStorage.setItem('cb_roadmap_v3', JSON.stringify(data));
+    setStatus('💾 Saved locally (npoint not configured)', 'err');
+    return;
+  }
+  setStatus('⟳ Saving to cloud…', 'saving');
+  try {
+    const res = await fetch(`${NPOINT_BASE}/${NPOINT_ID}`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    });
+    if(!res.ok) throw new Error('HTTP '+res.status);
+    localStorage.setItem('cb_roadmap_v3', JSON.stringify(data));
+    setStatus('✓ Saved to cloud · ' + new Date().toLocaleTimeString(), 'ok');
+  } catch(e){
+    localStorage.setItem('cb_roadmap_v3', JSON.stringify(data));
+    setStatus('⚠ Cloud save failed — saved locally', 'err');
+    console.warn('npoint save error:', e);
+  }
+}
+
+function saveToLocal(){ pushToCloud(); }
+
+function showSetupBanner(){
+  if(document.getElementById('setupBanner')) return;
+  const b = document.createElement('div');
+  b.id = 'setupBanner';
+  b.style.cssText = 'position:fixed;bottom:0;left:0;right:0;background:#0B1E3D;color:white;padding:14px 2.5rem;display:flex;align-items:center;gap:16px;z-index:300;font-size:13px;border-top:3px solid #C8963E;font-family:DM Sans,sans-serif;box-shadow:0 -4px 20px rgba(0,0,0,0.3)';
+  b.innerHTML = `
+    <span style="font-size:22px">☁️</span>
+    <div>
+      <strong style="color:#E8B86D;display:block;margin-bottom:4px">Enable shared cloud saves in 30 seconds</strong>
+      <span style="color:rgba(255,255,255,0.7);font-size:12px">
+        1. Go to <a href="https://www.npoint.io" target="_blank" style="color:#E8B86D;font-weight:600">npoint.io</a>
+        &nbsp;→&nbsp; 2. Click <strong style="color:white">"Create JSON Bin"</strong>
+        &nbsp;→&nbsp; 3. Type <code style="background:rgba(255,255,255,0.1);padding:1px 5px;border-radius:3px">[]</code> and Save
+        &nbsp;→&nbsp; 4. Copy the ID from the URL
+        &nbsp;→&nbsp; 5. Paste as <code style="background:rgba(255,255,255,0.1);padding:1px 5px;border-radius:3px">NPOINT_ID</code> in the HTML and push to GitHub
+      </span>
+    </div>
+    <button onclick="document.getElementById('setupBanner').remove()" style="margin-left:auto;flex-shrink:0;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.25);color:white;padding:7px 16px;border-radius:8px;cursor:pointer;font-family:DM Sans,sans-serif;font-size:12px">Dismiss</button>
+  `;
+  document.body.appendChild(b);
+}
+
+function updateBudget(idx,field,val){data[idx][field]=val;renderSummary();clearTimeout(window._budgetSaveTimer);window._budgetSaveTimer=setTimeout(()=>pushToCloud(),1500)}
+
+// ── Status cycle ────────────────────────────────────
+function cycleBadge(idx,field){
+  const order=['wip','inv','q1','q2','q3','q4','ss','sunset','closed','na'];
+  const cur=data[idx][field];data[idx][field]=order[(order.indexOf(cur)+1)%order.length];
+  renderTable();renderSummary();pushToCloud()
+}
+
+// ── Filter ──────────────────────────────────────────
+function toggleFilter(obj){
+  activeFilters[obj]=!activeFilters[obj];
+  const b=document.getElementById('fBtn-'+obj);
+  const cols={cx:'var(--teal)',ce:'var(--purple)',ms:'var(--amber)'};
+  b.style.background=activeFilters[obj]?(obj==='cx'?'var(--teal-pale)':obj==='ce'?'var(--purple-pale)':'var(--amber-pale)'):'';
+  b.style.color=activeFilters[obj]?cols[obj]:'';
+  b.style.borderColor=activeFilters[obj]?cols[obj]:'';
+  renderTable();
+}
+function isRowHidden(row){
+  const al=Object.entries(activeFilters).filter(([,v])=>v).map(([k])=>k);
+  if(!al.length)return false;
+  return !al.some(f=>getObjs(row).includes(f));
+}
+function filterSearch(){searchQuery=document.getElementById('searchInput').value.toLowerCase();renderTable()}
+
+// ── RENDER TABLE ────────────────────────────────────
+function renderTable(){
+  const tbody=document.getElementById('roadmapBody');
+  let html='',lastLayer='',visible=0;
+  const YRS=['26','27','28','29','30'];
+  data.forEach((row,i)=>{
+    if(isRowHidden(row))return;
+    const ms=!searchQuery||row.name.toLowerCase().includes(searchQuery)||row.layer.toLowerCase().includes(searchQuery)||(row.desc||'').toLowerCase().includes(searchQuery);
+    if(!ms)return;
+    visible++;
+    const isD=row.layer==='Decommissioning';
+    const lc=LAYER_CLASS[row.layer]||'lb-data';
+    const objs=getObjs(row);
+    if(row.layer!==lastLayer){html+=`<tr class="section-head"><td>${row.layer}</td><td colspan="6"></td></tr>`;lastLayer=row.layer}
+    let dots='<div class="obj-dots">';
+    if(objs.includes('cx'))dots+=`<span class="obj-dot dot-cx" title="Client Experience"></span>`;
+    if(objs.includes('ce'))dots+=`<span class="obj-dot dot-ce" title="Cost Efficiency"></span>`;
+    if(objs.includes('ms'))dots+=`<span class="obj-dot dot-ms" title="Market Share"></span>`;
+    dots+='</div>';
+    html+=`<tr class="${isD?'decomm-row':''}" data-idx="${i}">`;
+    html+=`<td class="layer-cell" style="padding-top:14px"><span class="layer-badge ${lc}">${row.layer}</span></td>`;
+    html+=`<td class="init-cell"><div class="init-name" onclick="openModal(${i})" title="Click to edit"><span>${row.name}</span><span class="edit-icon">✏ edit</span></div>${row.desc?`<div class="init-desc">${row.desc}</div>`:''} ${dots}</td>`;
+    YRS.forEach(yr=>{
+      const st=row['yr'+yr]||'na';const s=sMap[st]||sMap['na'];
+      html+=`<td style="vertical-align:middle;padding:10px 8px 4px"><div style="display:flex;flex-direction:column;align-items:center;gap:4px"><span class="badge ${s.cls}" onclick="cycleBadge(${i},'yr${yr}')" title="Click to cycle">${s.label}</span><input class="budget-input" type="text" placeholder="Add budget" value="${row['b'+yr]||''}" onchange="updateBudget(${i},'b${yr}',this.value)" aria-label="Budget ${yr}"></div></td>`;
+    });
+    html+=`</tr>`;
+  });
+  tbody.innerHTML=html;
+  document.getElementById('visibleCount').textContent=`Showing ${visible} of ${data.length} initiatives`;
+  document.getElementById('totalInitiatives').textContent=data.length;
+}
+
+// ── SUMMARY CARDS ───────────────────────────────────
+function renderSummary(){
+  const years=['2026','2027','2028','2029','2030'],YRS=['26','27','28','29','30'];
+  const clsMap=['sum-card-2026','sum-card-2027','sum-card-2028','sum-card-2029','sum-card-2030'];
+  const html=years.map((yr,yi)=>{
+    const y=YRS[yi],counts={};let totalBudget=0,budgetCount=0;
+    data.forEach(row=>{const st=row['yr'+y]||'na';if(st!=='na')counts[st]=(counts[st]||0)+1;if(row['b'+y]){const n=parseFloat(row['b'+y].replace(/[^0-9.]/g,''));if(!isNaN(n)){totalBudget+=n;budgetCount++}}});
+    const wip=(counts['wip']||0)+(counts['inv']||0);
+    const done=(counts['q1']||0)+(counts['q2']||0)+(counts['q3']||0)+(counts['q4']||0);
+    const ss=counts['ss']||0;const sunset=(counts['sunset']||0)+(counts['closed']||0);
+    return `<div class="sum-card ${clsMap[yi]}"><div class="sum-year">${yr}</div><div class="sum-label">Year Summary</div><div class="sum-stats">${wip?`<div class="sum-stat"><span class="sum-stat-lbl">In progress</span><span class="sum-stat-val" style="color:#1A4E96">${wip}</span></div>`:''} ${done?`<div class="sum-stat"><span class="sum-stat-lbl">Completing</span><span class="sum-stat-val" style="color:#0B5E3A">${done}</span></div>`:''} ${ss?`<div class="sum-stat"><span class="sum-stat-lbl">Steady state</span><span class="sum-stat-val" style="color:#3A2A88">${ss}</span></div>`:''} ${sunset?`<div class="sum-stat"><span class="sum-stat-lbl">Sunset/Closed</span><span class="sum-stat-val" style="color:#8B3A10">${sunset}</span></div>`:''}</div><div class="sum-budget-row"><span>Total budget</span><span class="sum-budget-val">${budgetCount?'R '+totalBudget.toFixed(1)+'M':'—'}</span></div></div>`;
+  }).join('');
+  document.getElementById('summaryRow').innerHTML=html;
+}
+
+// ══ HEATMAP ═════════════════════════════════════════
+const HM_COLORS={
+  cx:['cx-0','cx-1','cx-2','cx-3','cx-4','cx-5'],
+  ce:['ce-0','ce-1','ce-2','ce-3','ce-4','ce-5'],
+  ms:['ms-0','ms-1','ms-2','ms-3','ms-4','ms-5'],
+};
+const OBJ_INFO={
+  cx:{label:'① Client Experience',key:'cx',desc:'Initiatives directly improving client-facing experience'},
+  ce:{label:'② Cost Efficiency',key:'ce',desc:'Initiatives reducing operating costs and complexity'},
+  ms:{label:'③ Market Share',key:'ms',desc:'Initiatives enabling growth and new business capture'},
+};
+
+function statusToHeat(val){
+  const map={na:0,inv:1,wip:2,q4:3,q3:3,q2:3,q1:3,ss:4,sunset:1,closed:0};
+  return map[val]||0;
+}
+
+function renderHeatmap(){
+  const YRS=['26','27','28','29','30'];
+  const YEAR_LABELS=['2026','2027','2028','2029','2030'];
+
+  // 3 spotlight cards
+  const grid=document.getElementById('hmGrid');
+  const OBJ_KEYS=['cx','ce','ms'];
+  grid.innerHTML=OBJ_KEYS.map(obj=>{
+    const matching=data.filter(r=>getObjs(r).includes(obj));
+    const count=matching.length;
+    // per-year totals
+    const yearTotals=YRS.map(y=>{
+      return matching.reduce((s,r)=>s+statusToHeat(r['yr'+y]),0);
+    });
+    const maxVal=Math.max(...yearTotals,1);
+    const colorKey=HM_COLORS[obj];
+    const info=OBJ_INFO[obj];
+
+    // mini heatmap rows: each initiative × each year
+    let cellsHtml='';
+    matching.slice(0,8).forEach(r=>{
+      cellsHtml+=`<div class="hm-row">
+        <div class="hm-year-label" style="width:90px;text-align:left;font-size:9px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis">${r.name}</div>
+        <div class="hm-cells">`;
+      YRS.forEach((y,yi)=>{
+        const h=statusToHeat(r['yr'+y]);
+        const ci=Math.min(Math.round(h/4*5),5);
+        const s=sMap[r['yr'+y]]||sMap['na'];
+        cellsHtml+=`<div class="hm-cell ${colorKey[ci]}" title="${r.name} ${YEAR_LABELS[yi]}: ${s.label}"><span class="hm-num" style="font-size:9px">${s.label==='—'?'':s.label.replace('Complete ','').replace('In Progress','WIP').replace('Investigation','INV').replace('Steady State','SS').replace('Sunset','SUN').replace('Closed','CLS')}</span></div>`;
+      });
+      cellsHtml+='</div></div>';
+    });
+    if(matching.length>8)cellsHtml+=`<div style="font-size:10px;color:var(--text-muted);margin-top:6px;text-align:center">+${matching.length-8} more initiatives</div>`;
+
+    return `<div class="hm-card">
+      <div class="hm-card-header">
+        <div class="hm-obj-badge ${obj}">${info.label}</div>
+        <div class="hm-count">${count}</div>
+      </div>
+      <div style="font-size:11px;color:var(--text-muted);margin-bottom:12px">${info.desc}</div>
+      <div style="display:flex;gap:3px;margin-bottom:4px">
+        ${YEAR_LABELS.map((lbl,i)=>{
+          const v=yearTotals[i];const pct=Math.round(v/maxVal*100);
+          const ci=Math.min(Math.floor(pct/20),5);
+          return `<div style="flex:1;text-align:center"><div class="hm-cell ${colorKey[ci]}" style="height:40px;width:100%;display:flex;flex-direction:column;align-items:center;justify-content:center" title="${lbl}: intensity ${v}"><span style="font-size:14px;font-weight:700">${v}</span><span style="font-size:8px;opacity:0.7">${lbl}</span></div></div>`;
+        }).join('')}
+      </div>
+      <div style="margin-top:14px;border-top:1px solid var(--border-light);padding-top:12px">
+        <div style="font-size:10px;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:8px">Initiative breakdown</div>
+        ${cellsHtml}
+      </div>
+      <div class="hm-legend">
+        <span class="hm-legend-label">Low</span>
+        <div class="hm-legend-scale">
+          ${[0,1,2,3,4,5].map(i=>`<div class="hm-legend-box ${colorKey[i]}"></div>`).join('')}
+        </div>
+        <span class="hm-legend-label">High</span>
+      </div>
+    </div>`;
+  }).join('');
+
+  // Full matrix table
+  const tbody=document.getElementById('fullHmBody');
+  tbody.innerHTML=data.map((row,i)=>{
+    const objs=getObjs(row);
+    const chips=objs.map(o=>`<span class="obj-chip chip-${o}">${o.toUpperCase()}</span>`).join(' ');
+    const cells=YRS.map(y=>{
+      const st=row['yr'+y]||'na';const s=sMap[st]||sMap['na'];const h=statusToHeat(st);
+      // pick color based on first objective
+      const obj=objs[0]||'cx';const colorArr=HM_COLORS[obj];
+      const ci=Math.min(h,5);
+      return `<td style="text-align:center;padding:5px 6px"><div class="fhm-cell ${colorArr[ci]}" title="${s.label}" style="width:100%">${s.label==='—'?'<span style="color:#ccc">—</span>':s.label.replace('Complete ','Q').replace('In Progress','WIP').replace('Investigation','INV').replace('Steady State','SS').replace('Sunset','☀').replace('Closed','✕')}</div></td>`;
+    }).join('');
+    return `<tr><td style="padding:6px 10px;font-size:12px;font-weight:500;color:var(--text-primary)">${row.name}</td><td style="padding:6px 8px">${chips}</td>${cells}</tr>`;
+  }).join('');
+
+  // Coverage bar chart
+  const layers=[...new Set(data.map(r=>r.layer))];
+  const OBJ_KEYS2=['cx','ce','ms'];
+  const layerCounts=layers.map(l=>{
+    const lr=data.filter(r=>r.layer===l);
+    return {
+      layer:l,
+      cx:lr.filter(r=>getObjs(r).includes('cx')).length,
+      ce:lr.filter(r=>getObjs(r).includes('ce')).length,
+      ms:lr.filter(r=>getObjs(r).includes('ms')).length,
+    };
+  });
+  const shortLayer=l=>l.replace('Engagement Layer','Engage.').replace('Sales & Servicing','Sales').replace('Document Management','Doc Mgmt').replace('Decommissioning','Decomm.');
+  if(charts.coverage)charts.coverage.destroy();
+  const ctx=document.getElementById('coverageChart').getContext('2d');
+  charts.coverage=new Chart(ctx,{type:'bar',data:{
+    labels:layers.map(shortLayer),
+    datasets:[
+      {label:'Client Experience',data:layerCounts.map(l=>l.cx),backgroundColor:'#3AB89E',borderRadius:4},
+      {label:'Cost Efficiency',data:layerCounts.map(l=>l.ce),backgroundColor:'#8878D8',borderRadius:4},
+      {label:'Market Share',data:layerCounts.map(l=>l.ms),backgroundColor:'#E8A030',borderRadius:4},
+    ]
+  },options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{grid:{display:false},ticks:{font:{size:10}}},y:{grid:{color:'#EEF2F6'},ticks:{stepSize:1,font:{size:10}}}}}});
+}
+
+// ══ ANALYTICS ════════════════════════════════════════
+function renderAnalytics(){
+  const YRS=['26','27','28','29','30'];
+  const YEARS=['2026','2027','2028','2029','2030'];
+
+  // KPI
+  const totalInit=data.length;
+  const totalSS=data.filter(r=>r.yr29==='ss'||r.yr30==='ss').length;
+  const decomm=data.filter(r=>r.layer==='Decommissioning').length;
+  const aiInit=data.filter(r=>r.layer==='AI').length;
+  document.getElementById('kpiStrip').innerHTML=`
+    <div class="kpi-card"><div class="kpi-num">${totalInit}</div><div class="kpi-label">Total Initiatives</div><div class="kpi-delta kpi-up">↑ Active portfolio</div></div>
+    <div class="kpi-card"><div class="kpi-num">${totalSS}</div><div class="kpi-label">Reaching Steady State by 2029</div><div class="kpi-delta kpi-up">${Math.round(totalSS/totalInit*100)}% of portfolio</div></div>
+    <div class="kpi-card"><div class="kpi-num">${decomm}</div><div class="kpi-label">Systems Decommissioned</div><div class="kpi-delta" style="color:var(--amber)">Mid-2028 target</div></div>
+    <div class="kpi-card"><div class="kpi-num">${data.filter(r=>r.yr27!=='na'&&isComplete(r.yr27)).length}</div><div class="kpi-label">Completing in 2027</div><div class="kpi-delta kpi-up">Peak delivery year</div></div>
+  `;
+
+  // Delivery bar chart
+  const deliveryCounts=YRS.map(y=>data.filter(r=>isComplete(r['yr'+y])).length);
+  if(charts.delivery)charts.delivery.destroy();
+  const dc=document.getElementById('deliveryChart').getContext('2d');
+  charts.delivery=new Chart(dc,{type:'bar',data:{
+    labels:YEARS,
+    datasets:[{label:'Completing',data:deliveryCounts,backgroundColor:['#B0C4D8','#3AB89E','#8878D8','#C8963E','#1A3260'],borderRadius:6,borderSkipped:false}]
+  },options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{grid:{display:false},ticks:{font:{size:11}}},y:{grid:{color:'#EEF2F6'},ticks:{stepSize:1,font:{size:10}},beginAtZero:true}}}});
+
+  // Status donut 2026
+  const s26={};data.forEach(r=>{const st=r.yr26||'na';if(st!=='na')s26[st]=(s26[st]||0)+1});
+  const donutLabels=Object.keys(s26).map(k=>(sMap[k]||sMap['na']).label);
+  const donutData=Object.values(s26);
+  const donutColors=['#E0EEFF','#EEF0F2','#D6F5E8','#E8E4FF','#FEE8D8'];
+  const donutBorders=['#B5D0F8','#D0D8E0','#7FD9B3','#BDB0F5','#F5B080'];
+  if(charts.donut)charts.donut.destroy();
+  const dn=document.getElementById('statusDonut').getContext('2d');
+  charts.donut=new Chart(dn,{type:'doughnut',data:{labels:donutLabels,datasets:[{data:donutData,backgroundColor:donutColors,borderColor:donutBorders,borderWidth:1.5,hoverOffset:6}]},options:{responsive:true,maintainAspectRatio:false,cutout:'62%',plugins:{legend:{position:'right',labels:{font:{size:10},boxWidth:10,padding:8}}}}});
+
+  // Gantt
+  const statusColor={'wip':'#3B82F6','inv':'#94A3B8','q1':'#10B981','q2':'#0D9488','q3':'#059669','q4':'#047857','ss':'#7C3AED','sunset':'#F97316','closed':'#EF4444','na':'transparent'};
+  const gantt=document.getElementById('ganttWrap');
+  const quarters=['Q1','Q2','Q3','Q4'];
+  let gh=`<table class="tl-table"><thead><tr><th class="tl-label">Initiative</th><th class="tl-layer-label">Layer</th>`;
+  YEARS.forEach((yr,yi)=>{
+    quarters.forEach((q,qi)=>{
+      const cls=qi===0?'tl-yr-sep':'';
+      gh+=`<th class="tl-qcell ${cls}"><div class="tl-qhead">${qi===0?yr:''}<br>${q}</div></th>`;
+    });
+  });
+  gh+='</tr></thead><tbody>';
+  data.forEach(row=>{
+    const shortL=row.layer.replace('Engagement Layer','EL').replace('Sales & Servicing','S&S').replace('Document Management','DM').replace('Decommissioning','DCM');
+    gh+=`<tr><td class="tl-label" title="${row.name}">${row.name.length>28?row.name.slice(0,26)+'…':row.name}</td><td class="tl-layer-label">${shortL}</td>`;
+    YRS.forEach((y,yi)=>{
+      const st=row['yr'+y]||'na';const col=statusColor[st]||'transparent';
+      const s=sMap[st]||sMap['na'];
+      // spread across 4 quarter cells
+      quarters.forEach((q,qi)=>{
+        const cls=qi===0?'tl-yr-sep':'';
+        // for completion statuses, shade by quarter
+        let cellCol=col;
+        if(isComplete(st)){
+          const compQ=parseInt(st.replace('q',''));
+          if(qi+1<compQ)cellCol='#D1FAE5'; // lighter for earlier quarters
+          else if(qi+1===compQ)cellCol='#10B981'; // solid on completion quarter
+          else cellCol='#6EE7B7'; // slightly diff after
+        }
+        if(st==='na')cellCol='transparent';
+        gh+=`<td class="tl-qcell ${cls}" style="padding:3px 2px"><div class="tl-bar" style="background:${cellCol};opacity:${st==='na'?0:0.85}" title="${row.name} ${YEARS[yi]} ${q}: ${s.label}"></div></td>`;
+      });
+    });
+    gh+='</tr>';
+  });
+  gh+='</tbody></table>';
+  gantt.innerHTML=gh;
+
+  // Progress bars by layer
+  const layers=[...new Set(data.map(r=>r.layer))];
+  const pb=document.getElementById('progressBars');
+  const layerColors={'Engagement Layer':'#1AA88E','Sales & Servicing':'#E08A35','Product':'#3AB89E','PAS':'#8878D8','DATA':'#1A6AB5','AI':'#9B2A6A','Document Management':'#705A28','Decommissioning':'#B02A2A'};
+  pb.innerHTML=layers.map(l=>{
+    const lr=data.filter(r=>r.layer===l);
+    const ss=lr.filter(r=>r.yr29==='ss'||r.yr30==='ss').length;
+    const pct=lr.length?Math.round(ss/lr.length*100):0;
+    const col=layerColors[l]||'var(--teal)';
+    return `<div class="prog-item">
+      <div class="prog-label"><span class="prog-name">${l}</span><span class="prog-val">${ss}/${lr.length} · ${pct}%</span></div>
+      <div class="prog-track"><div class="prog-fill" style="width:${pct}%;background:${col}"></div></div>
+    </div>`;
+  }).join('');
+
+  // Decommission plan
+  const dp=document.getElementById('decommPlan');
+  const dcItems=data.filter(r=>r.layer==='Decommissioning');
+  dp.innerHTML=dcItems.map(r=>{
+    const phases=[
+      {yr:'2026',st:r.yr26},{yr:'2027',st:r.yr27},{yr:'2028',st:r.yr28},
+      {yr:'2029',st:r.yr29},{yr:'2030',st:r.yr30}
+    ];
+    return `<div style="margin-bottom:1rem;padding:1rem;background:var(--off-white);border-radius:var(--radius);border-left:3px solid var(--red)">
+      <div style="font-size:13px;font-weight:600;color:var(--text-primary);margin-bottom:6px">${r.name}</div>
+      <div style="font-size:11px;color:var(--text-secondary);margin-bottom:8px">${r.desc}</div>
+      <div style="display:flex;gap:4px">
+        ${phases.map(p=>{const s=sMap[p.st]||sMap['na'];return `<div style="flex:1;text-align:center"><div style="font-size:8px;color:var(--text-muted);margin-bottom:2px">${p.yr}</div><span class="badge ${s.cls}" style="font-size:9px;padding:2px 6px;min-width:40px">${s.label==='—'?'—':s.label.replace('Complete ','Q')}</span></div>`}).join('')}
+      </div>
+    </div>`;
+  }).join('');
+
+  // Radar chart — objective alignment per year
+  const objKeys=['cx','ce','ms'];
+  const objLabels=['Client Experience','Cost Efficiency','Market Share'];
+  const radarDatasets=YEARS.map((yr,yi)=>{
+    const y=YRS[yi];
+    const vals=objKeys.map(obj=>data.filter(r=>getObjs(r).includes(obj)&&isActive(r['yr'+y])&&r['yr'+y]!=='na').length);
+    const colors=['rgba(14,124,106,','rgba(91,75,168,','rgba(192,107,24,','rgba(26,50,96,','rgba(176,42,42,'];
+    return {label:yr,data:vals,borderColor:colors[yi]+'0.8)',backgroundColor:colors[yi]+'0.08)',borderWidth:2,pointRadius:4,pointHoverRadius:6};
+  });
+  if(charts.radar)charts.radar.destroy();
+  const rc=document.getElementById('radarChart').getContext('2d');
+  charts.radar=new Chart(rc,{type:'radar',data:{labels:objLabels,datasets:radarDatasets},options:{responsive:true,maintainAspectRatio:false,scales:{r:{beginAtZero:true,ticks:{stepSize:2,font:{size:9}},pointLabels:{font:{size:12,weight:'500'}},grid:{color:'#EEF2F6'}}},plugins:{legend:{position:'top',labels:{font:{size:11},boxWidth:12,padding:12}}}}});
+}
+
+// ══ TIMELINE ════════════════════════════════════════
+let tlLayerFilter = 'all';
+
+const LAYER_COLORS = {
+  'Engagement Layer':'#1A6AB5','Sales & Servicing':'#C06B18','Product':'#0E7C6A',
+  'PAS':'#5B4BA8','DATA':'#1A5C9E','AI':'#9B2A6A',
+  'Document Management':'#705A28','Decommissioning':'#B02A2A'
+};
+const LAYER_DOT_COLORS = {
+  'Engagement Layer':'#3A9AE8','Sales & Servicing':'#E8A030','Product':'#3AB89E',
+  'PAS':'#8878D8','DATA':'#4A8AD8','AI':'#D060A0',
+  'Document Management':'#B08040','Decommissioning':'#E05050'
+};
+
+// Map status+year to a quarter-based start/end within 20-quarter timeline
+// Timeline: 2026Q1=0 … 2030Q4=19
+function statusToSpan(row) {
+  const YRS = ['26','27','28','29','30'];
+  const spans = []; // {start, end, type, label}
+  let activeStart = null;
+  let lastType = null;
+
+  YRS.forEach((y, yi) => {
+    const st = row['yr'+y] || 'na';
+    const baseQ = yi * 4; // 0,4,8,12,16
+    if (st === 'na' || st === 'closed') {
+      if (activeStart !== null) { spans.push({start:activeStart, end:baseQ-1, type:lastType}); activeStart=null; }
+      if (st === 'closed') spans.push({start:baseQ, end:baseQ+3, type:'closed'});
+      return;
+    }
+    const type = ['q1','q2','q3','q4'].includes(st) ? 'completing' : st === 'ss' ? 'steady' : st === 'sunset' ? 'sunset' : st === 'inv' ? 'inv' : 'wip';
+    if (activeStart === null) { activeStart = baseQ; lastType = type; }
+    else if (type !== lastType) {
+      spans.push({start:activeStart, end:baseQ-1, type:lastType});
+      activeStart = baseQ; lastType = type;
+    }
+  });
+  if (activeStart !== null) spans.push({start:activeStart, end:19, type:lastType});
+
+  // Milestone: when does it "complete"?
+  const milestone = [];
+  YRS.forEach((y, yi) => {
+    const st = row['yr'+y] || 'na';
+    if (['q1','q2','q3','q4'].includes(st)) {
+      const q = parseInt(st.replace('q','')) - 1;
+      milestone.push({ qIdx: yi*4+q, label: row.name + ' — Complete '+st.toUpperCase()+' '+(2026+yi) });
+    }
+    if (st === 'ss' && (yi===0 || !['ss'].includes(row['yr'+YRS[yi-1]]||'na'))) {
+      milestone.push({ qIdx: yi*4, label: row.name + ' — Steady State '+(2026+yi), type:'ss' });
+    }
+    if (st === 'sunset') {
+      milestone.push({ qIdx: yi*4+1, label: row.name + ' — Sunset Mid '+(2026+yi), type:'sunset' });
+    }
+  });
+  return {spans, milestone};
+}
+
+const SPAN_COLORS = {
+  wip:'#3AB89E', inv:'#94A3B8', completing:'#10B981',
+  steady:'#8878D8', sunset:'#F97316', closed:'#EF4444'
+};
+
+// Exco review gates per year
+const REVIEW_GATES = [
+  {yr:2026, q:1, label:'Q1 Review — Programme Kick-off', date:'Mar 2026'},
+  {yr:2026, q:2, label:'Q2 Review — Delivery Confirmation', date:'Jun 2026'},
+  {yr:2026, q:3, label:'Q3 Review — Mid-year Assessment', date:'Sep 2026'},
+  {yr:2026, q:4, label:'Q4 Review — Year-end Sign-off', date:'Dec 2026'},
+  {yr:2027, q:1, label:'Q1 Review — 2027 Kick-off', date:'Mar 2027'},
+  {yr:2027, q:2, label:'Q2 Review — Product Wave 1 Complete?', date:'Jun 2027'},
+  {yr:2027, q:3, label:'Q3 Review — Engagement & Sales Complete?', date:'Sep 2027'},
+  {yr:2027, q:4, label:'Q4 Review — PAS Wave 1 Complete?', date:'Dec 2027'},
+  {yr:2028, q:2, label:'Mid-2028 — Decommission Gate: LCU + BPC', date:'Jun 2028'},
+  {yr:2028, q:3, label:'Q3 Review — Data & Docs Complete?', date:'Sep 2028'},
+  {yr:2028, q:4, label:'Q4 Review — Pre-Steady State Sign-off', date:'Dec 2028'},
+  {yr:2029, q:1, label:'Steady State Confirmation — All Systems', date:'Jan 2029'},
+  {yr:2029, q:4, label:'Q4 2029 — Benefits Realisation Review', date:'Dec 2029'},
+  {yr:2030, q:4, label:'Final Review — 5-Year Horizon Close', date:'Dec 2030'},
+];
+
+let tlFilterActive = 'all';
+
+function tlFilter(layer) {
+  tlFilterActive = layer;
+  document.querySelectorAll('.tl-filter-btn').forEach(b => b.classList.remove('on'));
+  const btn = document.getElementById('tlf-'+layer);
+  if (btn) btn.classList.add('on');
+  renderTimeline();
+}
+
+function renderTimeline() {
+  const YEARS = [2026,2027,2028,2029,2030];
+  const QUARTERS = ['Q1','Q2','Q3','Q4'];
+  const TOTAL_Q = 20;
+
+  const filtered = tlFilterActive === 'all' ? data : data.filter(r => r.layer === tlFilterActive);
+  const layers = [...new Set(filtered.map(r => r.layer))];
+
+  // Build the gantt HTML via canvas-style div layout
+  let html = '<div style="display:flex;min-width:1100px">';
+
+  // LEFT LABELS
+  html += '<div class="gantt-labels">';
+  html += '<div class="gantt-labels-top">Initiative</div>';
+
+  layers.forEach(layer => {
+    const rows = filtered.filter(r => r.layer === layer);
+    const col = LAYER_DOT_COLORS[layer] || '#888';
+    html += `<div class="gantt-section-row"><span class="gantt-section-name" style="color:${col}">${layer}</span></div>`;
+    rows.forEach(row => {
+      html += `<div class="gantt-label-row" style="height:38px"><span class="gantt-layer-dot" style="background:${col}"></span><span class="gantt-init-name" title="${row.name}">${row.name}</span></div>`;
+    });
+  });
+  html += '</div>';
+
+  // RIGHT GRID
+  html += '<div class="gantt-grid">';
+
+  // Year headers
+  html += '<div class="gantt-yr-headers">';
+  YEARS.forEach(yr => { html += `<div class="gantt-yr-head" style="flex:4">${yr}</div>`; });
+  html += '</div>';
+
+  // Quarter headers with review flags
+  html += '<div class="gantt-q-headers">';
+  YEARS.forEach((yr, yi) => {
+    QUARTERS.forEach((q, qi) => {
+      const gate = REVIEW_GATES.find(g => g.yr === yr && g.q === qi+1);
+      html += `<div class="gantt-q-cell${qi===0?' q1':''}" style="flex:1">`;
+      if (gate) html += `<div class="review-marker"><div class="review-flag"></div><div class="review-label">${gate.date}</div></div>`;
+      html += `<span style="margin-top:${gate?'14px':'0'}">${q}</span></div>`;
+    });
+  });
+  html += '</div>';
+
+  // Bar rows
+  html += '<div class="gantt-rows-wrap" style="position:relative">';
+
+  // Background Q grid lines (absolute, spanning all rows)
+  const pct = (q) => (q / TOTAL_Q * 100).toFixed(4) + '%';
+  const wPct = (1 / TOTAL_Q * 100).toFixed(4) + '%';
+
+  layers.forEach(layer => {
+    const rows = filtered.filter(r => r.layer === layer);
+    // Section spacer
+    html += `<div class="gantt-bar-row section-spacer"></div>`;
+    rows.forEach(row => {
+      const {spans, milestone} = statusToSpan(row);
+      html += `<div class="gantt-bar-row" style="position:relative;overflow:visible">`;
+      // Q grid
+      for (let q=0; q<TOTAL_Q; q++) {
+        html += `<div style="position:absolute;top:0;bottom:0;left:${pct(q)};width:${wPct};border-right:1px solid ${q%4===3?'#D8DDE5':'#EEF2F6'};pointer-events:none"></div>`;
+      }
+      // Bars
+      spans.forEach(sp => {
+        const left = pct(sp.start);
+        const width = ((sp.end - sp.start + 1) / TOTAL_Q * 100).toFixed(4) + '%';
+        const col = SPAN_COLORS[sp.type] || '#94A3B8';
+        const label = sp.type === 'wip' ? 'In Progress' : sp.type === 'inv' ? 'Investigation' : sp.type === 'completing' ? 'Delivering' : sp.type === 'steady' ? 'Steady State' : sp.type === 'sunset' ? 'Sunset' : 'Closed';
+        html += `<div class="gantt-bar" style="left:${left};width:${width};background:${col};top:8px" title="${row.name}: ${label}">${label}</div>`;
+      });
+      // Milestones
+      milestone.forEach(m => {
+        const left = ((m.qIdx + 0.5) / TOTAL_Q * 100).toFixed(4) + '%';
+        const col = m.type === 'ss' ? '#8878D8' : m.type === 'sunset' ? '#F97316' : '#C8963E';
+        html += `<div class="gantt-milestone" style="left:calc(${left} - 7px);top:12px;background:${col};border-radius:3px" title="${m.label}"><div class="milestone-tooltip">${m.label}</div></div>`;
+      });
+      html += '</div>';
+    });
+  });
+  html += '</div></div></div>'; // gantt-rows-wrap, gantt-grid, flex wrapper
+
+  document.getElementById('ganttMain').innerHTML = html;
+
+  // Milestone list by year
+  const mlBody = document.getElementById('mlBody');
+  mlBody.innerHTML = YEARS.map((yr, yi) => {
+    const y = String(yr).slice(2);
+    const YRS2 = ['26','27','28','29','30'];
+    const items = [];
+    data.forEach(row => {
+      const st = row['yr'+YRS2[yi]] || 'na';
+      if (['q1','q2','q3','q4'].includes(st)) {
+        items.push({name:row.name, layer:row.layer, q:st.toUpperCase(), type:'complete'});
+      }
+      if (st === 'ss' && (yi===0 || !['ss'].includes(row['yr'+YRS2[yi-1]]||'na'))) {
+        items.push({name:row.name, layer:row.layer, q:'SS', type:'steady'});
+      }
+      if (st === 'sunset') items.push({name:row.name, layer:row.layer, q:'MID', type:'sunset'});
+    });
+    const gates = REVIEW_GATES.filter(g => g.yr === yr);
+    const borderMap = {complete:'var(--teal)',steady:'var(--purple)',sunset:'var(--red)'};
+    const bgMap = {complete:'#EFF9F4',steady:'#F4F0FF',sunset:'#FFF0EE'};
+    const qBgMap = {complete:'#D6F5E8',steady:'#E8E4FF',sunset:'#FEE8D8'};
+    const qColMap = {complete:'#0B5E3A',steady:'#3A2A88',sunset:'#8B3A10'};
+    return `<div class="ml-year-col">
+      <div class="ml-year-title" style="border-bottom-color:${['#8EA4BC','#3AB89E','#8878D8','#C8963E','#1A3260'][yi]}">${yr}</div>
+      ${items.map(it=>`<div class="ml-item" style="border-left-color:${borderMap[it.type]||'var(--teal)'};background:${bgMap[it.type]||'#EFF9F4'}">
+        <div class="ml-item-title">${it.name}</div>
+        <div class="ml-item-sub">${it.layer}</div>
+        <span class="ml-item-q" style="background:${qBgMap[it.type]};color:${qColMap[it.type]}">${it.q}</span>
+      </div>`).join('')}
+      ${gates.map(g=>`<div style="margin-bottom:8px;padding:7px 10px;background:#F7F3FF;border-left:3px solid var(--gold);border-radius:var(--radius)"><div style="font-size:10px;font-weight:600;color:var(--navy)">▼ ${g.label}</div><div style="font-size:9px;color:var(--text-muted);margin-top:2px">${g.date}</div></div>`).join('')}
+    </div>`;
+  }).join('');
+
+  // Review gates strip
+  const rg = document.getElementById('reviewGates');
+  rg.innerHTML = `<div style="display:flex;gap:0;border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden">
+    ${YEARS.map((yr,yi)=>{
+      const gates = REVIEW_GATES.filter(g=>g.yr===yr);
+      const colors=['#EEF6FF','#EFF9F4','#F4F0FF','#FFF4E6','#F0F6FF'];
+      const bcolors=['#1A6AB5','#0E7C6A','#5B4BA8','#C06B18','#1A3260'];
+      return `<div style="flex:1;border-right:2px solid ${bcolors[yi]};padding:12px 10px;background:${colors[yi]}">
+        <div style="font-family:'DM Serif Display',serif;font-size:14px;color:${bcolors[yi]};margin-bottom:8px">${yr}</div>
+        ${gates.map(g=>`<div style="margin-bottom:6px;padding:5px 8px;background:white;border-radius:6px;border-left:2px solid var(--gold);cursor:pointer" onclick="showGateDetail(${g.yr},${g.q})" title="Click to view">
+          <div style="font-size:10px;font-weight:600;color:var(--navy)">▼ ${g.label}</div>
+          <div style="font-size:9px;color:var(--text-muted)">${g.date}</div>
+        </div>`).join('')}
+      </div>`;
+    }).join('')}
+  </div>`;
+}
+
+function showGateDetail(yr, q) {
+  const gate = REVIEW_GATES.find(g=>g.yr===yr&&g.q===q);
+  if (!gate) return;
+  const YRS = ['26','27','28','29','30'];
+  const yi = yr-2026;
+  const y = YRS[yi];
+  const due = data.filter(r=>{
+    const st=r['yr'+y]||'na';
+    return ['q1','q2','q3','q4'].includes(st)&&parseInt(st.replace('q',''))<=q;
+  });
+  const steady = data.filter(r=>(r['yr'+y]||'na')==='ss');
+  let msg = `Gate: ${gate.label}\n\nInitiatives completing by ${gate.date}:\n`;
+  due.forEach(r=>msg+=`  • ${r.name} (${r.layer})\n`);
+  if (steady.length) { msg+=`\nAlready in Steady State:\n`; steady.forEach(r=>msg+=`  • ${r.name}\n`); }
+  alert(msg);
+}
+
+function openModal(idx){
+  editIdx=idx;const isNew=idx===-1;
+  const row=isNew?{layer:'Product',name:'',desc:'',objs:[],yr26:'wip',yr27:'na',yr28:'na',yr29:'na',yr30:'na',b26:'',b27:'',b28:'',b29:'',b30:''}:data[idx];
+  document.getElementById('modalTitle').textContent=isNew?'Add New Initiative':'Edit Initiative';
+  document.getElementById('mLayer').value=row.layer||'Product';
+  document.getElementById('mName').value=row.name||'';
+  document.getElementById('mDesc').value=row.desc||'';
+  const objs=row.objs&&row.objs.length?row.objs:(DEFAULT_OBJS[row.name]||[]);
+  document.getElementById('mCX').checked=objs.includes('cx');
+  document.getElementById('mCE').checked=objs.includes('ce');
+  document.getElementById('mMS').checked=objs.includes('ms');
+  ['26','27','28','29','30'].forEach(yr=>{
+    document.getElementById('mS'+yr).innerHTML=STATUSES.map(s=>`<option value="${s.val}"${row['yr'+yr]===s.val?' selected':''}>${s.label}</option>`).join('');
+    document.getElementById('mB'+yr).value=row['b'+yr]||'';
+  });
+  document.getElementById('deleteBtn').style.display=isNew?'none':'';
+  document.getElementById('editModal').classList.add('open');
+}
+function closeModal(){document.getElementById('editModal').classList.remove('open');editIdx=-1}
+function saveModal(){
+  const objs=[];
+  if(document.getElementById('mCX').checked)objs.push('cx');
+  if(document.getElementById('mCE').checked)objs.push('ce');
+  if(document.getElementById('mMS').checked)objs.push('ms');
+  const row={layer:document.getElementById('mLayer').value,name:document.getElementById('mName').value,desc:document.getElementById('mDesc').value,objs};
+  ['26','27','28','29','30'].forEach(yr=>{row['yr'+yr]=document.getElementById('mS'+yr).value;row['b'+yr]=document.getElementById('mB'+yr).value});
+  if(editIdx===-1)data.push(row);else data[editIdx]={...data[editIdx],...row};
+  closeModal();renderTable();renderSummary();pushToCloud();
+}
+function deleteRow(){if(!confirm('Delete "'+data[editIdx].name+'"?'))return;data.splice(editIdx,1);closeModal();renderTable();renderSummary();pushToCloud()}
+function addRow(){openModal(-1)}
+function exportJSON(){const b=new Blob([JSON.stringify(data,null,2)],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='corporate_benefits_roadmap.json';a.click()}
+document.getElementById('editModal').addEventListener('click',function(e){if(e.target===this)closeModal()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
+// Boot: load from cloud (falls back to localStorage if JSONBin not configured)
+loadFromCloud();
+</script>
+</body>
+</html>
