@@ -1,0 +1,2972 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Corporate Benefit Roadmap 2026–2030</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<style>
+:root {
+  --navy:#0B1E3D;--navy-mid:#122547;--navy-light:#1A3260;
+  --gold:#C8963E;--gold-light:#E8B86D;--gold-pale:#F5E6C8;
+  --teal:#0E7C6A;--teal-light:#1AA88E;--teal-pale:#D4F0EA;
+  --purple:#5B4BA8;--purple-light:#7B6FC8;--purple-pale:#E8E5F8;
+  --amber:#C06B18;--amber-light:#E08A35;--amber-pale:#FDF0DC;
+  --red:#B02A2A;--red-pale:#FDEAEA;
+  --slate:#5C6E84;--slate-light:#8EA4BC;--slate-pale:#EEF2F6;
+  --white:#FFFFFF;--off-white:#F7F8FA;
+  --border:#D8DDE5;--border-light:#EEF2F6;
+  --text-primary:#0B1E3D;--text-secondary:#4A5E72;--text-muted:#8EA4BC;
+  --shadow-sm:0 1px 4px rgba(11,30,61,0.08);
+  --shadow-md:0 4px 16px rgba(11,30,61,0.12);
+  --shadow-lg:0 8px 32px rgba(11,30,61,0.16);
+  --radius:10px;--radius-lg:16px;--radius-xl:24px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',sans-serif;background:var(--off-white);color:var(--text-primary);min-height:100vh;overflow-x:hidden}
+
+/* ── HEADER ── */
+.page-header{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-light) 60%,#1E4080 100%);position:relative;overflow:hidden}
+.header-geo{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.header-geo::before{content:'';position:absolute;width:600px;height:600px;border-radius:50%;border:1px solid rgba(200,150,62,0.15);top:-200px;right:-100px}
+.header-geo::after{content:'';position:absolute;width:400px;height:400px;border-radius:50%;border:1px solid rgba(200,150,62,0.1);top:-100px;right:100px}
+.header-geo-tri{position:absolute;bottom:0;right:200px;width:0;height:0;border-left:80px solid transparent;border-right:0 solid transparent;border-bottom:60px solid rgba(200,150,62,0.06)}
+.header-accent{position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold) 0%,var(--gold-light) 40%,var(--teal-light) 100%)}
+.header-inner{position:relative;z-index:1;max-width:1400px;margin:0 auto;padding:2.5rem 2.5rem 2rem;display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:end}
+.header-left h1{font-family:'DM Serif Display',serif;font-size:2rem;color:var(--white);letter-spacing:-0.02em;line-height:1.2;margin-bottom:0.4rem}
+.header-left h1 em{font-style:italic;color:var(--gold-light)}
+.header-subtitle{font-size:13px;color:rgba(255,255,255,0.55);font-weight:400;letter-spacing:0.04em;text-transform:uppercase}
+.header-meta{display:flex;gap:1.5rem;align-items:flex-end}
+.meta-pill{text-align:center}
+.meta-pill .num{font-family:'DM Serif Display',serif;font-size:1.8rem;color:var(--gold-light);line-height:1}
+.meta-pill .lbl{font-size:10px;color:rgba(255,255,255,0.45);text-transform:uppercase;letter-spacing:0.06em;margin-top:3px}
+.meta-divider{width:1px;height:40px;background:rgba(255,255,255,0.12)}
+
+/* ── NAV TABS ── */
+.nav-bar{background:var(--white);border-bottom:1px solid var(--border-light);box-shadow:var(--shadow-sm);position:sticky;top:0;z-index:50}
+.nav-bar-inner{max-width:1400px;margin:0 auto;padding:0 2.5rem;display:flex;align-items:stretch}
+.nav-tab{display:flex;align-items:center;gap:8px;padding:0 20px;height:50px;cursor:pointer;border-bottom:2px solid transparent;font-size:13px;font-weight:500;color:var(--text-secondary);transition:all 0.2s;user-select:none;white-space:nowrap}
+.nav-tab:hover{color:var(--text-primary);background:var(--off-white)}
+.nav-tab.active{border-bottom-color:var(--navy);color:var(--navy)}
+.nav-tab .tab-icon{width:22px;height:22px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:12px;background:var(--off-white)}
+.nav-tab.active .tab-icon{background:var(--navy);color:white}
+.nav-actions{margin-left:auto;display:flex;align-items:center;gap:8px;padding:8px 0}
+
+/* ── BUTTONS ── */
+.btn{display:inline-flex;align-items:center;gap:6px;padding:7px 16px;border-radius:var(--radius);font-size:12px;font-weight:500;font-family:'DM Sans',sans-serif;cursor:pointer;border:1px solid transparent;transition:all 0.15s}
+.btn-outline{background:var(--white);border-color:var(--border);color:var(--text-secondary)}
+.btn-outline:hover{background:var(--off-white);color:var(--text-primary);border-color:var(--slate-light)}
+.btn-primary{background:var(--navy);color:var(--white);border-color:var(--navy)}
+.btn-primary:hover{background:var(--navy-light)}
+.btn-gold{background:var(--gold);color:var(--white);border-color:var(--gold)}
+.btn-gold:hover{background:var(--gold-light)}
+
+/* ── MAIN ── */
+.main{max-width:1400px;margin:0 auto;padding:2rem 2.5rem 4rem}
+.page-section{display:none}
+.page-section.active{display:block}
+
+/* ── SUMMARY CARDS ── */
+.summary-row{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-bottom:2rem}
+.sum-card{background:var(--white);border:1px solid var(--border-light);border-radius:var(--radius-lg);padding:1.25rem 1.25rem 1rem;box-shadow:var(--shadow-sm);transition:box-shadow 0.2s,transform 0.2s;position:relative;overflow:hidden}
+.sum-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
+.sum-card-2026::before{background:linear-gradient(90deg,#8EA4BC,#B0C4D8)}
+.sum-card-2027::before{background:linear-gradient(90deg,var(--teal),var(--teal-light))}
+.sum-card-2028::before{background:linear-gradient(90deg,var(--purple),var(--purple-light))}
+.sum-card-2029::before{background:linear-gradient(90deg,var(--gold),var(--gold-light))}
+.sum-card-2030::before{background:linear-gradient(90deg,var(--navy),#1A3260)}
+.sum-card:hover{box-shadow:var(--shadow-md);transform:translateY(-1px)}
+.sum-year{font-family:'DM Serif Display',serif;font-size:1.5rem;color:var(--text-primary);line-height:1;margin-bottom:8px}
+.sum-label{font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:10px}
+.sum-stats{display:flex;flex-direction:column;gap:4px}
+.sum-stat{display:flex;justify-content:space-between;align-items:center;font-size:11px}
+.sum-stat-lbl{color:var(--text-secondary)}
+.sum-stat-val{font-weight:600;font-size:12px}
+.sum-budget-row{margin-top:10px;padding-top:8px;border-top:1px solid var(--border-light);font-size:11px;color:var(--text-muted);display:flex;justify-content:space-between;align-items:center}
+.sum-budget-val{font-size:13px;font-weight:600;color:var(--gold);font-family:'DM Serif Display',serif}
+
+/* ── LEGEND ── */
+.legend-row{display:flex;align-items:center;flex-wrap:wrap;gap:16px;margin-bottom:1.25rem}
+.legend-item{display:flex;align-items:center;gap:6px;font-size:11px;color:var(--text-secondary)}
+.legend-badge{height:18px;padding:0 8px;border-radius:9px;font-size:10px;display:flex;align-items:center;font-weight:500}
+
+/* ── TABLE ── */
+.table-wrapper{background:var(--white);border:1px solid var(--border);border-radius:var(--radius-xl);overflow:hidden;box-shadow:var(--shadow-md)}
+.table-toolbar{display:flex;align-items:center;gap:12px;padding:1rem 1.5rem;border-bottom:1px solid var(--border-light)}
+.table-toolbar-title{font-size:13px;font-weight:500;color:var(--text-primary)}
+.table-toolbar-sub{font-size:11px;color:var(--text-muted);margin-left:4px}
+.search-box{display:flex;align-items:center;gap:8px;padding:6px 12px;border:1px solid var(--border);border-radius:var(--radius);background:var(--off-white);margin-left:auto}
+.search-box svg{width:14px;height:14px;color:var(--text-muted);flex-shrink:0}
+.search-box input{border:none;background:none;outline:none;font-size:12px;color:var(--text-primary);font-family:'DM Sans',sans-serif;width:160px}
+.search-box input::placeholder{color:var(--text-muted)}
+.table-scroll{overflow-x:auto}
+table{width:100%;border-collapse:collapse;min-width:1100px}
+thead th{padding:10px 12px;text-align:left;font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;color:var(--text-muted);background:var(--off-white);border-bottom:1px solid var(--border);white-space:nowrap}
+thead th.yr-col{text-align:center;min-width:130px}
+.yr-col-header{display:flex;flex-direction:column;align-items:center;gap:2px}
+.yr-col-header .yr-num{font-size:14px;font-weight:600;color:var(--text-primary);font-family:'DM Serif Display',serif;letter-spacing:0;text-transform:none}
+.yr-col-header .yr-sub{font-size:9px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.05em}
+tbody tr{border-bottom:1px solid var(--border-light);transition:background 0.1s}
+tbody tr:last-child{border-bottom:none}
+tbody tr:hover td{background:#F9FAFB}
+tbody tr.section-head td{background:var(--navy);padding:6px 12px;font-size:10px;font-weight:600;color:rgba(255,255,255,0.7);letter-spacing:0.1em;text-transform:uppercase}
+tbody tr.section-head td:first-child{color:var(--gold-light);font-size:11px}
+.layer-cell{padding:0 12px;width:130px;vertical-align:top;padding-top:12px}
+.layer-badge{display:inline-flex;align-items:center;font-size:10px;font-weight:600;padding:3px 8px;border-radius:6px;white-space:nowrap;letter-spacing:0.02em}
+.lb-engagement{background:#EEF6FF;color:#1A6AB5}
+.lb-sales{background:#FFF4E6;color:#A05A10}
+.lb-product{background:#EFF9F4;color:#0B6B47}
+.lb-pas{background:#F4F0FF;color:#4A3A96}
+.lb-data{background:#F0F6FF;color:#1A5C9E}
+.lb-ai{background:#FFF0F8;color:#9B2A6A}
+.lb-docmgmt{background:#F5F0E8;color:#705A28}
+.lb-decomm{background:#FFF0EE;color:#8B2020}
+.init-cell{padding:10px 12px;vertical-align:middle}
+.init-name{font-size:13px;font-weight:500;color:var(--text-primary);display:flex;align-items:center;gap:6px;cursor:pointer}
+.init-name:hover{color:var(--navy-light)}
+.edit-icon{opacity:0;font-size:11px;color:var(--text-muted);background:var(--off-white);border:1px solid var(--border);padding:2px 7px;border-radius:5px;cursor:pointer;white-space:nowrap;transition:opacity 0.15s}
+tr:hover .edit-icon{opacity:1}
+.init-desc{font-size:11px;color:var(--text-muted);margin-top:2px}
+.obj-dots{display:flex;gap:4px;align-items:center;margin-top:4px}
+.obj-dot{width:6px;height:6px;border-radius:50%}
+.dot-cx{background:var(--teal)}
+.dot-ce{background:var(--purple)}
+.dot-ms{background:var(--amber)}
+.status-cell{padding:8px 10px;text-align:center;vertical-align:middle}
+.badge{display:inline-block;font-size:10px;font-weight:600;padding:4px 10px;border-radius:20px;white-space:nowrap;cursor:pointer;transition:transform 0.1s,box-shadow 0.1s;letter-spacing:0.02em;min-width:72px;text-align:center}
+.badge:hover{transform:scale(1.05);box-shadow:0 2px 8px rgba(0,0,0,0.12)}
+.b-wip{background:#E0EEFF;color:#1A4E96;border:1px solid #B5D0F8}
+.b-inv{background:#EEF0F2;color:#4A5E72;border:1px solid #D0D8E0}
+.b-q1{background:#D6F5E8;color:#0B5E3A;border:1px solid #7FD9B3}
+.b-q2{background:#C8F0E0;color:#0A5232;border:1px solid #60CFA0}
+.b-q3{background:#BAE8D5;color:#094A2C;border:1px solid #40BD88}
+.b-q4{background:#A8E0C8;color:#083E24;border:1px solid #28AA70}
+.b-ss{background:#E8E4FF;color:#3A2A88;border:1px solid #BDB0F5}
+.b-sunset{background:#FEE8D8;color:#8B3A10;border:1px solid #F5B080}
+.b-closed{background:#FFE0E0;color:#7A1010;border:1px solid #F5A0A0}
+.b-na{background:transparent;color:var(--text-muted);border:1px solid transparent;font-size:10px}
+.budget-cell{padding:6px 8px;text-align:center;vertical-align:middle}
+.budget-input{width:105px;font-size:12px;text-align:center;padding:5px 8px;border:1px solid var(--border);border-radius:7px;background:var(--off-white);color:var(--text-primary);font-family:'DM Sans',sans-serif;transition:border-color 0.15s,background 0.15s}
+.budget-input:focus{outline:none;border-color:var(--gold);background:#FFFBF3}
+.budget-input:not(:placeholder-shown){background:var(--white);border-color:var(--gold-pale);color:var(--amber);font-weight:500}
+.budget-input::placeholder{color:var(--text-muted);font-weight:400}
+.decomm-row td{background:#FFF8F6}
+.info-banner{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:2rem}
+.info-card{background:var(--white);border:1px solid var(--border-light);border-radius:var(--radius-lg);padding:1.25rem;box-shadow:var(--shadow-sm);display:flex;align-items:flex-start;gap:12px}
+.info-icon{width:40px;height:40px;border-radius:var(--radius);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:18px}
+.info-icon-teal{background:var(--teal-pale)}
+.info-icon-purple{background:var(--purple-pale)}
+.info-icon-amber{background:var(--amber-pale)}
+.info-content h4{font-size:13px;font-weight:600;color:var(--text-primary);margin-bottom:3px}
+.info-content p{font-size:12px;color:var(--text-secondary);line-height:1.5}
+
+/* ══ HEATMAP TAB ══ */
+.heatmap-header{margin-bottom:2rem}
+.heatmap-header h2{font-family:'DM Serif Display',serif;font-size:1.4rem;color:var(--text-primary);margin-bottom:0.3rem}
+.heatmap-header p{font-size:13px;color:var(--text-secondary)}
+.heatmap-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-bottom:2.5rem}
+.hm-card{background:var(--white);border:1px solid var(--border-light);border-radius:var(--radius-xl);padding:1.5rem;box-shadow:var(--shadow-sm);overflow:hidden;position:relative}
+.hm-card-header{display:flex;align-items:center;gap:12px;margin-bottom:1.25rem}
+.hm-obj-badge{display:flex;align-items:center;gap:8px;padding:8px 14px;border-radius:30px;font-size:13px;font-weight:600}
+.hm-obj-badge.cx{background:var(--teal-pale);color:var(--teal)}
+.hm-obj-badge.ce{background:var(--purple-pale);color:var(--purple)}
+.hm-obj-badge.ms{background:var(--amber-pale);color:var(--amber)}
+.hm-count{margin-left:auto;font-family:'DM Serif Display',serif;font-size:2rem;color:var(--text-muted)}
+
+/* heatmap matrix */
+.hm-matrix{display:flex;flex-direction:column;gap:3px}
+.hm-row{display:flex;align-items:center;gap:3px}
+.hm-year-label{width:36px;font-size:10px;font-weight:600;color:var(--text-muted);text-align:right;flex-shrink:0}
+.hm-cells{display:flex;gap:3px;flex:1}
+.hm-cell{flex:1;height:32px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;cursor:default;transition:transform 0.15s,box-shadow 0.15s;position:relative}
+.hm-cell:hover{transform:scale(1.08);box-shadow:var(--shadow-md);z-index:2}
+.hm-cell .hm-num{font-size:13px;font-weight:700}
+.hm-cell-label{position:absolute;bottom:-18px;left:50%;transform:translateX(-50%);font-size:8px;color:var(--text-muted);white-space:nowrap;opacity:0;pointer-events:none;transition:opacity 0.15s}
+.hm-cell:hover .hm-cell-label{opacity:1}
+/* intensity classes per objective */
+.cx-0{background:#F0FAF7;color:#B0D8CE}
+.cx-1{background:#C2EBE0;color:#0B6B47}
+.cx-2{background:#7FD4BC;color:#085237}
+.cx-3{background:#3AB89E;color:#fff}
+.cx-4{background:#0E7C6A;color:#fff}
+.cx-5{background:#074F44;color:#fff}
+.ce-0{background:#F3F0FF;color:#C0B8E8}
+.ce-1{background:#D8D2F8;color:#3A2A88}
+.ce-2{background:#B8AEEE;color:#2A1A78}
+.ce-3{background:#8878D8;color:#fff}
+.ce-4{background:#5B4BA8;color:#fff}
+.ce-5{background:#3A2A88;color:#fff}
+.ms-0{background:#FFF8EE;color:#E0C898}
+.ms-1{background:#FAE0B0;color:#8B5A10}
+.ms-2{background:#F0C070;color:#6B4008}
+.ms-3{background:#E8A030;color:#fff}
+.ms-4{background:#C06B18;color:#fff}
+.ms-5{background:#8B4A08;color:#fff}
+
+.hm-legend{display:flex;align-items:center;gap:6px;margin-top:1rem;justify-content:flex-end}
+.hm-legend-label{font-size:10px;color:var(--text-muted)}
+.hm-legend-scale{display:flex;gap:2px}
+.hm-legend-box{width:14px;height:14px;border-radius:3px}
+
+/* ── Full heatmap matrix (initiative × year) ── */
+.full-hm-wrap{background:var(--white);border:1px solid var(--border-light);border-radius:var(--radius-xl);box-shadow:var(--shadow-md);overflow:hidden;margin-bottom:2rem}
+.full-hm-header{padding:1.25rem 1.5rem;border-bottom:1px solid var(--border-light);display:flex;align-items:center;gap:12px}
+.full-hm-header h3{font-family:'DM Serif Display',serif;font-size:1.1rem;color:var(--text-primary)}
+.full-hm-scroll{overflow-x:auto}
+.full-hm-table{border-collapse:collapse;min-width:800px;width:100%}
+.full-hm-table th{padding:8px 10px;font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;color:var(--text-muted);background:var(--off-white);border-bottom:1px solid var(--border);text-align:center;white-space:nowrap}
+.full-hm-table th:first-child{text-align:left;width:220px}
+.full-hm-table th:nth-child(2){width:80px;text-align:left}
+.full-hm-table td{padding:6px 8px;border-bottom:1px solid var(--border-light);font-size:12px;vertical-align:middle}
+.full-hm-table tr:last-child td{border-bottom:none}
+.full-hm-table tr:hover td{background:#FAFBFC}
+.fhm-cell{display:flex;align-items:center;justify-content:center;height:28px;border-radius:6px;font-size:10px;font-weight:600;cursor:default;transition:transform 0.12s}
+.fhm-cell:hover{transform:scale(1.1)}
+.obj-chip{display:inline-flex;align-items:center;gap:3px;font-size:9px;font-weight:600;padding:2px 6px;border-radius:9px}
+.chip-cx{background:var(--teal-pale);color:var(--teal)}
+.chip-ce{background:var(--purple-pale);color:var(--purple)}
+.chip-ms{background:var(--amber-pale);color:var(--amber)}
+
+/* ══ ANALYTICS TAB ══ */
+.analytics-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;margin-bottom:2rem}
+.analytics-grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-bottom:2rem}
+.an-card{background:var(--white);border:1px solid var(--border-light);border-radius:var(--radius-xl);padding:1.5rem;box-shadow:var(--shadow-sm)}
+.an-card-full{background:var(--white);border:1px solid var(--border-light);border-radius:var(--radius-xl);padding:1.5rem;box-shadow:var(--shadow-sm);margin-bottom:1.5rem}
+.an-card h3{font-family:'DM Serif Display',serif;font-size:1.1rem;color:var(--text-primary);margin-bottom:0.3rem}
+.an-card-full h3{font-family:'DM Serif Display',serif;font-size:1.1rem;color:var(--text-primary);margin-bottom:0.3rem}
+.an-sub{font-size:11px;color:var(--text-muted);margin-bottom:1.25rem}
+
+/* progress bar */
+.prog-item{margin-bottom:14px}
+.prog-label{display:flex;justify-content:space-between;align-items:center;margin-bottom:5px;font-size:12px}
+.prog-name{color:var(--text-secondary);font-weight:500}
+.prog-val{color:var(--text-muted);font-size:11px}
+.prog-track{height:8px;background:var(--off-white);border-radius:4px;overflow:hidden;border:1px solid var(--border-light)}
+.prog-fill{height:100%;border-radius:4px;transition:width 1s ease}
+
+/* KPI strip */
+.kpi-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:2rem}
+.kpi-card{background:var(--white);border:1px solid var(--border-light);border-radius:var(--radius-lg);padding:1.25rem;box-shadow:var(--shadow-sm);text-align:center;position:relative;overflow:hidden}
+.kpi-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px}
+.kpi-card:nth-child(1)::after{background:var(--teal)}
+.kpi-card:nth-child(2)::after{background:var(--purple)}
+.kpi-card:nth-child(3)::after{background:var(--gold)}
+.kpi-card:nth-child(4)::after{background:var(--red)}
+.kpi-num{font-family:'DM Serif Display',serif;font-size:2.2rem;color:var(--text-primary);line-height:1;margin-bottom:4px}
+.kpi-label{font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.05em}
+.kpi-delta{font-size:11px;margin-top:6px;font-weight:500}
+.kpi-up{color:var(--teal)}
+.kpi-down{color:var(--red)}
+
+/* Gantt/timeline */
+.timeline-wrap{overflow-x:auto}
+.tl-table{border-collapse:collapse;width:100%;min-width:900px}
+.tl-table td,.tl-table th{border:none;padding:4px 6px}
+.tl-label{font-size:11px;color:var(--text-secondary);white-space:nowrap;padding-right:12px;font-weight:500;width:200px}
+.tl-layer-label{font-size:9px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.05em;width:80px}
+.tl-qcell{width:40px;text-align:center}
+.tl-qhead{font-size:9px;color:var(--text-muted);text-align:center;padding-bottom:8px;font-weight:600;letter-spacing:0.04em;text-transform:uppercase}
+.tl-bar{height:18px;border-radius:9px;display:block;margin:0 2px;transition:opacity 0.2s}
+.tl-bar:hover{opacity:0.8}
+.tl-yr-head{font-size:11px;font-weight:600;color:var(--text-primary);text-align:center;padding:8px 0 2px;font-family:'DM Serif Display',serif}
+.tl-yr-sep{border-left:2px solid var(--border);padding-left:8px}
+
+/* ── MODAL ── */
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(11,30,61,0.5);z-index:200;backdrop-filter:blur(3px);align-items:center;justify-content:center}
+.modal-overlay.open{display:flex}
+.modal{background:var(--white);border-radius:var(--radius-xl);padding:2rem;width:520px;max-width:95vw;max-height:90vh;overflow-y:auto;box-shadow:var(--shadow-lg);animation:modalIn 0.25s ease}
+@keyframes modalIn{from{opacity:0;transform:translateY(12px) scale(0.98)}to{opacity:1;transform:none}}
+.modal-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.5rem}
+.modal-header h3{font-family:'DM Serif Display',serif;font-size:1.25rem;color:var(--text-primary)}
+.modal-close{width:32px;height:32px;border-radius:50%;background:var(--off-white);border:1px solid var(--border);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:16px;color:var(--text-secondary);transition:background 0.15s}
+.modal-close:hover{background:var(--border-light)}
+.modal-section{margin-bottom:1.25rem}
+.modal-section label{display:block;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;color:var(--text-muted);margin-bottom:6px}
+.modal-section input,.modal-section select,.modal-section textarea{width:100%;padding:9px 12px;border:1px solid var(--border);border-radius:var(--radius);font-size:13px;color:var(--text-primary);font-family:'DM Sans',sans-serif;background:var(--off-white);transition:border-color 0.15s,background 0.15s}
+.modal-section input:focus,.modal-section select:focus,.modal-section textarea:focus{outline:none;border-color:var(--navy);background:var(--white)}
+.modal-section textarea{resize:vertical;min-height:60px}
+.modal-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.obj-check-row{display:flex;gap:12px;flex-wrap:wrap}
+.obj-check{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--text-secondary);cursor:pointer;padding:6px 12px;border:1px solid var(--border);border-radius:var(--radius);transition:all 0.15s;user-select:none}
+.obj-check input{display:none}
+.obj-check:has(input:checked).oc-cx{background:var(--teal-pale);border-color:var(--teal-light);color:var(--teal)}
+.obj-check:has(input:checked).oc-ce{background:var(--purple-pale);border-color:var(--purple-light);color:var(--purple)}
+.obj-check:has(input:checked).oc-ms{background:var(--amber-pale);border-color:var(--amber-light);color:var(--amber)}
+.obj-check:hover{background:var(--off-white)}
+.modal-actions{display:flex;gap:8px;justify-content:flex-end;margin-top:1.5rem;padding-top:1.25rem;border-top:1px solid var(--border-light)}
+.btn-save{background:var(--navy);color:var(--white);padding:9px 24px;border-radius:var(--radius);border:none;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;cursor:pointer;transition:background 0.15s}
+.btn-save:hover{background:var(--navy-light)}
+.btn-cancel{background:var(--off-white);color:var(--text-secondary);padding:9px 20px;border-radius:var(--radius);border:1px solid var(--border);font-family:'DM Sans',sans-serif;font-size:13px;cursor:pointer;transition:background 0.15s}
+.btn-cancel:hover{background:var(--border-light)}
+.btn-danger{background:var(--red-pale);color:var(--red);padding:9px 16px;border-radius:var(--radius);border:1px solid #F5A0A0;font-family:'DM Sans',sans-serif;font-size:13px;cursor:pointer;margin-right:auto;transition:background 0.15s}
+.btn-danger:hover{background:#FFDCDC}
+
+/* FOOTER */
+.page-footer{background:var(--navy);color:rgba(255,255,255,0.4);text-align:center;padding:1.25rem;font-size:11px;letter-spacing:0.04em}
+.page-footer span{color:var(--gold-light)}
+
+@media print{.nav-bar,.table-toolbar,.modal-overlay,.page-footer{display:none}.page-header{-webkit-print-color-adjust:exact;print-color-adjust:exact}.badge{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+
+/* ══ TIMELINE TAB ══ */
+.tl-page-header{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:1.75rem;flex-wrap:wrap;gap:1rem}
+.tl-page-header h2{font-family:'DM Serif Display',serif;font-size:1.4rem;color:var(--text-primary);margin-bottom:3px}
+.tl-page-header p{font-size:13px;color:var(--text-secondary)}
+.tl-controls{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.tl-filter-btn{padding:5px 12px;border-radius:20px;border:1px solid var(--border);font-size:11px;font-weight:500;font-family:'DM Sans',sans-serif;cursor:pointer;background:var(--white);color:var(--text-secondary);transition:all 0.15s}
+.tl-filter-btn.on{background:var(--navy);color:var(--white);border-color:var(--navy)}
+
+/* Year scrollable gantt */
+.gantt-outer{background:var(--white);border:1px solid var(--border);border-radius:var(--radius-xl);box-shadow:var(--shadow-md);overflow:hidden;margin-bottom:2rem}
+.gantt-top-bar{padding:1rem 1.5rem;border-bottom:1px solid var(--border-light);display:flex;align-items:center;gap:1rem}
+.gantt-top-bar h3{font-family:'DM Serif Display',serif;font-size:1.1rem;color:var(--text-primary)}
+.gantt-scroll-area{overflow-x:auto;overflow-y:visible}
+.gantt-canvas-wrap{display:flex;min-width:1200px}
+
+/* Left labels pane */
+.gantt-labels{flex-shrink:0;width:200px;border-right:1px solid var(--border-light)}
+.gantt-labels-top{height:72px;border-bottom:1px solid var(--border-light);background:var(--off-white);display:flex;align-items:flex-end;padding:0 12px 8px;font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;color:var(--text-muted)}
+.gantt-label-row{display:flex;align-items:center;padding:0 12px;border-bottom:1px solid var(--border-light);gap:8px;position:relative}
+.gantt-label-row:last-child{border-bottom:none}
+.gantt-section-row{background:var(--navy);padding:6px 12px;display:flex;align-items:center;gap:8px}
+.gantt-section-name{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:var(--gold-light)}
+.gantt-init-name{font-size:11px;color:var(--text-primary);font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;flex:1}
+.gantt-layer-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
+
+/* Timeline grid pane */
+.gantt-grid{flex:1;position:relative}
+.gantt-yr-headers{height:32px;display:flex;border-bottom:1px solid var(--border-light);background:var(--navy)}
+.gantt-yr-head{flex:1;display:flex;align-items:center;justify-content:center;font-family:'DM Serif Display',serif;font-size:13px;color:rgba(255,255,255,0.9);border-right:1px solid rgba(255,255,255,0.12)}
+.gantt-yr-head:last-child{border-right:none}
+.gantt-q-headers{height:40px;display:flex;border-bottom:1px solid var(--border-light);background:var(--off-white)}
+.gantt-q-cell{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;border-right:1px solid var(--border-light);font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;color:var(--text-muted);position:relative}
+.gantt-q-cell.q1{border-left:2px solid var(--border)}
+.gantt-q-cell .review-marker{position:absolute;top:-2px;display:flex;flex-direction:column;align-items:center;gap:1px}
+.review-flag{width:0;height:0;border-left:5px solid transparent;border-right:5px solid transparent;border-top:8px solid var(--gold)}
+.review-label{font-size:8px;color:var(--gold);font-weight:600;white-space:nowrap}
+.gantt-rows-wrap{position:relative}
+.gantt-bar-row{display:flex;align-items:center;padding:4px 0;border-bottom:1px solid var(--border-light);position:relative;min-height:38px}
+.gantt-bar-row:last-child{border-bottom:none}
+.gantt-bar-row.section-spacer{background:var(--navy);min-height:28px}
+.gantt-q-bg{position:absolute;top:0;bottom:0;border-right:1px solid var(--border-light)}
+.gantt-q-bg.yr-start{border-right-color:var(--border)}
+.gantt-bar{position:absolute;height:22px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:600;color:white;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;padding:0 8px;cursor:pointer;transition:opacity 0.15s,transform 0.15s;box-shadow:0 1px 3px rgba(0,0,0,0.15)}
+.gantt-bar:hover{opacity:0.88;transform:scaleY(1.08)}
+.gantt-milestone{position:absolute;width:14px;height:14px;transform:rotate(45deg);cursor:pointer;transition:transform 0.15s}
+.gantt-milestone:hover{transform:rotate(45deg) scale(1.3)}
+.milestone-tooltip{display:none;position:absolute;top:-36px;left:50%;transform:translateX(-50%);background:var(--navy);color:white;font-size:10px;padding:4px 8px;border-radius:6px;white-space:nowrap;pointer-events:none;z-index:10}
+.gantt-milestone:hover .milestone-tooltip{display:block}
+
+/* milestone modal */
+.ms-modal{background:var(--white);border-radius:var(--radius-xl);padding:1.75rem;width:500px;max-width:95vw;box-shadow:var(--shadow-lg);animation:modalIn 0.2s ease}
+.ms-tag{display:inline-flex;align-items:center;gap:4px;padding:3px 10px;border-radius:12px;font-size:11px;font-weight:500;margin-bottom:12px}
+
+/* Milestone list view */
+.ml-outer{background:var(--white);border:1px solid var(--border);border-radius:var(--radius-xl);box-shadow:var(--shadow-md);overflow:hidden;margin-bottom:2rem}
+.ml-header{padding:1rem 1.5rem;border-bottom:1px solid var(--border-light);display:flex;align-items:center;gap:1rem}
+.ml-header h3{font-family:'DM Serif Display',serif;font-size:1.1rem;color:var(--text-primary)}
+.ml-body{display:grid;grid-template-columns:repeat(5,1fr);border-top:1px solid var(--border-light)}
+.ml-year-col{border-right:1px solid var(--border-light);padding:1rem}
+.ml-year-col:last-child{border-right:none}
+.ml-year-title{font-family:'DM Serif Display',serif;font-size:1rem;color:var(--text-primary);margin-bottom:12px;padding-bottom:8px;border-bottom:2px solid var(--border-light)}
+.ml-item{margin-bottom:10px;padding:8px 10px;border-radius:var(--radius);border-left:3px solid;font-size:11px}
+.ml-item-title{font-weight:600;color:var(--text-primary);margin-bottom:2px}
+.ml-item-sub{color:var(--text-secondary);font-size:10px}
+.ml-item-q{display:inline-block;font-size:9px;font-weight:700;padding:1px 5px;border-radius:4px;margin-top:3px}
+
+/* ══ FIX AND GROW 2026 TAB ══ */
+.fg-hero{background:linear-gradient(135deg,#071428 0%,#0B1E3D 40%,#0D2A5C 100%);border-radius:var(--radius-xl);padding:2rem 2.5rem 0;margin-bottom:0;position:relative;overflow:hidden;box-shadow:var(--shadow-lg)}
+.fg-hero-top{position:relative;z-index:1;padding-bottom:1rem}
+.fg-fix{color:#4A90E2;font-family:'DM Serif Display',serif;font-size:2rem;font-weight:400;letter-spacing:-0.02em;display:inline}
+.fg-and-grow{color:white;font-family:'DM Serif Display',serif;font-size:2rem;letter-spacing:-0.02em;display:inline}
+.fg-subtitle{color:rgba(255,255,255,0.55);font-size:11px;letter-spacing:0.14em;text-transform:uppercase;margin-top:3px}
+.fg-arrow{background:linear-gradient(90deg,#1557CC,#2878F0);height:60px;margin:1rem 0;display:flex;align-items:center;justify-content:center;position:relative;clip-path:polygon(0 0,calc(100% - 36px) 0,100% 50%,calc(100% - 36px) 100%,0 100%);border-radius:4px 0 0 4px}
+.fg-year-txt{font-family:'DM Serif Display',serif;font-size:2.6rem;color:white;letter-spacing:-0.02em;position:relative;z-index:1}
+.fg-year-txt em{color:rgba(255,255,255,0.38);font-style:normal}
+.fg-landscape{position:relative;min-height:260px;margin-top:0}
+.fg-sky{position:absolute;inset:0;background:linear-gradient(180deg,#0B1E3D 0%,#0B1E3D 45%,transparent 100%)}
+.fg-ground{position:absolute;bottom:0;left:0;right:0;height:120px;background:linear-gradient(180deg,#3D9426 0%,#2D7A18 100%);border-radius:40% 40% 0 0 / 30px 30px 0 0}
+.fg-ground-front{position:absolute;bottom:0;left:0;right:0;height:50px;background:#2D6A14}
+.fg-grass-svg{position:absolute;bottom:45px;left:0;right:0;height:60px;overflow:hidden;opacity:0.9}
+.fg-pots-row{position:absolute;bottom:40px;left:0;right:0;display:flex;justify-content:space-around;align-items:flex-end;padding:0 2rem;z-index:5}
+.fg-pot{display:flex;flex-direction:column;align-items:center;gap:4px;cursor:pointer;transition:transform 0.2s;text-align:center;max-width:120px}
+.fg-pot:hover{transform:translateY(-8px)}
+.fg-pot-icon{font-size:42px;line-height:1;filter:drop-shadow(0 3px 6px rgba(0,0,0,0.4))}
+.fg-pot-name{font-size:11px;font-weight:700;color:white;text-shadow:0 1px 4px rgba(0,0,0,0.8);line-height:1.2;margin-top:2px}
+.fg-pot-name.gold{color:#FFD700;text-shadow:0 1px 4px rgba(0,0,0,0.9)}
+.fg-pot-name.new-pot{color:#A0FFB0;text-shadow:0 1px 4px rgba(0,0,0,0.9)}
+.fg-pot-sub{font-size:9px;color:rgba(255,255,255,0.65);text-shadow:0 1px 3px rgba(0,0,0,0.7);line-height:1.3;margin-top:1px}
+.fg-cards-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-bottom:2rem}
+.fg-card{background:var(--white);border:1px solid var(--border-light);border-radius:var(--radius-xl);padding:1.5rem;box-shadow:var(--shadow-sm);transition:box-shadow 0.2s,transform 0.15s;position:relative;overflow:hidden}
+.fg-card:hover{box-shadow:var(--shadow-md);transform:translateY(-2px)}
+.fg-card-stripe{position:absolute;top:0;left:0;right:0;height:4px}
+.fg-card-head{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.fg-card-emoji{font-size:1.8rem;line-height:1}
+.fg-card-title{font-family:'DM Serif Display',serif;font-size:1rem;color:var(--text-primary)}
+.fg-card-sub{font-size:11px;color:var(--text-secondary);line-height:1.5;margin-bottom:12px}
+.fg-init-row{display:flex;align-items:center;gap:8px;padding:6px 10px;border-radius:8px;margin-bottom:4px;font-size:12px;font-weight:500;border:1px solid transparent}
+.fg-init-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
+.fg-new-pill{font-size:9px;padding:2px 6px;border-radius:8px;background:#FFF0EE;color:#B02A2A;font-weight:700;border:1px solid #F5A0A0;margin-left:auto;white-space:nowrap}
+.fg-section-hd{font-family:'DM Serif Display',serif;font-size:1.25rem;color:var(--text-primary);margin:2rem 0 0.4rem}
+.fg-section-sd{font-size:13px;color:var(--text-secondary);margin-bottom:1.25rem}
+
+/* ══ AI & INTELLIGENCE TAB ══ */
+.intel-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:2rem}
+.intel-card{background:var(--white);border:1px solid var(--border-light);border-radius:var(--radius-xl);padding:1.75rem;box-shadow:var(--shadow-sm);position:relative;overflow:hidden}
+.intel-card-full{background:var(--white);border:1px solid var(--border-light);border-radius:var(--radius-xl);padding:1.75rem;box-shadow:var(--shadow-sm);margin-bottom:1.5rem;position:relative;overflow:hidden}
+.intel-card h3,.intel-card-full h3{font-family:'DM Serif Display',serif;font-size:1.1rem;color:var(--text-primary);margin-bottom:0.3rem}
+.intel-sub{font-size:12px;color:var(--text-muted);margin-bottom:1.25rem}
+.ai-btn{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;background:linear-gradient(135deg,var(--navy),var(--navy-light));color:white;border:none;border-radius:var(--radius);font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;cursor:pointer;transition:all 0.2s;box-shadow:var(--shadow-sm)}
+.ai-btn:hover{transform:translateY(-1px);box-shadow:var(--shadow-md)}
+.ai-btn:disabled{opacity:0.6;cursor:not-allowed;transform:none}
+.ai-output{background:var(--off-white);border:1px solid var(--border-light);border-radius:var(--radius-lg);padding:1.25rem;font-size:13px;color:var(--text-primary);line-height:1.7;min-height:120px;white-space:pre-wrap;font-family:'DM Sans',sans-serif}
+.ai-output.loading{color:var(--text-muted);font-style:italic}
+.ai-streaming{border-left:3px solid var(--gold);padding-left:1rem}
+.rag-badge{display:inline-flex;align-items:center;gap:5px;padding:3px 10px;border-radius:12px;font-size:11px;font-weight:600;cursor:pointer;border:1px solid transparent;transition:all 0.15s}
+.rag-r{background:#FDEAEA;color:#7A1010;border-color:#F5A0A0}
+.rag-a{background:#FFF4E0;color:#7A4A00;border-color:#F5C870}
+.rag-g{background:#E8F5E9;color:#1B5E20;border-color:#A5D6A7}
+.dep-svg{width:100%;border-radius:var(--radius-lg);background:var(--navy);cursor:grab}
+.dep-svg:active{cursor:grabbing}
+.dep-node{cursor:pointer;transition:transform 0.2s}
+.dep-node:hover{transform:scale(1.1)}
+.burndown-wrap{display:flex;flex-direction:column;gap:12px}
+.burn-row{display:flex;align-items:center;gap:12px}
+.burn-label{font-size:12px;color:var(--text-secondary);width:40px;flex-shrink:0;font-weight:600}
+.burn-bar-wrap{flex:1;height:28px;background:var(--off-white);border-radius:var(--radius);overflow:hidden;border:1px solid var(--border-light);position:relative}
+.burn-bar-fill{height:100%;border-radius:var(--radius);transition:width 0.6s ease;display:flex;align-items:center;padding-left:10px;font-size:11px;font-weight:600;color:white;white-space:nowrap}
+.burn-input{width:90px;padding:5px 8px;border:1px solid var(--border);border-radius:var(--radius);font-size:12px;text-align:right;font-family:'DM Sans',sans-serif;background:var(--off-white)}
+.burn-input:focus{outline:none;border-color:var(--gold)}
+.burn-total{text-align:right;font-size:13px;font-weight:600;color:var(--text-primary);margin-top:8px}
+.anim-controls{display:flex;align-items:center;gap:12px;margin-bottom:1.25rem;flex-wrap:wrap}
+.anim-btn{padding:8px 20px;border-radius:var(--radius);font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;cursor:pointer;border:1px solid var(--border);background:var(--white);color:var(--text-primary);transition:all 0.15s}
+.anim-btn.playing{background:var(--navy);color:white;border-color:var(--navy)}
+.anim-yr-display{font-family:'DM Serif Display',serif;font-size:1.5rem;color:var(--gold);min-width:60px}
+.anim-progress{flex:1;height:6px;background:var(--off-white);border-radius:3px;overflow:hidden;border:1px solid var(--border-light)}
+.anim-progress-fill{height:100%;background:linear-gradient(90deg,var(--teal),var(--gold));border-radius:3px;transition:width 0.5s ease}
+.anim-table{width:100%;border-collapse:collapse;font-size:12px}
+.anim-table th{padding:8px 10px;text-align:left;font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;color:var(--text-muted);background:var(--off-white);border-bottom:1px solid var(--border)}
+.anim-table td{padding:8px 10px;border-bottom:1px solid var(--border-light);transition:background 0.3s}
+.anim-table tr.just-changed td{background:rgba(200,150,62,0.15)}
+.pdf-preview{background:white;border:1px solid var(--border);border-radius:var(--radius-lg);padding:2rem;box-shadow:var(--shadow-md);max-width:800px;margin:0 auto}
+.pdf-header{background:linear-gradient(135deg,var(--navy),var(--navy-light));color:white;padding:2rem;border-radius:var(--radius-lg);margin-bottom:1.5rem;position:relative;overflow:hidden}
+.pdf-header h1{font-family:'DM Serif Display',serif;font-size:1.8rem;margin-bottom:4px}
+.pdf-header p{font-size:12px;opacity:0.6;letter-spacing:0.08em;text-transform:uppercase}
+.pdf-kpi-row{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:1.5rem}
+.pdf-kpi{background:var(--off-white);border-radius:var(--radius-lg);padding:1rem;text-align:center;border:1px solid var(--border-light)}
+.pdf-kpi .num{font-family:'DM Serif Display',serif;font-size:1.8rem;color:var(--navy);line-height:1}
+.pdf-kpi .lbl{font-size:10px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.05em;margin-top:4px}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.4}}
+.ai-pulse{animation:pulse 1.2s infinite}
+@keyframes slideIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.slide-in{animation:slideIn 0.3s ease forwards}
+
+/* ══ TECH ENVIRONMENT TAB ══ */
+.te-hero{background:linear-gradient(135deg,#071428 0%,#0B1E3D 60%,#0D2A5C 100%);border-radius:var(--radius-xl);padding:2rem 2.5rem;margin-bottom:2rem;box-shadow:var(--shadow-lg)}
+.te-title{font-family:'DM Serif Display',serif;font-size:1.8rem;color:white;margin-bottom:4px}
+.te-title em{font-style:italic;color:var(--gold-light)}
+.te-subtitle{font-size:12px;color:rgba(255,255,255,0.5);letter-spacing:0.12em;text-transform:uppercase}
+.te-toggle{display:flex;background:#050E1E;border-radius:var(--radius-xl);padding:6px;gap:6px;width:fit-content;margin:1.5rem 0}
+.te-toggle-btn{padding:10px 28px;border-radius:var(--radius-lg);font-size:13px;font-weight:600;font-family:'DM Sans',sans-serif;cursor:pointer;border:none;transition:all 0.3s;color:rgba(255,255,255,0.45);background:transparent}
+.te-toggle-btn.active{background:linear-gradient(135deg,#1050CC,#2878F5);color:white;box-shadow:0 4px 14px rgba(16,80,204,0.4)}
+.te-toggle-btn.future-active{background:linear-gradient(135deg,#0E7C6A,#1AA88E);color:white;box-shadow:0 4px 14px rgba(14,124,106,0.4)}
+.te-toggle-btn.future-active{background:linear-gradient(135deg,#0E7C6A,#1AA88E);color:white;box-shadow:0 4px 14px rgba(14,124,106,0.4)}
+/* Particle burst */
+.te-particle{position:fixed;pointer-events:none;border-radius:50%;z-index:9999;animation:particleBurst 0.9s ease forwards}
+@keyframes particleBurst{0%{opacity:1;transform:scale(0) translate(0,0)}100%{opacity:0;transform:scale(1) translate(var(--tx),var(--ty))}}
+/* Ripple wipe overlay */
+.te-ripple{position:fixed;pointer-events:none;border-radius:50%;z-index:9998;background:radial-gradient(circle,rgba(26,168,142,0.35) 0%,rgba(14,124,106,0.08) 60%,transparent 100%);animation:rippleExpand 1.4s ease forwards}
+@keyframes rippleExpand{0%{width:0;height:0;opacity:1;transform:translate(-50%,-50%)}100%{width:300vmax;height:300vmax;opacity:0;transform:translate(-50%,-50%)}}
+/* App chip glow on survive */
+.te-chip.glowing{box-shadow:0 0 18px currentColor,0 0 40px rgba(26,168,142,0.4)!important}
+/* Scan line effect */
+.te-scanline{position:absolute;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,rgba(26,168,142,0.8),transparent);pointer-events:none;z-index:20;animation:scanDown 1.6s ease forwards}
+@keyframes scanDown{0%{top:0;opacity:0}10%{opacity:1}90%{opacity:1}100%{top:100%;opacity:0}}
+.te-stats{display:flex;gap:2rem;align-items:center;margin-left:auto}
+.te-stat{text-align:center}
+.te-stat .n{font-family:'DM Serif Display',serif;font-size:1.6rem;line-height:1}
+.te-stat .l{font-size:10px;text-transform:uppercase;letter-spacing:0.06em;margin-top:2px;opacity:0.6}
+.te-grid-wrap{border-radius:var(--radius-xl);overflow:hidden;box-shadow:var(--shadow-lg);background:#0B1E3D;min-height:500px;position:relative}
+.te-grid{display:grid;grid-template-columns:180px 1fr;min-height:500px}
+.te-layer-col{background:#071428;border-right:1px solid rgba(255,255,255,0.08)}
+.te-layer-header{height:64px;display:flex;align-items:center;padding:0 1.25rem;border-bottom:1px solid rgba(255,255,255,0.08);background:#050E1E}
+.te-layer-header span{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:rgba(255,255,255,0.4)}
+.te-layer-row{display:flex;align-items:center;padding:0 1.25rem;border-bottom:1px solid rgba(255,255,255,0.06);min-height:72px}
+.te-layer-name{font-size:13px;font-weight:700;letter-spacing:0.02em}
+.te-apps-col{overflow:hidden}
+.te-apps-header{height:64px;display:flex;align-items:center;padding:0 1.5rem;border-bottom:1px solid rgba(255,255,255,0.08);background:#050E1E}
+.te-arrow-banner{flex:1;background:linear-gradient(90deg,#1050CC,#2878F5);height:40px;border-radius:4px 0 0 4px;display:flex;align-items:center;justify-content:center;clip-path:polygon(0 0,calc(100% - 20px) 0,100% 50%,calc(100% - 20px) 100%,0 100%)}
+.te-arrow-text{font-size:14px;font-weight:700;color:white;letter-spacing:0.04em}
+.te-apps-row{display:flex;align-items:center;padding:8px 1.5rem;border-bottom:1px solid rgba(255,255,255,0.06);min-height:72px;flex-wrap:wrap;gap:8px;position:relative}
+.te-chip{display:inline-flex;align-items:center;gap:5px;padding:7px 14px;border-radius:10px;font-size:12px;font-weight:600;white-space:nowrap;position:relative;transition:all 0.5s;cursor:default}
+.te-chip.sunset{animation:sunsetFlame 0.8s ease forwards}
+.te-chip.survive{animation:survivePulse 0.6s ease forwards}
+.te-chip.new{animation:newAppear 0.8s ease forwards}
+@keyframes sunsetFlame{
+  0%{opacity:1;transform:scale(1)}
+  30%{opacity:1;transform:scale(1.05);filter:brightness(1.3) saturate(2);box-shadow:0 0 20px rgba(255,100,0,0.8)}
+  60%{opacity:0.6;transform:scale(0.9) translateY(-4px);filter:brightness(0.5) sepia(1)}
+  100%{opacity:0;transform:scale(0.3) translateY(-20px);filter:brightness(0) blur(4px)}
+}
+@keyframes survivePulse{
+  0%{transform:scale(1)}
+  40%{transform:scale(1.1);box-shadow:0 0 16px rgba(26,168,142,0.6)}
+  100%{transform:scale(1);box-shadow:0 0 8px rgba(26,168,142,0.3)}
+}
+@keyframes newAppear{
+  0%{opacity:0;transform:scale(0.4) translateY(10px)}
+  60%{opacity:1;transform:scale(1.08) translateY(-2px)}
+  100%{opacity:1;transform:scale(1) translateY(0)}
+}
+.sunset-badge{font-size:9px;background:rgba(239,68,68,0.2);color:#FCA5A5;padding:1px 5px;border-radius:4px;border:1px solid rgba(239,68,68,0.4)}
+.new-badge{font-size:9px;background:rgba(26,168,142,0.2);color:#6EE7B7;padding:1px 5px;border-radius:4px;border:1px solid rgba(26,168,142,0.4)}
+.te-count-pill{padding:4px 12px;border-radius:12px;font-size:11px;font-weight:700;font-family:'DM Sans',sans-serif}
+.te-reduction{background:linear-gradient(135deg,#0B1E3D,#1A3260);border:1px solid rgba(255,255,255,0.1);border-radius:var(--radius-xl);padding:1.5rem 2rem;margin-top:1.5rem;display:flex;align-items:center;gap:2rem;flex-wrap:wrap}
+.te-metric{text-align:center;flex:1}
+.te-metric .big{font-family:'DM Serif Display',serif;font-size:2.4rem;line-height:1}
+.te-metric .sm{font-size:11px;text-transform:uppercase;letter-spacing:0.06em;margin-top:4px;color:rgba(255,255,255,0.5)}
+.te-divider{width:1px;height:60px;background:rgba(255,255,255,0.1)}
+@keyframes countUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.count-anim{animation:countUp 0.6s ease forwards}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="page-header">
+  <div class="header-geo"><div class="header-geo-tri"></div></div>
+  <div class="header-inner">
+    <div class="header-left">
+      <div class="header-subtitle">Corporate &amp; Investment Banking · Benefits Technology</div>
+      <h1>Corporate Benefit<br><em>Roadmap</em></h1>
+      <div class="header-subtitle" style="margin-top:0.5rem">2026 – 2030 &nbsp;·&nbsp; Strategic Initiatives &amp; Investment Plan &nbsp;·&nbsp; Exco Planning View</div>
+    </div>
+    <div class="header-meta">
+      <div class="meta-pill"><div class="num" id="totalInitiatives">25</div><div class="lbl">Initiatives</div></div>
+      <div class="meta-divider"></div>
+      <div class="meta-pill"><div class="num">5</div><div class="lbl">Year horizon</div></div>
+      <div class="meta-divider"></div>
+      <div class="meta-pill"><div class="num">3</div><div class="lbl">Objectives</div></div>
+      <div class="meta-divider"></div>
+      <div class="meta-pill" style="text-align:right">
+        <div style="display:flex;gap:6px;align-items:center;justify-content:flex-end">
+          <button class="btn btn-gold" onclick="window.print()" style="font-size:11px;padding:6px 14px">🖨 Print</button>
+          <button class="btn btn-outline" onclick="exportJSON()" style="font-size:11px;padding:6px 14px;background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.2);color:white">⬇ JSON</button>
+        </div>
+        <div class="lbl" style="margin-top:4px" id="lastSaved">Auto-saves locally</div>
+      </div>
+    </div>
+  </div>
+  <div class="header-accent"></div>
+</header>
+
+<!-- NAV TABS -->
+<nav class="nav-bar">
+  <div class="nav-bar-inner">
+    <div class="nav-tab active" id="navTab-fixgrow" onclick="switchTab('fixgrow')">
+      <div class="tab-icon">🌱</div> Fix &amp; Grow 2026
+    </div>
+    <div class="nav-tab" id="navTab-roadmap" onclick="switchTab('roadmap')">
+      <div class="tab-icon">📋</div> Roadmap
+    </div>
+    <div class="nav-tab" id="navTab-heatmap" onclick="switchTab('heatmap')">
+      <div class="tab-icon">🔥</div> Objectives Heatmap
+    </div>
+    <div class="nav-tab" id="navTab-analytics" onclick="switchTab('analytics')">
+      <div class="tab-icon">📊</div> Analytics &amp; Insights
+    </div>
+    <div class="nav-tab" id="navTab-timeline" onclick="switchTab('timeline')">
+      <div class="tab-icon">🗓</div> Timeline &amp; Milestones
+    </div>
+    <div class="nav-tab" id="navTab-intelligence" onclick="switchTab('intelligence')">
+      <div class="tab-icon">🧠</div> Intelligence
+    </div>
+    <div class="nav-tab" id="navTab-techenv" onclick="switchTab('techenv')">
+      <div class="tab-icon">⚡</div> Tech Environment
+    </div>
+    <div class="nav-actions">
+      <span style="font-size:11px;color:var(--text-muted)">Filter:</span>
+      <button class="btn btn-outline" id="fBtn-cx" onclick="toggleFilter('cx')" style="font-size:11px;border-left:3px solid var(--teal)">① Client Exp.</button>
+      <button class="btn btn-outline" id="fBtn-ce" onclick="toggleFilter('ce')" style="font-size:11px;border-left:3px solid var(--purple)">② Cost Eff.</button>
+      <button class="btn btn-outline" id="fBtn-ms" onclick="toggleFilter('ms')" style="font-size:11px;border-left:3px solid var(--amber)">③ Mkt Share</button>
+      <div style="width:1px;height:20px;background:var(--border);margin:0 4px"></div>
+      <button class="btn btn-outline" onclick="addRow()" style="font-size:11px">+ Add</button>
+      <button class="btn btn-outline" onclick="pushToCloud()" style="font-size:11px">💾 Save</button>
+      <button class="btn btn-gold" onclick="downloadDataJson()" style="font-size:11px">📥 Save & Download</button>
+    </div>
+  </div>
+</nav>
+
+<!-- MAIN -->
+<main class="main">
+
+<!-- ═══ TAB 0: FIX AND GROW 2026 ═══ -->
+<section class="page-section active" id="section-fixgrow">
+
+  <!-- Photo-based Fix and Grow hero — original image as background with clickable overlays -->
+  <div style="background:#071428;border-radius:var(--radius-xl);overflow:hidden;box-shadow:0 8px 40px rgba(0,0,0,0.5);margin-bottom:1.5rem;user-select:none">
+
+    <!-- Year selector tabs -->
+    <div style="display:flex;background:#050E1E;border-bottom:1px solid rgba(255,255,255,0.08)">
+      <div style="padding:10px 24px;font-size:11px;font-weight:600;color:rgba(255,255,255,0.4);letter-spacing:0.1em;text-transform:uppercase;font-family:DM Sans,sans-serif;align-self:center">Select Year:</div>
+      <button id="yr-btn-2026" onclick="fgSetYear(2026)" style="padding:10px 20px;background:#1050CC;color:white;border:none;cursor:pointer;font-family:DM Sans,sans-serif;font-size:12px;font-weight:600;border-bottom:3px solid #4A90E2;transition:all 0.2s">2026</button>
+      <button id="yr-btn-2027" onclick="fgSetYear(2027)" style="padding:10px 20px;background:transparent;color:rgba(255,255,255,0.45);border:none;cursor:pointer;font-family:DM Sans,sans-serif;font-size:12px;font-weight:600;border-bottom:3px solid transparent;transition:all 0.2s">2027</button>
+      <button id="yr-btn-2028" onclick="fgSetYear(2028)" style="padding:10px 20px;background:transparent;color:rgba(255,255,255,0.45);border:none;cursor:pointer;font-family:DM Sans,sans-serif;font-size:12px;font-weight:600;border-bottom:3px solid transparent;transition:all 0.2s">2028</button>
+      <button id="yr-btn-2029" onclick="fgSetYear(2029)" style="padding:10px 20px;background:transparent;color:rgba(255,255,255,0.45);border:none;cursor:pointer;font-family:DM Sans,sans-serif;font-size:12px;font-weight:600;border-bottom:3px solid transparent;transition:all 0.2s">2029</button>
+      <button id="yr-btn-2030" onclick="fgSetYear(2030)" style="padding:10px 20px;background:transparent;color:rgba(255,255,255,0.45);border:none;cursor:pointer;font-family:DM Sans,sans-serif;font-size:12px;font-weight:600;border-bottom:3px solid transparent;transition:all 0.2s">2030</button>
+      <div style="margin-left:auto;padding:8px 16px;font-size:10px;color:rgba(255,255,255,0.3);align-self:center;font-family:DM Sans,sans-serif">☝ Click icon to filter · click again to reset</div>
+    </div>
+
+    <!-- Progress strip -->
+    <div style="background:#071428;display:flex;align-items:center;padding:6px 20px;gap:0">
+      <span style="font-family:DM Serif Display,serif;font-size:13px;color:rgba(255,255,255,0.5);white-space:nowrap;margin-right:12px">2026</span>
+      <div style="flex:1;height:3px;background:linear-gradient(90deg,#1050CC,#2878F5,#5B4BA8,#C06B18,#0E7C6A);border-radius:2px;position:relative">
+        <div id="fgProgressDot" style="position:absolute;top:-5px;left:0%;width:13px;height:13px;background:#4A90E2;border-radius:50%;border:2px solid white;box-shadow:0 0 8px #4A90E2;transition:left 0.4s ease"></div>
+      </div>
+      <span style="font-family:DM Serif Display,serif;font-size:13px;color:rgba(255,255,255,0.5);white-space:nowrap;margin-left:12px">2030</span>
+    </div>
+
+    <!-- Hero image container with clickable hotspots -->
+    <div id="fgHeroWrap" style="position:relative;width:100%;overflow:hidden"></div>
+
+    <div style="background:#050E1E;padding:6px 20px 8px;font-size:10px;color:rgba(255,255,255,0.3);text-align:center;letter-spacing:0.05em;font-family:DM Sans,sans-serif">
+      Click any initiative above to filter cards below · Click again to reset
+    </div>
+  </div>
+
+  <!-- Detail cards grid -->  <!-- Detail cards grid -->
+  <div class="fg-section-hd" id="fgSectionTitle" style="margin-top:1.5rem">2026 Initiative Pots</div>
+  <div class="fg-section-sd">Each pot maps to a strategic theme. New initiatives not yet in the roadmap are marked <span style="background:#FFF0EE;color:#B02A2A;padding:2px 7px;border-radius:8px;font-size:11px;font-weight:700;border:1px solid #F5A0A0">NEW</span></div>
+  <div class="fg-cards-grid" id="fgCardsGrid"></div>
+
+</section>
+
+<!-- ═══ TAB 1: ROADMAP ═══ -->
+<section class="page-section" id="section-roadmap">
+  <div class="summary-row" id="summaryRow"></div>
+  <div class="info-banner">
+    <div class="info-card"><div class="info-icon info-icon-teal">🎯</div><div class="info-content"><h4>2029 Steady State Target</h4><p>Product and PAS consolidation complete. Single LCB instance. All initiatives in maintenance mode by 2029.</p></div></div>
+    <div class="info-card"><div class="info-icon info-icon-amber">⚠️</div><div class="info-content"><h4>Mid-2028 Decommissioning</h4><p>LCU, BPC (FA) and BPC (Admin) sunset mid-2028. Instances consolidated onto single LCB platform.</p></div></div>
+    <div class="info-card"><div class="info-icon info-icon-purple">✏️</div><div class="info-content"><h4>Editable Roadmap</h4><p>Click any status badge to cycle. Click initiative name to edit details and budget inline.</p></div></div>
+  </div>
+  <div class="legend-row">
+    <strong style="font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.05em">Status:</strong>
+    <div class="legend-item"><span class="legend-badge b-wip">In Progress</span></div>
+    <div class="legend-item"><span class="legend-badge b-inv">Investigation</span></div>
+    <div class="legend-item"><span class="legend-badge b-q1">Complete Q1</span></div>
+    <div class="legend-item"><span class="legend-badge b-q2">Complete Q2</span></div>
+    <div class="legend-item"><span class="legend-badge b-q3">Complete Q3</span></div>
+    <div class="legend-item"><span class="legend-badge b-q4">Complete Q4</span></div>
+    <div class="legend-item"><span class="legend-badge b-ss">Steady State</span></div>
+    <div class="legend-item"><span class="legend-badge b-sunset">Sunset</span></div>
+    <div class="legend-item"><span class="legend-badge b-closed">Closed</span></div>
+    <div style="margin-left:auto;display:flex;align-items:center;gap:12px">
+      <div class="legend-item"><span class="obj-dot dot-cx" style="width:8px;height:8px"></span> Client Exp.</div>
+      <div class="legend-item"><span class="obj-dot dot-ce" style="width:8px;height:8px"></span> Cost Eff.</div>
+      <div class="legend-item"><span class="obj-dot dot-ms" style="width:8px;height:8px"></span> Mkt Share</div>
+    </div>
+  </div>
+  <div class="table-wrapper">
+    <div class="table-toolbar">
+      <span class="table-toolbar-title">Initiative Roadmap</span>
+      <span class="table-toolbar-sub" id="visibleCount">Showing all 25 initiatives</span>
+      <div style="margin-left:auto;display:flex;gap:8px;align-items:center">
+        <div class="search-box">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          <input type="text" id="searchInput" placeholder="Search initiatives…" oninput="filterSearch()">
+        </div>
+      </div>
+    </div>
+    <div class="table-scroll">
+      <table id="roadmapTable">
+        <thead><tr>
+          <th style="width:118px">Layer</th>
+          <th style="min-width:200px">Initiative</th>
+          <th class="yr-col"><div class="yr-col-header"><span class="yr-num">2026</span><span class="yr-sub">Budget (R)</span></div></th>
+          <th class="yr-col"><div class="yr-col-header"><span class="yr-num">2027</span><span class="yr-sub">Budget (R)</span></div></th>
+          <th class="yr-col"><div class="yr-col-header"><span class="yr-num">2028</span><span class="yr-sub">Budget (R)</span></div></th>
+          <th class="yr-col"><div class="yr-col-header"><span class="yr-num">2029</span><span class="yr-sub">Budget (R)</span></div></th>
+          <th class="yr-col"><div class="yr-col-header"><span class="yr-num">2030</span><span class="yr-sub">Budget (R)</span></div></th>
+        </tr></thead>
+        <tbody id="roadmapBody"></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TAB 2: HEATMAP ═══ -->
+<section class="page-section" id="section-heatmap">
+  <div class="heatmap-header">
+    <h2>Objectives Heatmap</h2>
+    <p>Initiative intensity mapped across enterprise objectives and years — darker cells indicate higher delivery concentration</p>
+  </div>
+
+  <!-- 3 objective spotlight cards -->
+  <div class="heatmap-grid" id="hmGrid"></div>
+
+  <!-- Full initiative × year heatmap -->
+  <div class="full-hm-wrap">
+    <div class="full-hm-header">
+      <h3>Initiative × Year Delivery Matrix</h3>
+      <span style="font-size:11px;color:var(--text-muted);margin-left:8px">Colour intensity = delivery progress per year</span>
+      <div style="margin-left:auto;display:flex;gap:6px">
+        <button class="btn btn-outline" style="font-size:11px" onclick="renderHeatmap()">↻ Refresh</button>
+      </div>
+    </div>
+    <div class="full-hm-scroll">
+      <table class="full-hm-table" id="fullHmTable">
+        <thead><tr>
+          <th>Initiative</th>
+          <th>Objectives</th>
+          <th style="text-align:center">2026</th>
+          <th style="text-align:center">2027</th>
+          <th style="text-align:center">2028</th>
+          <th style="text-align:center">2029</th>
+          <th style="text-align:center">2030</th>
+        </tr></thead>
+        <tbody id="fullHmBody"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Objective coverage bar chart -->
+  <div class="an-card-full">
+    <h3>Objective Coverage by Layer</h3>
+    <div class="an-sub">Number of initiatives per layer mapped to each enterprise objective</div>
+    <div style="position:relative;height:280px"><canvas id="coverageChart" role="img" aria-label="Grouped bar chart showing objective coverage by layer"></canvas></div>
+  </div>
+</section>
+
+<!-- ═══ TAB 3: ANALYTICS ═══ -->
+<section class="page-section" id="section-analytics">
+  <!-- KPI strip -->
+  <div class="kpi-strip" id="kpiStrip"></div>
+
+  <div class="analytics-grid">
+    <!-- Delivery by year -->
+    <div class="an-card">
+      <h3>Delivery Pipeline by Year</h3>
+      <div class="an-sub">Initiatives completing per year (Q1–Q4)</div>
+      <div style="position:relative;height:240px"><canvas id="deliveryChart" role="img" aria-label="Bar chart of delivery counts by year"></canvas></div>
+    </div>
+
+    <!-- Status distribution donut -->
+    <div class="an-card">
+      <h3>Current Status Distribution</h3>
+      <div class="an-sub">Breakdown of 2026 initiative statuses</div>
+      <div style="position:relative;height:240px"><canvas id="statusDonut" role="img" aria-label="Donut chart of status distribution"></canvas></div>
+    </div>
+  </div>
+
+  <!-- Gantt-style timeline -->
+  <div class="an-card-full">
+    <h3>Delivery Timeline — Gantt View</h3>
+    <div class="an-sub">Initiative status bar across all 5 years (click any bar to view details)</div>
+    <div class="timeline-wrap" id="ganttWrap"></div>
+  </div>
+
+  <div class="analytics-grid">
+    <!-- Layer completion progress -->
+    <div class="an-card">
+      <h3>Layer Completion Progress</h3>
+      <div class="an-sub">% of initiatives reaching steady state by 2029</div>
+      <div id="progressBars"></div>
+    </div>
+
+    <!-- Decommission countdown -->
+    <div class="an-card">
+      <h3>Decommission Plan</h3>
+      <div class="an-sub">Systems sunset and closure timeline</div>
+      <div id="decommPlan"></div>
+    </div>
+  </div>
+
+  <!-- Objective alignment radar -->
+  <div class="an-card-full">
+    <h3>Objective Alignment by Year</h3>
+    <div class="an-sub">How many delivering initiatives touch each enterprise objective each year</div>
+    <div style="position:relative;height:300px"><canvas id="radarChart" role="img" aria-label="Radar chart of objective alignment per year"></canvas></div>
+  </div>
+</section>
+
+<!-- ═══ TAB 4: TIMELINE & MILESTONES ═══ -->
+<section class="page-section" id="section-timeline">
+  <div class="tl-page-header">
+    <div>
+      <h2>Timeline &amp; Milestones</h2>
+      <p>Full Gantt view across 2026–2030 with quarterly reviews, delivery milestones and decommission events</p>
+    </div>
+    <div class="tl-controls">
+      <span style="font-size:11px;color:var(--text-muted)">Show layers:</span>
+      <button class="tl-filter-btn on" id="tlf-all" onclick="tlFilter('all')">All</button>
+      <button class="tl-filter-btn" id="tlf-Engagement Layer" onclick="tlFilter('Engagement Layer')">Engagement</button>
+      <button class="tl-filter-btn" id="tlf-Sales & Servicing" onclick="tlFilter('Sales & Servicing')">Sales</button>
+      <button class="tl-filter-btn" id="tlf-Product" onclick="tlFilter('Product')">Product</button>
+      <button class="tl-filter-btn" id="tlf-PAS" onclick="tlFilter('PAS')">PAS</button>
+      <button class="tl-filter-btn" id="tlf-DATA" onclick="tlFilter('DATA')">Data</button>
+      <button class="tl-filter-btn" id="tlf-AI" onclick="tlFilter('AI')">AI</button>
+      <button class="tl-filter-btn" id="tlf-Decommissioning" onclick="tlFilter('Decommissioning')">Decomm.</button>
+    </div>
+  </div>
+
+  <!-- Gantt chart -->
+  <div class="gantt-outer">
+    <div class="gantt-top-bar">
+      <h3>Delivery Gantt — 2026 to 2030</h3>
+      <span style="font-size:11px;color:var(--text-muted)">Bars span active delivery quarters · ◆ = milestone · ▼ = Exco review gate</span>
+      <div style="margin-left:auto;display:flex;gap:8px;align-items:center">
+        <div style="display:flex;gap:6px;align-items:center;font-size:11px;color:var(--text-muted)">
+          <span style="display:inline-block;width:24px;height:8px;background:#3AB89E;border-radius:4px"></span>In progress
+          <span style="display:inline-block;width:24px;height:8px;background:#8878D8;border-radius:4px"></span>Steady state
+          <span style="display:inline-block;width:24px;height:8px;background:#E25B3A;border-radius:4px"></span>Sunset
+          <span style="width:12px;height:12px;transform:rotate(45deg);display:inline-block;background:var(--gold);border-radius:2px"></span>Milestone
+        </div>
+      </div>
+    </div>
+    <div class="gantt-scroll-area">
+      <div id="ganttMain" style="min-width:1100px"></div>
+    </div>
+  </div>
+
+  <!-- Milestone list by year -->
+  <div class="ml-outer">
+    <div class="ml-header">
+      <h3>Key Milestones by Year</h3>
+      <span style="font-size:11px;color:var(--text-muted);margin-left:8px">Completion events, review gates and decommission moments</span>
+    </div>
+    <div class="ml-body" id="mlBody"></div>
+  </div>
+
+  <!-- Review gates timeline strip -->
+  <div class="an-card-full">
+    <h3>Exco Review Gates &amp; Governance Checkpoints</h3>
+    <div class="an-sub">Annual review cadence with delivery confirmation gates per year — click any gate to see initiatives due</div>
+    <div id="reviewGates" style="margin-top:1rem"></div>
+  </div>
+</section>
+
+<!-- ═══ INTELLIGENCE TAB ═══ -->
+<section class="page-section" id="section-intelligence">
+
+  <!-- Row 1: AI Summary + Dependency Web -->
+  <div class="intel-grid">
+
+    <!-- AI Executive Summary -->
+    <div class="intel-card">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:0.3rem">
+        <div style="width:36px;height:36px;background:linear-gradient(135deg,var(--navy),var(--navy-light));border-radius:var(--radius);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0">📝</div>
+        <h3>Executive Summary Generator</h3>
+      </div>
+      <div class="intel-sub">One-click boardroom-ready narrative generated from live roadmap data</div>
+      <div style="display:flex;gap:8px;margin-bottom:1rem;flex-wrap:wrap">
+        <button class="ai-btn" id="aiSummaryBtn" onclick="generateAISummary()">✨ Generate Summary</button>
+        <button class="btn btn-outline" onclick="copyAIOutput()" style="font-size:12px">📋 Copy</button>
+        <select id="aiTone" style="padding:6px 10px;border:1px solid var(--border);border-radius:var(--radius);font-size:12px;font-family:'DM Sans',sans-serif;background:var(--off-white)">
+          <option value="executive">Executive tone</option>
+          <option value="detailed">Detailed analysis</option>
+          <option value="risk">Risk focused</option>
+          <option value="investor">Investor narrative</option>
+        </select>
+      </div>
+      <div class="ai-output" id="aiSummaryOutput">Click "Generate Summary" to create an AI-powered Exco narrative based on your current roadmap data...</div>
+    </div>
+
+    <!-- Dependency Web -->
+    <div class="intel-card">
+      <h3>🕸 Initiative Dependency Web</h3>
+      <div class="intel-sub">Interactive force graph — drag nodes to explore relationships. Line thickness = dependency strength.</div>
+      <div id="depWebWrap" style="height:340px;background:var(--navy);border-radius:var(--radius-lg);overflow:hidden;position:relative">
+        <canvas id="depCanvas" style="width:100%;height:100%"></canvas>
+        <div style="position:absolute;bottom:8px;right:10px;font-size:10px;color:rgba(255,255,255,0.35);font-family:'DM Sans',sans-serif">Drag to explore · Scroll to zoom</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Row 2: Budget Burndown + Animated Timeline -->
+  <div class="intel-grid">
+
+    <!-- Budget Burndown -->
+    <div class="intel-card">
+      <h3>💰 Budget Burndown Simulator</h3>
+      <div class="intel-sub">Enter total budget per year — see allocation vs spend as you fill initiative budgets</div>
+      <div class="burndown-wrap" id="burndownWrap"></div>
+      <div class="burn-total" id="burnTotal"></div>
+    </div>
+
+    <!-- Animated Timeline -->
+    <div class="intel-card">
+      <h3>🎬 Animated Progress Timeline</h3>
+      <div class="intel-sub">Watch the roadmap evolve year by year — initiatives light up as they complete</div>
+      <div class="anim-controls">
+        <button class="anim-btn" id="animPlayBtn" onclick="toggleAnimation()">▶ Play</button>
+        <button class="anim-btn" onclick="resetAnimation()">↺ Reset</button>
+        <div class="anim-yr-display" id="animYrDisplay">2026</div>
+        <div class="anim-progress"><div class="anim-progress-fill" id="animProgressFill" style="width:0%"></div></div>
+        <span style="font-size:11px;color:var(--text-muted)" id="animSpeed">1×</span>
+        <button class="btn btn-outline" style="font-size:11px" onclick="cycleAnimSpeed()">⚡ Speed</button>
+      </div>
+      <div style="overflow:auto;max-height:260px">
+        <table class="anim-table">
+          <thead><tr><th>Initiative</th><th>Layer</th><th>Status</th></tr></thead>
+          <tbody id="animTableBody"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- PDF Export -->
+  <div class="intel-card-full">
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:1rem">
+      <h3>📄 Exco PDF Export</h3>
+      <div style="margin-left:auto;display:flex;gap:8px">
+        <button class="ai-btn" onclick="exportExcoPDF()">⬇ Download PDF</button>
+        <button class="btn btn-outline" style="font-size:12px" onclick="refreshPDFPreview()">↻ Refresh Preview</button>
+      </div>
+    </div>
+    <div class="intel-sub">Live preview of your Exco-ready one-pager. Click Download to save as PDF.</div>
+    <div id="pdfPreviewWrap"></div>
+  </div>
+
+</section>
+
+<!-- ═══ TECH ENVIRONMENT TAB ═══ -->
+<section class="page-section" id="section-techenv">
+
+  <!-- Hero -->
+  <div class="te-hero">
+    <div style="display:flex;align-items:flex-start;flex-wrap:wrap;gap:1.5rem">
+      <div>
+        <div class="te-subtitle">Fix and Grow · Business Transformation</div>
+        <div class="te-title">Our <em>Technology</em> Environment</div>
+        <div style="font-size:13px;color:rgba(255,255,255,0.55);margin-top:6px;max-width:500px">From a fragmented legacy landscape to a lean, modern platform — watch the transformation unfold</div>
+        <div style="display:flex;align-items:center;gap:10px;margin-top:1.25rem;flex-wrap:wrap">
+          <div class="te-toggle">
+            <button class="te-toggle-btn active" id="teBtnCurrent" onclick="teShow('current',event)">📸 Current State</button>
+            <button class="te-toggle-btn" id="teBtnFuture" onclick="teShow('future',event)">🚀 Future State</button>
+          </div>
+        </div>
+      </div>
+      <div class="te-stats" id="teStats">
+        <div class="te-stat"><div class="n" style="color:#EF4444" id="teStatCurrent">16</div><div class="l" style="color:rgba(255,255,255,0.4)">Current apps</div></div>
+        <div style="font-size:2rem;color:rgba(255,255,255,0.15)">→</div>
+        <div class="te-stat"><div class="n" style="color:#1AA88E" id="teStatFuture">6</div><div class="l" style="color:rgba(255,255,255,0.4)">Future apps</div></div>
+        <div style="width:1px;height:50px;background:rgba(255,255,255,0.1);margin:0 0.5rem"></div>
+        <div class="te-stat"><div class="n" style="color:var(--gold-light)" id="teStatReduction">63%</div><div class="l" style="color:rgba(255,255,255,0.4)">Reduction</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main grid -->
+  <div class="te-grid-wrap">
+    <div class="te-grid">
+      <!-- Layer labels -->
+      <div class="te-layer-col">
+        <div class="te-layer-header"><span>Layer</span></div>
+        <div class="te-layer-row"><div class="te-layer-name" style="color:#FF8C00">Front End Systems</div></div>
+        <div class="te-layer-row"><div class="te-layer-name" style="color:white">Finance Systems</div></div>
+        <div class="te-layer-row"><div class="te-layer-name" style="color:#9C89CC">Quotes</div></div>
+        <div class="te-layer-row"><div class="te-layer-name" style="color:#9C89CC">Underwriting</div></div>
+        <div class="te-layer-row"><div class="te-layer-name" style="color:#4CAF50">Workflow</div></div>
+        <div class="te-layer-row"><div class="te-layer-name" style="color:#4A90E2">PAS</div></div>
+        <div class="te-layer-row"><div class="te-layer-name" style="color:#E53935">Data Platform</div></div>
+      </div>
+      <!-- Apps columns -->
+      <div class="te-apps-col">
+        <!-- Header banner -->
+        <div class="te-apps-header">
+          <div class="te-arrow-banner" style="flex:1">
+            <span class="te-arrow-text" id="teArrowText">Our current technology environment</span>
+          </div>
+        </div>
+        <!-- Row: Front End -->
+        <div class="te-apps-row" id="teRow-frontend">
+          <div class="te-chip" data-layer="frontend" data-state="current" style="background:#FF8C0022;border:1.5px solid #FF8C00;color:#FF8C00">BPC <span class="sunset-badge">SUNSET</span></div>
+          <div class="te-chip" data-layer="frontend" data-state="current" style="background:#FF8C0022;border:1.5px solid #FF8C00;color:#FF8C00">LCC <span class="sunset-badge">SUNSET</span></div>
+          <div class="te-chip" data-layer="frontend" data-state="current" style="background:#FF8C0022;border:1.5px solid #FF8C00;color:#FF8C00">Liber8 SSP <span class="sunset-badge">SUNSET</span></div>
+          <div class="te-chip" data-layer="frontend" data-state="both" style="background:#1AA88E22;border:1.5px solid #1AA88E;color:#1AA88E">New SSP ✓</div>
+        </div>
+        <!-- Row: Finance -->
+        <div class="te-apps-row" id="teRow-finance">
+          <div class="te-chip" data-layer="finance" data-state="current" style="background:#ffffff18;border:1.5px solid rgba(255,255,255,0.3);color:white">SAP FSCD <span class="sunset-badge">SUNSET</span></div>
+          <div class="te-chip" data-layer="finance" data-state="current" style="background:#ffffff18;border:1.5px solid rgba(255,255,255,0.3);color:white">Accounts Payable <span class="sunset-badge">SUNSET</span></div>
+          <div class="te-chip" data-layer="finance" data-state="current" style="background:#ffffff18;border:1.5px solid rgba(255,255,255,0.3);color:white">EBTax <span class="sunset-badge">SUNSET</span></div>
+          <div class="te-chip" data-layer="finance" data-state="both" style="background:#ffffff18;border:1.5px solid rgba(255,255,255,0.5);color:white">Payments &amp; Cashiering ✓</div>
+          <div class="te-chip" data-layer="finance" data-state="both" style="background:#ffffff18;border:1.5px solid rgba(255,255,255,0.5);color:white">SAP ECC ✓</div>
+          <div class="te-chip" data-layer="finance" data-state="both" style="background:#ffffff18;border:1.5px solid rgba(255,255,255,0.5);color:white">KeyTax ✓</div>
+          <div class="te-chip" data-layer="finance" data-state="both" style="background:#ffffff18;border:1.5px solid rgba(255,255,255,0.5);color:white">S4 HANA ✓</div>
+          <div class="te-chip" data-layer="finance" data-state="both" style="background:#ffffff18;border:1.5px solid rgba(255,255,255,0.5);color:white">GFC ✓</div>
+          <div class="te-chip" data-layer="finance" data-state="both" style="background:#ffffff18;border:1.5px solid rgba(255,255,255,0.5);color:white">BOL ✓</div>
+          <div class="te-chip" data-layer="finance" data-state="both" style="background:#ffffff18;border:1.5px solid rgba(255,255,255,0.5);color:white">Compa ✓</div>
+          <div class="te-chip" data-layer="finance" data-state="both" style="background:#ffffff18;border:1.5px solid rgba(255,255,255,0.5);color:white">SAP FPSL ✓</div>
+          <div class="te-chip" data-layer="finance" data-state="both" style="background:#ffffff18;border:1.5px solid rgba(255,255,255,0.5);color:white">Blackline ✓</div>
+          <div class="te-chip" data-layer="finance" data-state="both" style="background:#ffffff18;border:1.5px solid rgba(255,255,255,0.5);color:white">CPR ✓</div>
+          <div class="te-chip" data-layer="finance" data-state="future" style="background:#1AA88E22;border:1.5px solid #1AA88E;color:#1AA88E">LCC Payroll ✓</div>
+        </div>
+        <!-- Row: Quotes -->
+        <div class="te-apps-row" id="teRow-quotes">
+          <div class="te-chip" data-layer="quotes" data-state="current" style="background:#9C89CC22;border:1.5px solid #9C89CC;color:#9C89CC">Excel <span class="sunset-badge">SUNSET</span></div>
+          <div class="te-chip" data-layer="quotes" data-state="current" style="background:#9C89CC22;border:1.5px solid #9C89CC;color:#9C89CC">BCD <span class="sunset-badge">SUNSET</span></div>
+          <div class="te-chip" data-layer="quotes" data-state="current" style="background:#9C89CC22;border:1.5px solid #9C89CC;color:#9C89CC">Liber8 Quotes <span class="sunset-badge">SUNSET</span></div>
+          <div class="te-chip" data-layer="quotes" data-state="both" style="background:#9C89CC22;border:1.5px solid #9C89CC;color:#C8B8F8">LCC Payroll ✓</div>
+          
+        </div>
+        <!-- Row: Underwriting -->
+        <div class="te-apps-row" id="teRow-underwriting">
+          <div class="te-chip" data-layer="underwriting" data-state="current" style="background:#9C89CC22;border:1.5px solid #9C89CC55;color:#9C89CC">BPC <span class="sunset-badge">SUNSET</span></div>
+          <div class="te-chip" data-layer="underwriting" data-state="current" style="background:#9C89CC22;border:1.5px solid #9C89CC55;color:#9C89CC">Magnum <span class="sunset-badge">SUNSET</span></div>
+          <div class="te-chip" data-layer="underwriting" data-state="current" style="background:#9C89CC22;border:1.5px solid #9C89CC55;color:#9C89CC">Pinball <span class="sunset-badge">SUNSET</span></div>
+          <div class="te-chip" data-layer="underwriting" data-state="current" style="background:#9C89CC22;border:1.5px solid #9C89CC55;color:#9C89CC">Excel <span class="sunset-badge">SUNSET</span></div>
+          <div class="te-chip" data-layer="underwriting" data-state="both" style="background:#9C89CC22;border:1.5px solid #9C89CC;color:#C8B8F8">AllFinanz ✓</div>
+        </div>
+        <!-- Row: Workflow -->
+        <div class="te-apps-row" id="teRow-workflow">
+          <div class="te-chip" data-layer="workflow" data-state="current" style="background:#4CAF5022;border:1.5px solid #4CAF50;color:#4CAF50">Mindkey <span class="sunset-badge">SUNSET</span></div>
+          <div class="te-chip" data-layer="workflow" data-state="current" style="background:#4CAF5022;border:1.5px solid #4CAF50;color:#4CAF50">IPP <span class="sunset-badge">SUNSET</span></div>
+          <div class="te-chip" data-layer="workflow" data-state="current" style="background:#4CAF5022;border:1.5px solid #4CAF50;color:#4CAF50">Excel <span class="sunset-badge">SUNSET</span></div>
+          <div class="te-chip" data-layer="workflow" data-state="both" style="background:#4CAF5022;border:1.5px solid #4CAF50;color:#81C784">Horizon ✓</div>
+          
+        </div>
+        <!-- Row: PAS -->
+        <div class="te-apps-row" id="teRow-pas">
+          <div class="te-chip" data-layer="pas" data-state="current" style="background:#4A90E222;border:1.5px solid #4A90E2;color:#4A90E2">LCU <span class="sunset-badge">SUNSET</span></div>
+          <div class="te-chip" data-layer="pas" data-state="current" style="background:#4A90E222;border:1.5px solid #4A90E2;color:#4A90E2">LHR <span class="sunset-badge">SUNSET</span></div>
+          <div class="te-chip" data-layer="pas" data-state="current" style="background:#4A90E222;border:1.5px solid #4A90E2;color:#4A90E2">CAL <span class="sunset-badge">SUNSET</span></div>
+          <div class="te-chip" data-layer="pas" data-state="both" style="background:#4A90E222;border:1.5px solid #4A90E2;color:#90CAF9">LCB ✓</div>
+          
+        </div>
+        <!-- Row: Data -->
+        <div class="te-apps-row" id="teRow-data">
+          <div class="te-chip" data-layer="data" data-state="current" style="background:#E5393522;border:1.5px solid #E53935;color:#E53935">Data Warehouse <span class="sunset-badge">SUNSET</span></div>
+          <div class="te-chip" data-layer="data" data-state="current" style="background:#E5393522;border:1.5px solid #E53935;color:#E53935">OBI <span class="sunset-badge">SUNSET</span></div>
+          <div class="te-chip" data-layer="data" data-state="current" style="background:#E5393522;border:1.5px solid #E53935;color:#E53935">CDM <span class="sunset-badge">SUNSET</span></div>
+          <div class="te-chip" data-layer="data" data-state="current" style="background:#E5393522;border:1.5px solid #E53935;color:#E53935">Legacy <span class="sunset-badge">SUNSET</span></div>
+          <div class="te-chip" data-layer="data" data-state="both" style="background:#E5393522;border:1.5px solid #EF9A9A;color:#EF9A9A">ODS ✓</div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Reduction metrics -->
+  <div class="te-reduction">
+    <div class="te-metric"><div class="big" style="color:#EF4444" id="teMetricCurrent">16</div><div class="sm" style="color:rgba(255,255,255,0.5)">Current systems</div></div>
+    <div class="te-divider"></div>
+    <div class="te-metric"><div class="big" style="color:var(--gold-light)">→</div></div>
+    <div class="te-divider"></div>
+    <div class="te-metric"><div class="big" style="color:#1AA88E" id="teMetricFuture">6</div><div class="sm" style="color:rgba(255,255,255,0.5)">Future systems</div></div>
+    <div class="te-divider"></div>
+    <div class="te-metric"><div class="big" style="color:var(--gold-light)">63%</div><div class="sm" style="color:rgba(255,255,255,0.5)">System reduction</div></div>
+    <div class="te-divider"></div>
+    <div class="te-metric"><div class="big" style="color:#8878D8">10</div><div class="sm" style="color:rgba(255,255,255,0.5)">Systems sunset</div></div>
+    <div class="te-divider"></div>
+    <div class="te-metric"><div class="big" style="color:#1AA88E">5</div><div class="sm" style="color:rgba(255,255,255,0.5)">New systems added</div></div>
+    <div style="margin-left:auto;text-align:right">
+      <div style="font-size:11px;color:rgba(255,255,255,0.35);text-transform:uppercase;letter-spacing:0.08em">Target year</div>
+      <div style="font-family:'DM Serif Display',serif;font-size:2rem;color:var(--gold-light)">2029</div>
+    </div>
+  </div>
+
+  <!-- Legend -->
+  <div style="display:flex;gap:1.5rem;align-items:center;margin-top:1rem;flex-wrap:wrap">
+    <div style="display:flex;align-items:center;gap:6px;font-size:12px;color:var(--text-secondary)"><span style="width:12px;height:12px;background:#EF444422;border:1.5px solid #EF4444;border-radius:3px;display:inline-block"></span>Being sunset</div>
+    <div style="display:flex;align-items:center;gap:6px;font-size:12px;color:var(--text-secondary)"><span style="width:12px;height:12px;background:#1AA88E22;border:1.5px solid #1AA88E;border-radius:3px;display:inline-block"></span>Retained / New</div>
+    <div style="display:flex;align-items:center;gap:6px;font-size:12px;color:var(--text-secondary)"><span style="font-size:9px;background:#FCA5A5;color:#7F1D1D;padding:1px 5px;border-radius:3px">SUNSET</span>Will be decommissioned</div>
+    <div style="display:flex;align-items:center;gap:6px;font-size:12px;color:var(--text-secondary)"><span style="font-size:9px;background:#6EE7B7;color:#064E3B;padding:1px 5px;border-radius:3px">NEW</span>Being introduced</div>
+  </div>
+
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="page-footer">
+  Corporate Benefit Roadmap &nbsp;·&nbsp; <span>Exco Planning View</span> &nbsp;·&nbsp; Confidential &amp; Commercially Sensitive &nbsp;·&nbsp; 2026–2030
+</footer>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="editModal">
+  <div class="modal">
+    <div class="modal-header">
+      <h3 id="modalTitle">Edit Initiative</h3>
+      <button class="modal-close" onclick="closeModal()">✕</button>
+    </div>
+    <div class="modal-section">
+      <label>Layer / Domain</label>
+      <select id="mLayer">
+        <option>Engagement Layer</option><option>Sales &amp; Servicing</option>
+        <option>Product</option><option>PAS</option><option>DATA</option>
+        <option>AI</option><option>Document Management</option><option>Decommissioning</option>
+      </select>
+    </div>
+    <div class="modal-grid">
+      <div class="modal-section" style="grid-column:1/-1"><label>Initiative Name</label><input type="text" id="mName" placeholder="e.g. SSP Front End"></div>
+      <div class="modal-section" style="grid-column:1/-1"><label>Description / Notes</label><textarea id="mDesc" placeholder="Optional context, dependencies, or notes…"></textarea></div>
+    </div>
+    <div class="modal-section">
+      <label>Enterprise Objectives</label>
+      <div class="obj-check-row">
+        <label class="obj-check oc-cx"><input type="checkbox" id="mCX"> ① Client Experience</label>
+        <label class="obj-check oc-ce"><input type="checkbox" id="mCE"> ② Cost Efficiency</label>
+        <label class="obj-check oc-ms"><input type="checkbox" id="mMS"> ③ Market Share</label>
+      </div>
+    </div>
+    <div class="modal-grid">
+      <div class="modal-section"><label>2026 Status</label><select id="mS26"></select></div>
+      <div class="modal-section"><label>2026 Budget (R)</label><input type="text" id="mB26" placeholder="e.g. R 1.2M"></div>
+      <div class="modal-section"><label>2027 Status</label><select id="mS27"></select></div>
+      <div class="modal-section"><label>2027 Budget (R)</label><input type="text" id="mB27" placeholder="e.g. R 2.5M"></div>
+      <div class="modal-section"><label>2028 Status</label><select id="mS28"></select></div>
+      <div class="modal-section"><label>2028 Budget (R)</label><input type="text" id="mB28" placeholder="e.g. R 3.0M"></div>
+      <div class="modal-section"><label>2029 Status</label><select id="mS29"></select></div>
+      <div class="modal-section"><label>2029 Budget (R)</label><input type="text" id="mB29" placeholder="e.g. R 1.5M"></div>
+      <div class="modal-section"><label>2030 Status</label><select id="mS30"></select></div>
+      <div class="modal-section"><label>2030 Budget (R)</label><input type="text" id="mB30" placeholder="e.g. R 0.5M"></div>
+    </div>
+    <div class="modal-actions">
+      <button class="btn-danger" id="deleteBtn" onclick="deleteRow()">🗑 Delete</button>
+      <button class="btn-cancel" onclick="closeModal()">Cancel</button>
+      <button class="btn-save" onclick="saveModal()">Save Changes</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// ═══ DATA ═══════════════════════════════════════════
+const STATUSES=[
+  {val:'wip',label:'In Progress',cls:'b-wip',score:1},
+  {val:'inv',label:'Investigation',cls:'b-inv',score:0.5},
+  {val:'q1',label:'Complete Q1',cls:'b-q1',score:2},
+  {val:'q2',label:'Complete Q2',cls:'b-q2',score:2},
+  {val:'q3',label:'Complete Q3',cls:'b-q3',score:2},
+  {val:'q4',label:'Complete Q4',cls:'b-q4',score:2},
+  {val:'ss',label:'Steady State',cls:'b-ss',score:3},
+  {val:'sunset',label:'Sunset',cls:'b-sunset',score:1},
+  {val:'closed',label:'Closed',cls:'b-closed',score:0},
+  {val:'na',label:'—',cls:'b-na',score:0},
+];
+const sMap=Object.fromEntries(STATUSES.map(s=>[s.val,s]));
+
+const LAYER_CLASS={'Engagement Layer':'lb-engagement','Sales & Servicing':'lb-sales','Product':'lb-product','PAS':'lb-pas','DATA':'lb-data','AI':'lb-ai','Document Management':'lb-docmgmt','Decommissioning':'lb-decomm'};
+
+const DEFAULT_OBJS={'SSP Front end':['cx','ms'],'Contact Center Front end':['cx'],'Quotes':['cx','ms'],'Billing':['cx','ce'],'Flexor':['cx','ms'],'CAL':['ce'],'ESP':['ce'],'LHR (Product)':['cx','ce'],'Investment':['cx','ms'],'Wellness':['cx','ms'],'Financial Literacy':['cx','ms'],'SBG Fund':['ms'],'Cpr Sel to Flexor':['ce'],'IFP':['cx','ms'],'Annuities':['cx','ms'],'LHR (PAS)':['ce'],'Workflow (Integration/STP)':['ce'],'ODS':['ce'],'MI':['ce','cx'],'Reports':['cx','ce'],'OCR':['ce'],'Single location for documents':['cx','ce'],'LCU Sunset':['ce'],'BPC (FA) Sunset':['ce'],'BPC (Admin) Sunset':['ce']};
+
+let data=[
+  {layer:'Engagement Layer',name:'SSP Front end',desc:'Self-service portal — client-facing digital front end',objs:['cx','ms'],yr26:'wip',yr27:'q2',yr28:'ss',yr29:'ss',yr30:'ss',b26:'',b27:'',b28:'',b29:'',b30:''},
+  {layer:'Engagement Layer',name:'Contact Center Front end',desc:'Agent desktop modernisation for contact centre',objs:['cx'],yr26:'wip',yr27:'q2',yr28:'ss',yr29:'ss',yr30:'ss',b26:'',b27:'',b28:'',b29:'',b30:''},
+  {layer:'Sales & Servicing',name:'Quotes',desc:'Digital quoting engine for new business',objs:['cx','ms'],yr26:'wip',yr27:'q2',yr28:'ss',yr29:'ss',yr30:'ss',b26:'',b27:'',b28:'',b29:'',b30:''},
+  {layer:'Sales & Servicing',name:'Billing',desc:'Automated billing and reconciliation',objs:['cx','ce'],yr26:'wip',yr27:'q2',yr28:'ss',yr29:'ss',yr30:'ss',b26:'',b27:'',b28:'',b29:'',b30:''},
+  {layer:'Sales & Servicing',name:'BCD',desc:'',objs:['cx','ce'],yr26:'wip',yr27:'na',yr28:'na',yr29:'na',yr30:'na',b26:'',b27:'',b28:'',b29:'',b30:''},
+  {layer:'Product',name:'Flexor',desc:'Core product platform modernisation (formerly Ignite)',objs:['cx','ms'],yr26:'wip',yr27:'q2',yr28:'ss',yr29:'ss',yr30:'ss',b26:'',b27:'',b28:'',b29:'',b30:''},
+  {layer:'Product',name:'CAL',desc:'Corporate Annuities Launch',objs:['ce'],yr26:'wip',yr27:'q3',yr28:'ss',yr29:'ss',yr30:'ss',b26:'',b27:'',b28:'',b29:'',b30:''},
+  {layer:'Product',name:'ESP',desc:'Employee Share Plan product integration',objs:['ce'],yr26:'wip',yr27:'q3',yr28:'ss',yr29:'ss',yr30:'ss',b26:'',b27:'',b28:'',b29:'',b30:''},
+  {layer:'Product',name:'LHR (Product)',desc:'Life and Health Risk — product layer',objs:['cx','ce'],yr26:'wip',yr27:'q1',yr28:'ss',yr29:'ss',yr30:'ss',b26:'',b27:'',b28:'',b29:'',b30:''},
+  {layer:'Product',name:'Staff Onboarding to SSP',desc:'Onboarding of staff members onto the Self Service Portal',objs:['cx','ce'],yr26:'wip',yr27:'q2',yr28:'ss',yr29:'ss',yr30:'ss',b26:'',b27:'',b28:'',b29:'',b30:''},
+  {layer:'Product',name:'Full Scale Self Servicing for Staff',desc:'Full scale self servicing capability for staff members',objs:['cx','ce'],yr26:'wip',yr27:'q3',yr28:'ss',yr29:'ss',yr30:'ss',b26:'',b27:'',b28:'',b29:'',b30:''},
+  {layer:'Product',name:'Payroll File Integration with LHR Compass',desc:'Integration of payroll file with LHR Compass system',objs:['ce'],yr26:'wip',yr27:'q2',yr28:'ss',yr29:'ss',yr30:'ss',b26:'',b27:'',b28:'',b29:'',b30:''},
+  {layer:'Product',name:'MBS Revamp',desc:'MBS system revamp — move to Infoslips',objs:['cx','ce'],yr26:'wip',yr27:'q3',yr28:'ss',yr29:'ss',yr30:'ss',b26:'',b27:'',b28:'',b29:'',b30:''},
+  {layer:'Product',name:'MIS Build',desc:'Management Information System build',objs:['ce'],yr26:'wip',yr27:'q4',yr28:'ss',yr29:'ss',yr30:'ss',b26:'',b27:'',b28:'',b29:'',b30:''},
+  {layer:'Product',name:'Investment',desc:'Investment product suite enhancements',objs:['cx','ms'],yr26:'wip',yr27:'q3',yr28:'ss',yr29:'ss',yr30:'ss',b26:'',b27:'',b28:'',b29:'',b30:''},
+  {layer:'Product',name:'Wellness',desc:'Wellness benefit integration and member portal',objs:['cx','ms'],yr26:'wip',yr27:'q1',yr28:'ss',yr29:'ss',yr30:'ss',b26:'',b27:'',b28:'',b29:'',b30:''},
+  {layer:'Product',name:'Financial Literacy',desc:'Financial literacy programme and digital content',objs:['cx','ms'],yr26:'wip',yr27:'q2',yr28:'ss',yr29:'ss',yr30:'ss',b26:'',b27:'',b28:'',b29:'',b30:''},
+  {layer:'Product',name:'SBG Fund',desc:'Standard Bank Group fund administration',objs:['ms'],yr26:'wip',yr27:'q1',yr28:'ss',yr29:'ss',yr30:'ss',b26:'',b27:'',b28:'',b29:'',b30:''},
+  {layer:'PAS',name:'Cpr Sel to Flexor',desc:'PAS consolidation — migrate onto single Flexor instance',objs:['ce'],yr26:'wip',yr27:'q4',yr28:'ss',yr29:'ss',yr30:'ss',b26:'',b27:'',b28:'',b29:'',b30:''},
+  {layer:'PAS',name:'IFP',desc:'Individual Financial Planning administration migration',objs:['cx','ms'],yr26:'wip',yr27:'q4',yr28:'ss',yr29:'ss',yr30:'ss',b26:'',b27:'',b28:'',b29:'',b30:''},
+  {layer:'PAS',name:'Annuities',desc:'Annuities policy administration on consolidated platform',objs:['cx','ms'],yr26:'wip',yr27:'na',yr28:'q1',yr29:'ss',yr30:'ss',b26:'',b27:'',b28:'',b29:'',b30:''},
+  {layer:'PAS',name:'LHR (PAS)',desc:'Life and Health Risk — policy admin migration',objs:['ce'],yr26:'wip',yr27:'na',yr28:'q1',yr29:'ss',yr30:'ss',b26:'',b27:'',b28:'',b29:'',b30:''},
+  {layer:'PAS',name:'Workflow (Integration/STP)',desc:'Workflow integration and straight-through processing automation',objs:['ce'],yr26:'wip',yr27:'na',yr28:'q1',yr29:'ss',yr30:'ss',b26:'',b27:'',b28:'',b29:'',b30:''},
+  {layer:'DATA',name:'ODS',desc:'Operational Data Store — unified data layer',objs:['ce'],yr26:'wip',yr27:'na',yr28:'q1',yr29:'ss',yr30:'ss',b26:'',b27:'',b28:'',b29:'',b30:''},
+  {layer:'DATA',name:'MI',desc:'Management Information reporting platform',objs:['ce','cx'],yr26:'wip',yr27:'na',yr28:'q1',yr29:'ss',yr30:'ss',b26:'',b27:'',b28:'',b29:'',b30:''},
+  {layer:'DATA',name:'Reports',desc:'Self-service and automated reports distribution',objs:['cx','ce'],yr26:'wip',yr27:'na',yr28:'q1',yr29:'ss',yr30:'ss',b26:'',b27:'',b28:'',b29:'',b30:''},
+  {layer:'AI',name:'OCR',desc:'AI-powered optical character recognition',objs:['ce'],yr26:'inv',yr27:'q1',yr28:'q1',yr29:'ss',yr30:'ss',b26:'',b27:'',b28:'',b29:'',b30:''},
+  {layer:'Document Management',name:'Single location for documents',desc:'Centralised document repository across all products',objs:['cx','ce'],yr26:'wip',yr27:'na',yr28:'q1',yr29:'ss',yr30:'ss',b26:'',b27:'',b28:'',b29:'',b30:''},
+  {layer:'Decommissioning',name:'LCU Sunset',desc:'Legacy LCU instance shutdown mid-2028',objs:['ce'],yr26:'na',yr27:'na',yr28:'sunset',yr29:'closed',yr30:'closed',b26:'',b27:'',b28:'',b29:'',b30:''},
+  {layer:'Decommissioning',name:'BPC (FA) Sunset',desc:'BPC for Financial Advisers — decommission mid-2028',objs:['ce'],yr26:'na',yr27:'na',yr28:'sunset',yr29:'closed',yr30:'closed',b26:'',b27:'',b28:'',b29:'',b30:''},
+  {layer:'Decommissioning',name:'BPC (Admin) Sunset',desc:'BPC for Operations/Admin — decommission mid-2028',objs:['ce'],yr26:'na',yr27:'na',yr28:'sunset',yr29:'closed',yr30:'closed',b26:'',b27:'',b28:'',b29:'',b30:''},
+];
+
+let activeFilters={cx:false,ce:false,ms:false};
+let editIdx=-1;
+let searchQuery='';
+let charts={};
+
+// ── helpers ─────────────────────────────────────────
+function getObjs(row){return row.objs&&row.objs.length?row.objs:(DEFAULT_OBJS[row.name]||[])}
+function statusScore(val){return (sMap[val]||sMap['na']).score}
+function isComplete(val){return ['q1','q2','q3','q4'].includes(val)}
+function isSteady(val){return val==='ss'}
+function isActive(val){return !['na','closed'].includes(val)}
+
+// ── Tab switching ───────────────────────────────────
+function switchTab(tab){
+  document.querySelectorAll('.page-section').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('.nav-tab').forEach(t=>t.classList.remove('active'));
+  document.getElementById('section-'+tab).classList.add('active');
+  document.getElementById('navTab-'+tab).classList.add('active');
+  if(tab==='heatmap') renderHeatmap();
+  if(tab==='analytics') renderAnalytics();
+  if(tab==='timeline') renderTimeline();
+  if(tab==='fixgrow') renderFixGrow();
+}
+
+// ══ FIX AND GROW 2026 ═══════════════════════════════
+const COMMON = ['ODS','MI','Reports']; // shared across all pots
+
+const FG_POTS = [
+  {
+    id:'ignite-launch',
+    icon:'🌱',
+    name:'Flexor Launch',
+    sub:'Build new product proposition on Flexor platform',
+    color:'#1A6AB5',
+    bg:'#EEF6FF',
+    initiatives:['Flexor','Flexor Quotes','Flexor Billing','Cpr Sel to Flexor','IFP','Workflow (Integration/STP)','ODS','MI','Reports'],
+    desc:'Core platform launch — product, quoting, billing, PAS consolidation on Flexor, plus shared data layer',
+    isNew:false
+  },
+  {
+    id:'cal-risk',
+    icon:'🌿',
+    name:'CAL Group Risk',
+    sub:'Rebuild CAL as risk-only product on Flexor',
+    color:'#5B4BA8',
+    bg:'#F4F0FF',
+    initiatives:['CAL','CAL Quotes','CAL Billing','Workflow (Integration/STP)','ODS','MI','Reports'],
+    desc:'Corporate Annuities Launch — risk product rebuild with quoting, billing and shared data layer',
+    isNew:false
+  },
+  {
+    id:'ssp',
+    icon:'🌳',
+    name:'Self Service Portal',
+    sub:'Enhancing customer experience and admin processing',
+    color:'#0E7C6A',
+    bg:'#EFF9F4',
+    initiatives:['SSP Front end','Contact Center Front end','ODS','MI','Reports'],
+    desc:'Client-facing SSP and Contact Centre agent desktop modernisation, with shared data layer',
+    isNew:false
+  },
+  {
+    id:'lhr-mbs',
+    icon:'💧',
+    name:'LHR / MBS Revamp',
+    sub:'Move LHR MBS to Infoslips',
+    color:'#1A5C9E',
+    bg:'#F0F6FF',
+    initiatives:['LHR (Product)','LHR (PAS)','Staff Onboarding to SSP','Full Scale Self Servicing for Staff','Payroll File Integration with LHR Compass','MBS Revamp','MIS Build'],
+    desc:'Life and Health Risk product and policy administration revamp, with shared data layer',
+    isNew:false
+  },
+  {
+    id:'bau',
+    icon:'🏷️',
+    name:'BAU',
+    sub:'Imperative features to keep business operational and in line with regulations',
+    color:'#5C6E84',
+    bg:'#EEF2F6',
+    initiatives:['BAU'],
+    desc:'Business-as-usual regulatory and operational continuity initiatives',
+    isNew:false
+  },
+  {
+    id:'esp',
+    icon:'🌾',
+    name:'Employee Select Plan',
+    sub:'Fit for purpose SMME product',
+    color:'#705A28',
+    bg:'#F5F0E8',
+    initiatives:['ESP'],
+    desc:'Employee Share Plan — SMME-focused product for small business market',
+    isNew:false
+  },
+  {
+    id:'annuity-cbond',
+    icon:'🧱',
+    name:'Annuities & CBond',
+    sub:'Long-term servicing excellence of annuity and investment products',
+    color:'#C06B18',
+    bg:'#FDF0DC',
+    initiatives:['Annuities','Investment','ODS','MI','Reports'],
+    desc:'Annuity consolidation and CBond investment product servicing excellence, with shared data layer',
+    isNew:false
+  },
+  {
+    id:'bcd-quotes',
+    icon:'🔧',
+    name:'BCD Quotes Tool',
+    sub:'Replace end-of-life platform',
+    color:'#B02A2A',
+    bg:'#FFF0EE',
+    initiatives:['BCD','ODS','MI','Reports'],
+    desc:'BCD quoting tool — replace legacy end-of-life platform, with shared data layer',
+    isNew:false
+  },
+  {
+    id:'new-horizons',
+    icon:'🚀',
+    name:'Seeds of Change',
+    sub:'Early-stage transformative initiatives',
+    color:'#9B2A6A',
+    bg:'#FFF0F8',
+    initiatives:['OCR','Single location for documents','Wellness','Financial Literacy','SBG Fund'],
+    desc:'Early-stage transformative initiatives — AI, Document Management, Wellness, Financial Literacy and PAS consolidation',
+    isNew:false,
+    isNewPot:true
+  },
+];
+
+let fgActivePot = null;
+
+function renderFixGrow(){
+  fgSetYear(2026);
+  renderFgCards(null);
+}
+
+let fgCurrentYear = 2026;
+
+// Hotspot positions — evenly distributed so all 9 fit within 100% width
+const FG_2026_HOTSPOTS = [
+  {pctL:2,  pctT:38, w:10, h:52, nm:'Flexor Launch',        col:'#4A90E2', id:'ignite-launch'},
+  {pctL:13, pctT:38, w:10, h:52, nm:'CAL Group Risk',       col:'#9C89CC', id:'cal-risk'},
+  {pctL:24, pctT:25, w:12, h:65, nm:'Self Service Portal',  col:'#FF8C00', id:'ssp'},
+  {pctL:37, pctT:40, w:10, h:50, nm:'LHR/MBS Revamp',       col:'#5BC8F5', id:'lhr-mbs'},
+  {pctL:48, pctT:38, w:10, h:52, nm:'BAU',                  col:'#FFFFFF', id:'bau'},
+  {pctL:59, pctT:42, w:10, h:46, nm:'Employee Select Plan', col:'#8BC34A', id:'esp'},
+  {pctL:70, pctT:38, w:10, h:50, nm:'Annuities & CBond',    col:'#FF6D00', id:'annuity-cbond'},
+  {pctL:81, pctT:40, w:10, h:48, nm:'BCD Quotes Tool',      col:'#AAAAAA', id:'bcd-quotes'},
+  {pctL:91, pctT:36, w:9,  h:54, nm:'Seeds of Change',      col:'#A0FFB0', id:'new-horizons'},
+];
+
+function fgSetYear(yr){
+  fgCurrentYear = yr;
+  [2026,2027,2028,2029,2030].forEach(y=>{
+    const btn=document.getElementById('yr-btn-'+y);
+    if(!btn) return;
+    if(y===yr){btn.style.background='#1050CC';btn.style.color='white';btn.style.borderBottom='3px solid #4A90E2';}
+    else{btn.style.background='transparent';btn.style.color='rgba(255,255,255,0.45)';btn.style.borderBottom='3px solid transparent';}
+  });
+  const dot=document.getElementById('fgProgressDot');
+  if(dot) dot.style.left=`calc(${(yr-2026)/4*100}% - 6px)`;
+  renderFgHero(yr);
+  renderFgCards(null);
+}
+
+function renderFgHero(yr){
+  const wrap = document.getElementById('fgHeroWrap');
+  if(!wrap) return;
+
+  // For 2026 use the original photo layout with hotspots
+  // For other years show a styled dark card with initiative list
+  if(yr === 2026){
+    wrap.innerHTML = `
+      <div style="position:relative;width:100%;background:#071428">
+        <!-- Recreated scene using the exact original layout as CSS -->
+        <div style="position:relative;width:100%;padding-bottom:50%;background:linear-gradient(180deg,#071428 0%,#0B1E3D 55%,#0D1F0D 55%,#1B5E20 100%);overflow:hidden;box-sizing:border-box">
+
+          <!-- Title block -->
+          <div style="position:absolute;top:5%;left:3%;z-index:2">
+            <div style="font-family:'DM Serif Display',serif;font-size:clamp(16px,2.5vw,32px);line-height:1">
+              <span style="color:#4A90E2">FIX</span><span style="color:white"> AND GROW</span>
+            </div>
+            <div style="font-size:clamp(8px,1vw,13px);color:rgba(255,255,255,0.5);letter-spacing:0.12em;margin-top:2px">BUSINESS TRANSFORMATION 2026 ROADMAP</div>
+          </div>
+
+          <!-- Blue chevron arrow -->
+          <div style="position:absolute;top:22%;left:3%;right:3%;height:18%;background:linear-gradient(90deg,#1050CC,#2878F5);clip-path:polygon(0 0,calc(100% - 3%) 0,100% 50%,calc(100% - 3%) 100%,0 100%);display:flex;align-items:center;justify-content:center;z-index:2">
+            <span style="font-family:'DM Serif Display',serif;font-size:clamp(24px,4.5vw,64px);color:white;font-weight:700">20</span>
+            <span style="font-family:'DM Serif Display',serif;font-size:clamp(24px,4.5vw,64px);color:rgba(255,255,255,0.3);font-weight:700">26</span>
+          </div>
+
+          <!-- Hill shapes -->
+          <div style="position:absolute;bottom:0;left:-5%;width:55%;height:40%;background:radial-gradient(ellipse at 50% 100%,#4CAF50 0%,#2E7D32 100%);border-radius:50% 50% 0 0;z-index:1"></div>
+          <div style="position:absolute;bottom:0;right:-5%;width:55%;height:36%;background:radial-gradient(ellipse at 50% 100%,#66BB6A 0%,#388E3C 100%);border-radius:50% 50% 0 0;z-index:1"></div>
+          <div style="position:absolute;bottom:0;left:0;right:0;height:14%;background:#1B5E20;z-index:1"></div>
+
+          <!-- Clickable hotspots with emoji icons -->
+          ${FG_2026_HOTSPOTS.map(h=>{
+            const isSelected = fgActivePot === h.id;
+            const isDimmed = fgActivePot && !isSelected;
+            const ICONS = {
+              'ignite-launch':'🪴','cal-risk':'🌿','ssp':'🌳','lhr-mbs':'💧',
+              'bau':'🏷️','esp':'🌾','annuity-cbond':'🧱','bcd-quotes':'🔧','new-horizons':'🚀'
+            };
+            return `<div onclick="fgSelectPot('${h.id}')"
+              style="position:absolute;left:${h.pctL}%;top:${h.pctT}%;width:${h.w}%;height:${h.h}%;
+              z-index:10;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;
+              opacity:${isDimmed?'0.25':'1'};transition:opacity 0.2s,transform 0.2s;
+              ${isSelected?'outline:2px dashed '+h.col+';outline-offset:4px;border-radius:8px;':''}
+              transform:${isSelected?'scale(1.08)':'scale(1)'}"
+              title="${isSelected?'Click to reset':h.nm}">
+              <div style="font-size:clamp(20px,3.5vw,52px);line-height:1;filter:drop-shadow(0 3px 6px rgba(0,0,0,0.5))">${ICONS[h.id]||'🌱'}</div>
+              <div style="font-size:clamp(7px,0.8vw,11px);font-weight:700;color:${h.col};text-shadow:0 1px 4px rgba(0,0,0,0.9);text-align:center;margin-top:2px;line-height:1.2;font-family:'DM Sans',sans-serif">${h.nm}</div>
+            </div>`;
+          }).join('')}
+        </div>
+      </div>`;
+  } else {
+    // For future years show a structured card view
+    const YR_THEMES = {
+      2027:{color:'#0E7C6A',title:'Delivery & Scale',desc:'Wave 1 completions — Product, Engagement and Sales go live'},
+      2028:{color:'#5B4BA8',title:'Consolidation & Decommission',desc:'PAS Wave 2, Data platform live · LCU + BPC sunset mid-year'},
+      2029:{color:'#C06B18',title:'Steady State',desc:'Full portfolio in steady state · Single LCB instance · Benefits realisation'},
+      2030:{color:'#1A3260',title:'Growth Horizon',desc:'Market leadership · New capability wave · Full optimisation'},
+    };
+    const t = YR_THEMES[yr];
+    wrap.innerHTML = `<div style="padding:3rem 2.5rem;background:linear-gradient(135deg,#071428,#0B1E3D);text-align:center">
+      <div style="font-family:'DM Serif Display',serif;font-size:clamp(16px,2.5vw,32px);color:white;margin-bottom:8px">
+        <span style="color:#4A90E2">FIX </span>AND GROW — <span style="color:${t.color}">${yr}</span>
+      </div>
+      <div style="font-size:clamp(14px,1.5vw,20px);color:${t.color};font-weight:600;margin-bottom:8px">${t.title}</div>
+      <div style="font-size:13px;color:rgba(255,255,255,0.6);max-width:600px;margin:0 auto">${t.desc}</div>
+      <div style="margin-top:1.5rem;display:flex;flex-wrap:wrap;gap:10px;justify-content:center">
+        ${FG_POTS.map(p=>`<div onclick="fgSelectPot('${p.id}')" style="padding:8px 16px;border-radius:20px;background:${p.bg};color:${p.color};font-size:12px;font-weight:600;cursor:pointer;border:1px solid ${p.color}44;font-family:'DM Sans',sans-serif;transition:all 0.15s;${fgActivePot===p.id?'box-shadow:0 0 0 2px '+p.color:''}opacity:${fgActivePot&&fgActivePot!==p.id?'0.4':'1'}">${p.icon} ${p.name}</div>`).join('')}
+      </div>
+    </div>`;
+  }
+}
+
+function buildFgSVG(yr){
+  const CFG={
+    2026:{sub:'BUSINESS TRANSFORMATION 2026 ROADMAP',ac1:'#1050CC',ac2:'#2878F5',yd:'26',hh:155,pots:[
+      {x:68,ic:'pot-seedling',nm:'Flexor Launch',sb:'Build new product',col:'#4A90E2',id:'ignite-launch'},
+      {x:193,ic:'pot-plant',nm:'CAL Group Risk',sb:'Rebuild CAL on Flexor',col:'#9C89CC',id:'cal-risk'},
+      {x:320,ic:'orange-tree',nm:'Self Service Portal',sb:'Customer experience',col:'#FF8C00',id:'ssp'},
+      {x:445,ic:'water-plant',nm:'LHR/MBS Revamp',sb:'Move to Infoslips',col:'#5BC8F5',id:'lhr-mbs'},
+      {x:565,ic:'seed-packet',nm:'BAU',sb:'Operational imperatives',col:'#FFFFFF',id:'bau'},
+      {x:685,ic:'lettuce',nm:'Employee Select Plan',sb:'Fit for purpose SMME',col:'#8BC34A',id:'esp'},
+      {x:810,ic:'bricks',nm:'Annuities & CBond',sb:'Long-term servicing',col:'#FF6D00',id:'annuity-cbond'},
+      {x:930,ic:'tools',nm:'BCD Quotes Tool',sb:'Replace end-of-life',col:'#AAAAAA',id:'bcd-quotes'},
+    ]},
+    2027:{sub:'DELIVERY & SCALE 2027 ROADMAP',ac1:'#0E7C6A',ac2:'#1AA88E',yd:'27',hh:178,pots:[
+      {x:90,ic:'orange-tree',nm:'Flexor Platform',sb:'Quotes & Billing complete Q2',col:'#FF8C00',id:'ignite-launch'},
+      {x:240,ic:'water-plant',nm:'SSP Live',sb:'Contact Centre Q2',col:'#5BC8F5',id:'ssp'},
+      {x:400,ic:'lettuce',nm:'LHR Complete Q1',sb:'Product & PAS layer done',col:'#8BC34A',id:'lhr-mbs'},
+      {x:555,ic:'pot-plant',nm:'CAL + ESP Q3',sb:'Risk products live',col:'#9C89CC',id:'cal-risk'},
+      {x:710,ic:'bricks',nm:'PAS Wave 1',sb:'Cpr Sel & IFP Q4',col:'#FF6D00',id:'annuity-cbond'},
+      {x:858,ic:'tools',nm:'BCD + BAU',sb:'Steady delivery',col:'#AAAAAA',id:'bcd-quotes'},
+      {x:1000,ic:'seed-packet',nm:'Seeds of Change',sb:'OCR investigation begins',col:'#A0FFB0',id:'new-horizons'},
+    ]},
+    2028:{sub:'CONSOLIDATION & DECOMMISSION 2028',ac1:'#5B4BA8',ac2:'#8878D8',yd:'28',hh:200,pots:[
+      {x:110,ic:'orange-tree',nm:'All Products SS',sb:'Full steady state achieved',col:'#FF8C00',id:'ignite-launch'},
+      {x:300,ic:'bricks',nm:'PAS Wave 2',sb:'Annuities & LHR Q1',col:'#FF6D00',id:'annuity-cbond'},
+      {x:490,ic:'lettuce',nm:'Data Platform',sb:'ODS + MI + Reports Q1',col:'#8BC34A',id:'bau'},
+      {x:670,ic:'water-plant',nm:'Docs & OCR',sb:'Single location Q1',col:'#5BC8F5',id:'new-horizons'},
+      {x:830,ic:'decomm',nm:'LCU Sunset',sb:'Mid-2028 decommission',col:'#F97316',id:'decomm'},
+      {x:990,ic:'decomm2',nm:'BPC Sunset',sb:'FA & Admin mid-2028',col:'#EF4444',id:'decomm2'},
+    ]},
+    2029:{sub:'STEADY STATE & OPTIMISATION 2029',ac1:'#B8860B',ac2:'#DAA520',yd:'29',hh:218,pots:[
+      {x:200,ic:'big-tree',nm:'Full Steady State',sb:'All 22 initiatives stable',col:'#4CAF50',id:'ignite-launch'},
+      {x:550,ic:'bricks',nm:'Single LCB',sb:'One platform instance',col:'#FF6D00',id:'annuity-cbond'},
+      {x:880,ic:'tools',nm:'Optimisation',sb:'Performance & cost efficiency',col:'#AAAAAA',id:'bcd-quotes'},
+    ]},
+    2030:{sub:'GROWTH HORIZON 2030',ac1:'#1A3260',ac2:'#2A4A80',yd:'30',hh:235,pots:[
+      {x:300,ic:'big-tree',nm:'Market Leadership',sb:'Full portfolio optimised',col:'#FFD700',id:'ignite-launch'},
+      {x:750,ic:'orange-tree',nm:'New Capabilities',sb:'Next wave initiatives',col:'#FF8C00',id:'new-horizons'},
+    ]},
+  };
+  const c=CFG[yr],W=1100,H=480,ICON_Y=370,LABEL_Y=415,SUB_Y=430;
+  const ico=(t,cx,cy)=>{switch(t){
+    case 'pot-seedling':return `<path d="M${cx-22},${cy+18} L${cx+22},${cy+18} L${cx+30},${cy+65} L${cx-30},${cy+65} Z" fill="none" stroke="white" stroke-width="2.8"/><rect x="${cx-30}" y="${cy+10}" width="60" height="10" rx="3" fill="none" stroke="white" stroke-width="2.8"/><path d="M${cx},${cy-4} Q${cx},${cy-28} ${cx},${cy-38} Q${cx-8},${cy-24} ${cx-11},${cy-10} Q${cx-3},${cy-20} ${cx},${cy-4}Z" fill="#4A90E2" transform="scale(1.3) translate(${-cx*0.23},${-cy*0.23})"/><path d="M${cx},${cy-4} Q${cx},${cy-28} ${cx},${cy-38} Q${cx-8},${cy-24} ${cx-11},${cy-10} Q${cx-3},${cy-20} ${cx},${cy-4}Z" fill="#4A90E2"/>`;
+    case 'pot-plant':return `<path d="M${cx-22},${cy+18} L${cx+22},${cy+18} L${cx+30},${cy+65} L${cx-30},${cy+65} Z" fill="none" stroke="#9C89CC" stroke-width="2.5"/><rect x="${cx-30}" y="${cy+10}" width="60" height="10" rx="3" fill="none" stroke="#9C89CC" stroke-width="2.5"/><ellipse cx="${cx-10}" cy="${cy-12}" rx="11" ry="19" fill="#7B68EE" transform="rotate(-20,${cx-10},${cy-12})"/><ellipse cx="${cx+8}" cy="${cy-16}" rx="11" ry="19" fill="#9370DB" transform="rotate(15,${cx+8},${cy-16})"/><ellipse cx="${cx-3}" cy="${cy-22}" rx="10" ry="16" fill="#8A6BE8" transform="rotate(-35,${cx-3},${cy-22})"/><line x1="${cx}" y1="${cy+12}" x2="${cx}" y2="${cy}" stroke="#5D4037" stroke-width="2"/>`;
+    case 'orange-tree':return `<rect x="${cx-6}" y="${cy-18}" width="12" height="50" rx="3" fill="#5D4037"/><line x1="${cx}" y1="${cy-4}" x2="${cx-18}" y2="${cy-20}" stroke="#5D4037" stroke-width="3"/><line x1="${cx}" y1="${cy-8}" x2="${cx+18}" y2="${cy-22}" stroke="#5D4037" stroke-width="3"/><ellipse cx="${cx}" cy="${cy-52}" rx="42" ry="36" fill="#2E7D32"/><ellipse cx="${cx-23}" cy="${cy-43}" rx="26" ry="22" fill="#388E3C"/><ellipse cx="${cx+23}" cy="${cy-45}" rx="26" ry="22" fill="#388E3C"/><ellipse cx="${cx-8}" cy="${cy-66}" rx="22" ry="19" fill="#43A047"/><ellipse cx="${cx+14}" cy="${cy-64}" rx="21" ry="18" fill="#43A047"/><circle cx="${cx-13}" cy="${cy-55}" r="6.5" fill="#FF8C00"/><circle cx="${cx+2}" cy="${cy-65}" r="6.5" fill="#FF7F00"/><circle cx="${cx+16}" cy="${cy-53}" r="6.5" fill="#FF8C00"/><circle cx="${cx-6}" cy="${cy-44}" r="5.5" fill="#FFA500"/><circle cx="${cx+10}" cy="${cy-47}" r="5.5" fill="#FF7F00"/>`;
+    case 'big-tree':return `<rect x="${cx-8}" y="${cy-28}" width="16" height="62" rx="4" fill="#4E342E"/><ellipse cx="${cx}" cy="${cy-68}" rx="52" ry="46" fill="#1B5E20"/><ellipse cx="${cx-28}" cy="${cy-54}" rx="34" ry="28" fill="#2E7D32"/><ellipse cx="${cx+28}" cy="${cy-56}" rx="34" ry="28" fill="#2E7D32"/><ellipse cx="${cx}" cy="${cy-86}" rx="28" ry="24" fill="#388E3C"/><circle cx="${cx-16}" cy="${cy-66}" r="7.5" fill="#FF8C00"/><circle cx="${cx+4}" cy="${cy-78}" r="7.5" fill="#FF7F00"/><circle cx="${cx+20}" cy="${cy-63}" r="7.5" fill="#FF8C00"/><circle cx="${cx-4}" cy="${cy-54}" r="6.5" fill="#FFA500"/>`;
+    case 'water-plant':return `<line x1="${cx}" y1="${cy+36}" x2="${cx}" y2="${cy+2}" stroke="#2D7A18" stroke-width="2"/><ellipse cx="${cx-10}" cy="${cy+10}" rx="11" ry="18" fill="#4CAF50" transform="rotate(-25,${cx-10},${cy+10})"/><ellipse cx="${cx+10}" cy="${cy+7}" rx="11" ry="18" fill="#43A047" transform="rotate(20,${cx+10},${cy+7})"/><path d="M${cx+14},${cy-12} Q${cx+14},${cy-24} ${cx+10},${cy-18} Q${cx+6},${cy-24} ${cx+6},${cy-12} Q${cx+6},${cy-6} ${cx+10},${cy-6} Q${cx+14},${cy-6} ${cx+14},${cy-12}Z" fill="#5BC8F5"/><path d="M${cx+26},${cy-4} Q${cx+26},${cy-16} ${cx+22},${cy-10} Q${cx+18},${cy-16} ${cx+18},${cy-4} Q${cx+18},${cy+2} ${cx+22},${cy+2} Q${cx+26},${cy+2} ${cx+26},${cy-4}Z" fill="#4DB6F0"/><path d="M${cx+20},${cy-20} Q${cx+20},${cy-30} ${cx+17},${cy-25} Q${cx+14},${cy-30} ${cx+14},${cy-20} Q${cx+14},${cy-14} ${cx+17},${cy-14} Q${cx+20},${cy-14} ${cx+20},${cy-20}Z" fill="#7DD4F8"/>`;
+    case 'seed-packet':return `<rect x="${cx-22}" y="${cy-28}" width="44" height="52" rx="4" fill="#1A237E" stroke="#3F51B5" stroke-width="1.5"/><rect x="${cx-22}" y="${cy-28}" width="44" height="15" rx="4" fill="#283593"/><circle cx="${cx}" cy="${cy+6}" r="7" fill="#E91E63" opacity="0.85"/><circle cx="${cx}" cy="${cy-4}" r="4" fill="#E91E63" opacity="0.7"/><circle cx="${cx}" cy="${cy+16}" r="4" fill="#E91E63" opacity="0.7"/><circle cx="${cx-10}" cy="${cy+6}" r="4" fill="#E91E63" opacity="0.7"/><circle cx="${cx+10}" cy="${cy+6}" r="4" fill="#E91E63" opacity="0.7"/><circle cx="${cx}" cy="${cy+6}" r="4" fill="#FFF9C4"/><circle cx="${cx-10}" cy="${cy+26}" r="2" fill="white" opacity="0.5"/><circle cx="${cx}" cy="${cy+28}" r="2" fill="white" opacity="0.5"/><circle cx="${cx+10}" cy="${cy+26}" r="2" fill="white" opacity="0.5"/>`;
+    case 'lettuce':return `<ellipse cx="${cx}" cy="${cy+32}" rx="40" ry="10" fill="#5D4037" opacity="0.6"/><ellipse cx="${cx-18}" cy="${cy+20}" rx="13" ry="10" fill="#8BC34A"/><ellipse cx="${cx-18}" cy="${cy+16}" rx="11" ry="8" fill="#AED581"/><ellipse cx="${cx}" cy="${cy+17}" rx="14" ry="11" fill="#7CB342"/><ellipse cx="${cx}" cy="${cy+12}" rx="12" ry="9" fill="#9CCC65"/><ellipse cx="${cx+18}" cy="${cy+20}" rx="13" ry="10" fill="#8BC34A"/><ellipse cx="${cx+18}" cy="${cy+16}" rx="11" ry="8" fill="#AED581"/>`;
+    case 'bricks':return `<rect x="${cx-30}" y="${cy-18}" width="60" height="11" rx="2" fill="#BF360C"/><rect x="${cx-26}" y="${cy-18}" width="18" height="11" rx="1" fill="#D84315" opacity="0.5"/><rect x="${cx-36}" y="${cy-5}" width="60" height="11" rx="2" fill="#D84315"/><rect x="${cx-32}" y="${cy-5}" width="18" height="11" rx="1" fill="#BF360C" opacity="0.5"/><rect x="${cx-30}" y="${cy+8}" width="60" height="11" rx="2" fill="#BF360C"/><rect x="${cx-22}" y="${cy+8}" width="18" height="11" rx="1" fill="#D84315" opacity="0.5"/><line x1="${cx-8}" y1="${cy-18}" x2="${cx-8}" y2="${cy-7}" stroke="#8D3B00" stroke-width="1"/><line x1="${cx+14}" y1="${cy-18}" x2="${cx+14}" y2="${cy-7}" stroke="#8D3B00" stroke-width="1"/>`;
+    case 'tools':return `<rect x="${cx-3}" y="${cy-18}" width="6" height="34" rx="3" fill="#8D6E63" transform="rotate(30,${cx},${cy+9})"/><path d="M${cx+5},${cy-12} L${cx+19},${cy-3} L${cx+13},${cy+7} L${cx-1},${cy-2} Z" fill="#9E9E9E"/><rect x="${cx+18}" y="${cy-22}" width="5" height="36" rx="2" fill="#8D6E63" transform="rotate(10,${cx+20},${cy-4})"/><rect x="${cx+10}" y="${cy-15}" width="24" height="4" rx="1" fill="#757575" transform="rotate(10,${cx+22},${cy-13})"/><line x1="${cx+11}" y1="${cy-11}" x2="${cx+10}" y2="${cx}" stroke="#757575" stroke-width="1.5"/><line x1="${cx+17}" y1="${cy-11}" x2="${cx+16}" y2="${cy}" stroke="#757575" stroke-width="1.5"/>`;
+    case 'decomm':return `<circle cx="${cx}" cy="${cy}" r="26" fill="none" stroke="#F97316" stroke-width="2.5"/><line x1="${cx-16}" y1="${cy-16}" x2="${cx+16}" y2="${cy+16}" stroke="#F97316" stroke-width="4"/><rect x="${cx-8}" y="${cy+10}" width="16" height="18" rx="2" fill="#F97316" opacity="0.5"/><polygon points="${cx},${cy-28} ${cx-10},${cy-12} ${cx+10},${cy-12}" fill="#F97316"/>`;
+    case 'decomm2':return `<rect x="${cx-22}" y="${cy-22}" width="44" height="44" rx="4" fill="none" stroke="#EF4444" stroke-width="2.5"/><line x1="${cx-14}" y1="${cy-14}" x2="${cx+14}" y2="${cy+14}" stroke="#EF4444" stroke-width="3"/><line x1="${cx+14}" y1="${cy-14}" x2="${cx-14}" y2="${cy+14}" stroke="#EF4444" stroke-width="3"/>`;
+    default:return `<circle cx="${cx}" cy="${cy}" r="20" fill="rgba(255,255,255,0.1)"/>`;
+  }};
+  let s=`<svg viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block">
+  <defs>
+    <linearGradient id="bg${yr}" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#071428"/><stop offset="100%" stop-color="#0B1E3D"/></linearGradient>
+    <linearGradient id="ar${yr}" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="${c.ac1}"/><stop offset="100%" stop-color="${c.ac2}"/></linearGradient>
+    <linearGradient id="h1${yr}" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#4CAF50"/><stop offset="100%" stop-color="#2E7D32"/></linearGradient>
+    <linearGradient id="h2${yr}" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#66BB6A"/><stop offset="100%" stop-color="#388E3C"/></linearGradient>
+    <clipPath id="cl${yr}"><rect width="${W}" height="${H}"/></clipPath>
+  </defs>
+  <g clip-path="url(#cl${yr})">
+  <rect width="${W}" height="${H}" fill="url(#bg${yr})"/>
+
+  <!-- Title -->
+  <text x="36" y="42" font-family="DM Serif Display,serif" font-size="26" fill="#4A90E2">FIX</text>
+  <text x="93" y="42" font-family="DM Serif Display,serif" font-size="26" fill="white"> AND GROW</text>
+  <text x="36" y="60" font-family="DM Sans,sans-serif" font-size="11" fill="rgba(255,255,255,0.5)" letter-spacing="2">${c.sub}</text>
+
+  <!-- Blue arrow -->
+  <polygon points="36,76 1042,76 1080,116 1042,156 36,156" fill="url(#ar${yr})"/>
+  <text x="498" y="134" font-family="DM Serif Display,serif" font-size="50" fill="white" font-weight="700" text-anchor="middle" dominant-baseline="middle">20</text>
+  <text x="582" y="134" font-family="DM Serif Display,serif" font-size="50" fill="rgba(255,255,255,0.32)" font-weight="700" dominant-baseline="middle">${c.yd}</text>
+
+  <!-- Hills — horizon at y=395, hills rise from bottom -->
+  <ellipse cx="200" cy="560" rx="360" ry="185" fill="#1B5E20" opacity="0.5"/>
+  <ellipse cx="960" cy="560" rx="320" ry="170" fill="#1B5E20" opacity="0.45"/>
+  <ellipse cx="360" cy="560" rx="460" ry="190" fill="url(#h1${yr})"/>
+  <ellipse cx="800" cy="565" rx="440" ry="185" fill="url(#h2${yr})"/>
+  <!-- Flat ground strip -->
+  <rect x="0" y="440" width="${W}" height="40" fill="#2E7D32"/>
+  <rect x="0" y="458" width="${W}" height="22" fill="#1B5E20"/>
+
+  <!-- Grass blades just above ground at y=440 -->
+  ${[20,52,88,126,166,210,258,310,362,414,462,512,565,622,682,742,800,855,906,958,1005,1050,1082].map(gx=>`<polygon points="${gx},440 ${gx+3.5},418 ${gx+7},440" fill="#4CAF50" opacity="0.9"/>`).join('')}
+
+  <!-- Label background band so text is always readable -->
+  <rect x="0" y="395" width="${W}" height="55" fill="rgba(34,85,34,0.85)"/>
+  `;
+
+  // All icons sit on the same baseline ICON_Y, labels in the green band
+  c.pots.forEach(p=>{
+    const isSelected = fgActivePot === p.id;
+    const isDimmed = fgActivePot && !isSelected;
+    const opacity = isDimmed ? '0.3' : '1';
+    const ring = isSelected ? `<circle cx="${p.x}" cy="${ICON_Y+20}" r="52" fill="none" stroke="${p.col}" stroke-width="2.5" stroke-dasharray="6,3" opacity="0.8"/>` : '';
+    s+=`<g onclick="fgSelectPot('${p.id}')" style="cursor:pointer;opacity:${opacity};transition:opacity 0.2s" title="${isSelected?'Click to reset':''+p.nm}">
+    ${ring}
+    ${ico(p.ic,p.x,ICON_Y)}
+    <text x="${p.x}" y="${LABEL_Y}" font-family="DM Sans,sans-serif" font-size="11" fill="${p.col}" font-weight="700" text-anchor="middle">${p.nm}</text>
+    <text x="${p.x}" y="${SUB_Y}" font-family="DM Sans,sans-serif" font-size="9.5" fill="rgba(255,255,255,0.8)" text-anchor="middle">${p.sb}</text>
+    <rect x="${p.x-52}" y="${ICON_Y-90}" width="104" height="180" fill="transparent"/>
+    </g>`;
+  });
+  s+=`</g></svg>`;return s;
+}
+
+function fgSelectPot(id){
+  // Toggle: clicking the same pot resets, clicking different pot selects it
+  fgActivePot = (fgActivePot === id) ? null : id;
+  renderFgHero(fgCurrentYear);
+  renderFgCards(fgActivePot);
+}
+// Expose globally so onclick in innerHTML can always find it
+window.fgSelectPot = fgSelectPot;
+window.fgSetYear = fgSetYear;
+
+function renderFgCards(filterId){
+  const titleEl = document.getElementById('fgSectionTitle');
+  if(titleEl) titleEl.textContent = fgCurrentYear + ' Initiative Pots' + (filterId ? ' — ' + (FG_POTS.find(p=>p.id===filterId)||{name:''}).name : '');
+  const grid = document.getElementById('fgCardsGrid');
+  if(!grid) return;
+  const pots = filterId ? FG_POTS.filter(p=>p.id===filterId) : FG_POTS;
+  grid.style.gridTemplateColumns = filterId ? '1fr' : 'repeat(3,1fr)';
+
+  grid.innerHTML = pots.map(pot => {
+    const initRows = pot.initiatives.map(name => {
+      const isCommon = COMMON.includes(name);
+      const isBauSummary = name === 'BAU' && pot.id === 'bau';
+      // Map display names back to data names for lookup
+      const dataName = name
+        .replace('Flexor Quotes','Quotes')
+        .replace('Flexor Billing','Billing')
+        .replace('CAL Quotes','Quotes')
+        .replace('CAL Billing','Billing');
+      const row = data.find(d=>d.name===dataName || d.name===name);
+      // Seeds of Change: non-OCR = Not Started, OCR = Investigation
+      let statusLabel, statusCls;
+      if(pot.id==='new-horizons'){
+        if(name==='OCR'){ statusLabel='Investigation'; statusCls='b-inv'; }
+        else { statusLabel='Not Started'; statusCls='b-na'; }
+      } else if(isBauSummary){
+        statusLabel='In Progress'; statusCls='b-wip';
+      } else {
+        statusLabel = row ? (sMap[row.yr26]||sMap['na']).label : 'In Progress';
+        statusCls = row ? (sMap[row.yr26]||sMap['na']).cls : 'b-wip';
+      }
+      const isNew = !row && !['Flexor Quotes','Flexor Billing','CAL Quotes','CAL Billing','BAU'].includes(name);
+      const commonBadge = isCommon ? `<span style="font-size:9px;padding:2px 6px;border-radius:8px;background:#F0F6FF;color:#1A5C9E;font-weight:600;border:1px solid #B0CCE8;margin-left:4px;white-space:nowrap">COMMON</span>` : '';
+      if(isBauSummary){
+        return `<div class="fg-init-row" style="background:${pot.bg};border-color:${pot.color}44;border-left-width:3px">
+          <div class="fg-init-dot" style="background:${pot.color}"></div>
+          <span style="color:${pot.color};flex:1;font-style:italic">Business-as-usual regulatory and operational continuity initiatives</span>
+          <span class="badge ${statusCls}" style="font-size:9px;padding:2px 8px;min-width:56px">${statusLabel}</span>
+        </div>`;
+      }
+      return `<div class="fg-init-row" style="background:${isCommon?'#F8FBFF':pot.bg};border-color:${isCommon?'#1A5C9E44':pot.color+'22'}">
+        <div class="fg-init-dot" style="background:${isCommon?'#1A5C9E':pot.color}"></div>
+        <span style="color:${isCommon?'#1A5C9E':pot.color};flex:1">${name}</span>
+        ${commonBadge}
+        <span class="badge ${statusCls}" style="font-size:9px;padding:2px 8px;min-width:56px">${statusLabel}</span>
+        ${isNew?`<span class="fg-new-pill">NEW</span>`:''}
+      </div>`;
+    }).join('');
+
+    const colStyle = `border-top-color:${pot.color}`;
+    return `<div class="fg-card" style="--card-color:${pot.color}">
+      <div class="fg-card-stripe" style="background:linear-gradient(90deg,${pot.color},${pot.color}88)"></div>
+      <div class="fg-card-head">
+        <span class="fg-card-emoji">${pot.icon}</span>
+        <div>
+          <div class="fg-card-title">${pot.name}${pot.isNewPot?` <span style="font-size:10px;background:#D4F0EA;color:#0E7C6A;padding:2px 7px;border-radius:8px;font-family:'DM Sans',sans-serif;font-weight:600">NEW POT</span>`:''}</div>
+          <div style="font-size:11px;color:var(--text-muted)">${pot.sub}</div>
+        </div>
+      </div>
+      <div class="fg-card-sub">${pot.desc}</div>
+      <div>${initRows}</div>
+    </div>`;
+  }).join('');
+}
+
+// ══════════════════════════════════════════════════════
+// SUPABASE DATABASE — real-time shared storage
+// ──────────────────────────────────────────────────────
+// SETUP (one time — 5 minutes):
+//  1. Go to https://supabase.com → Sign up free → New Project
+//     Name: roadmap | Region: pick closest to you
+//  2. Wait ~2 min for provisioning
+//  3. Go to SQL Editor → New Query → paste & run:
+//
+//     create table roadmap (
+//       id integer primary key default 1,
+//       data jsonb not null default '[]'::jsonb,
+//       updated_at timestamptz default now()
+//     );
+//     insert into roadmap (id, data) values (1, '[]'::jsonb);
+//
+//  4. Go to Settings → API
+//  5. Copy "Project URL"  → paste as SUPABASE_URL below
+//  6. Copy "anon public"  → paste as SUPABASE_KEY below
+//  7. Commit this file → done! Auto-saves forever.
+// ══════════════════════════════════════════════════════
+
+const SUPABASE_URL = 'PASTE_YOUR_PROJECT_URL';  // https://xxxx.supabase.co
+const SUPABASE_KEY = 'PASTE_YOUR_ANON_KEY';      // eyJhbGci...
+
+const SB_READY = () => !SUPABASE_URL.includes('PASTE') && !SUPABASE_KEY.includes('PASTE');
+const SB_HDR = () => ({
+  'Content-Type': 'application/json',
+  'apikey': SUPABASE_KEY,
+  'Authorization': `Bearer ${SUPABASE_KEY}`
+});
+
+function setStatus(msg, type='idle'){
+  const el = document.getElementById('lastSaved');
+  if(!el) return;
+  const colors = {idle:'rgba(255,255,255,0.45)',saving:'#E8B86D',ok:'#1AA88E',err:'#F97316'};
+  el.textContent = msg;
+  el.style.color = colors[type]||colors.idle;
+}
+
+async function loadFromCloud(){
+  // Load from localStorage instantly for snappy UX
+  const cached = localStorage.getItem('cb_roadmap_v3');
+  if(cached){ try{ const p=JSON.parse(cached); if(Array.isArray(p)&&p.length>0){ data=p; renderTable(); renderSummary(); }}catch(e){} }
+
+  if(!SB_READY()){ setStatus('⚠ Configure Supabase to share data','err'); showSetupBanner(); if(!cached){renderTable();renderSummary();} return; }
+
+  setStatus('⟳ Loading shared data…','saving');
+  try {
+    const res = await fetch(`${SUPABASE_URL}/rest/v1/roadmap?id=eq.1&select=data`, { headers: SB_HDR() });
+    if(!res.ok) throw new Error('HTTP '+res.status);
+    const rows = await res.json();
+    if(rows&&rows[0]&&Array.isArray(rows[0].data)&&rows[0].data.length>0){
+      data = rows[0].data;
+      localStorage.setItem('cb_roadmap_v3', JSON.stringify(data));
+      setStatus('✓ Shared data loaded','ok');
+      renderTable(); renderSummary();
+    } else {
+      // DB empty — seed with defaults
+      setStatus('↑ Seeding database…','saving');
+      await _writeToDB();
+      setStatus('✓ Database ready','ok');
+    }
+  } catch(e){
+    setStatus('⚠ Using cached data — check Supabase config','err');
+    console.warn('Supabase load:',e);
+    if(!cached){renderTable();renderSummary();}
+  }
+}
+
+async function _writeToDB(){
+  // Try PATCH first (update existing row)
+  const patch = await fetch(`${SUPABASE_URL}/rest/v1/roadmap?id=eq.1`, {
+    method:'PATCH',
+    headers:{...SB_HDR(),'Prefer':'return=minimal'},
+    body: JSON.stringify({data:data, updated_at: new Date().toISOString()})
+  });
+  if(patch.ok) return;
+  // Row missing — INSERT
+  await fetch(`${SUPABASE_URL}/rest/v1/roadmap`, {
+    method:'POST',
+    headers:{...SB_HDR(),'Prefer':'return=minimal'},
+    body: JSON.stringify({id:1, data:data})
+  });
+}
+
+let _saveTimer = null;
+async function pushToCloud(){
+  localStorage.setItem('cb_roadmap_v3', JSON.stringify(data));
+  if(!SB_READY()){ setStatus('💾 Saved locally','idle'); showSetupBanner(); return; }
+  clearTimeout(_saveTimer);
+  _saveTimer = setTimeout(async ()=>{
+    setStatus('⟳ Saving…','saving');
+    try {
+      await _writeToDB();
+      setStatus('✓ Saved · '+new Date().toLocaleTimeString(),'ok');
+    } catch(e){
+      setStatus('⚠ Cloud save failed — data safe locally','err');
+      console.warn('Supabase save:',e);
+    }
+  }, 1500);
+}
+
+function saveToLocal(){ pushToCloud(); }
+
+function downloadDataJson(){
+  const blob = new Blob([JSON.stringify(data,null,2)],{type:'application/json'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'data.json';
+  a.click();
+}
+
+function showSetupBanner(){
+  if(document.getElementById('setupBanner')) return;
+  const b = document.createElement('div');
+  b.id = 'setupBanner';
+  b.style.cssText='position:fixed;bottom:0;left:0;right:0;background:#0B1E3D;color:white;padding:16px 2.5rem;display:flex;align-items:center;gap:16px;z-index:300;font-size:13px;border-top:3px solid #C8963E;font-family:DM Sans,sans-serif;box-shadow:0 -4px 20px rgba(0,0,0,0.3)';
+  b.innerHTML=`
+    <span style="font-size:24px">🗄️</span>
+    <div>
+      <strong style="color:#E8B86D;display:block;margin-bottom:5px">Connect Supabase for live shared data (free)</strong>
+      <span style="color:rgba(255,255,255,0.7);font-size:12px;line-height:1.9">
+        1. <a href="https://supabase.com" target="_blank" style="color:#E8B86D;font-weight:600">supabase.com</a> → New Project
+        &nbsp;·&nbsp; 2. SQL Editor → run the CREATE TABLE script in the HTML comments
+        &nbsp;·&nbsp; 3. Settings → API → copy URL + anon key → paste into HTML → commit
+      </span>
+    </div>
+    <button onclick="document.getElementById('setupBanner').remove()" style="margin-left:auto;flex-shrink:0;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.25);color:white;padding:8px 18px;border-radius:8px;cursor:pointer;font-family:DM Sans,sans-serif;font-size:12px;white-space:nowrap">Got it</button>
+  `;
+  document.body.appendChild(b);
+}
+
+function updateBudget(idx,field,val){data[idx][field]=val;localStorage.setItem('cb_roadmap_v3',JSON.stringify(data));renderSummary();pushToCloud()}
+
+// ── Status cycle ────────────────────────────────────
+function cycleBadge(idx,field){
+  const order=['wip','inv','q1','q2','q3','q4','ss','sunset','closed','na'];
+  const cur=data[idx][field];data[idx][field]=order[(order.indexOf(cur)+1)%order.length];
+  renderTable();renderSummary();pushToCloud()
+}
+
+// ── Filter ──────────────────────────────────────────
+function toggleFilter(obj){
+  activeFilters[obj]=!activeFilters[obj];
+  const b=document.getElementById('fBtn-'+obj);
+  const cols={cx:'var(--teal)',ce:'var(--purple)',ms:'var(--amber)'};
+  b.style.background=activeFilters[obj]?(obj==='cx'?'var(--teal-pale)':obj==='ce'?'var(--purple-pale)':'var(--amber-pale)'):'';
+  b.style.color=activeFilters[obj]?cols[obj]:'';
+  b.style.borderColor=activeFilters[obj]?cols[obj]:'';
+  renderTable();
+}
+function isRowHidden(row){
+  const al=Object.entries(activeFilters).filter(([,v])=>v).map(([k])=>k);
+  if(!al.length)return false;
+  return !al.some(f=>getObjs(row).includes(f));
+}
+function filterSearch(){searchQuery=document.getElementById('searchInput').value.toLowerCase();renderTable()}
+
+// ── RENDER TABLE ────────────────────────────────────
+function renderTable(){
+  const tbody=document.getElementById('roadmapBody');
+  let html='',lastLayer='',visible=0;
+  const YRS=['26','27','28','29','30'];
+  data.forEach((row,i)=>{
+    if(isRowHidden(row))return;
+    const ms=!searchQuery||row.name.toLowerCase().includes(searchQuery)||row.layer.toLowerCase().includes(searchQuery)||(row.desc||'').toLowerCase().includes(searchQuery);
+    if(!ms)return;
+    visible++;
+    const isD=row.layer==='Decommissioning';
+    const lc=LAYER_CLASS[row.layer]||'lb-data';
+    const objs=getObjs(row);
+    if(row.layer!==lastLayer){html+=`<tr class="section-head"><td>${row.layer}</td><td colspan="6"></td></tr>`;lastLayer=row.layer}
+    let dots='<div class="obj-dots">';
+    if(objs.includes('cx'))dots+=`<span class="obj-dot dot-cx" title="Client Experience"></span>`;
+    if(objs.includes('ce'))dots+=`<span class="obj-dot dot-ce" title="Cost Efficiency"></span>`;
+    if(objs.includes('ms'))dots+=`<span class="obj-dot dot-ms" title="Market Share"></span>`;
+    dots+='</div>';
+    html+=`<tr class="${isD?'decomm-row':''}" data-idx="${i}">`;
+    html+=`<td class="layer-cell" style="padding-top:14px"><span class="layer-badge ${lc}">${row.layer}</span></td>`;
+    html+=`<td class="init-cell"><div class="init-name" onclick="openModal(${i})" title="Click to edit"><span>${row.name}</span><span class="edit-icon">✏ edit</span></div>${row.desc?`<div class="init-desc">${row.desc}</div>`:''} ${dots}</td>`;
+    YRS.forEach(yr=>{
+      const st=row['yr'+yr]||'na';const s=sMap[st]||sMap['na'];
+      html+=`<td style="vertical-align:middle;padding:10px 8px 4px"><div style="display:flex;flex-direction:column;align-items:center;gap:4px"><span class="badge ${s.cls}" onclick="cycleBadge(${i},'yr${yr}')" title="Click to cycle">${s.label}</span><input class="budget-input" type="text" placeholder="Add budget" value="${row['b'+yr]||''}" onchange="updateBudget(${i},'b${yr}',this.value)" aria-label="Budget ${yr}"></div></td>`;
+    });
+    html+=`</tr>`;
+  });
+  tbody.innerHTML=html;
+  document.getElementById('visibleCount').textContent=`Showing ${visible} of ${data.length} initiatives`;
+  document.getElementById('totalInitiatives').textContent=data.length;
+}
+
+// ── SUMMARY CARDS ───────────────────────────────────
+function renderSummary(){
+  const years=['2026','2027','2028','2029','2030'],YRS=['26','27','28','29','30'];
+  const clsMap=['sum-card-2026','sum-card-2027','sum-card-2028','sum-card-2029','sum-card-2030'];
+  const html=years.map((yr,yi)=>{
+    const y=YRS[yi],counts={};let totalBudget=0,budgetCount=0;
+    data.forEach(row=>{const st=row['yr'+y]||'na';if(st!=='na')counts[st]=(counts[st]||0)+1;if(row['b'+y]){const n=parseFloat(row['b'+y].replace(/[^0-9.]/g,''));if(!isNaN(n)){totalBudget+=n;budgetCount++}}});
+    const wip=(counts['wip']||0)+(counts['inv']||0);
+    const done=(counts['q1']||0)+(counts['q2']||0)+(counts['q3']||0)+(counts['q4']||0);
+    const ss=counts['ss']||0;const sunset=(counts['sunset']||0)+(counts['closed']||0);
+    return `<div class="sum-card ${clsMap[yi]}"><div class="sum-year">${yr}</div><div class="sum-label">Year Summary</div><div class="sum-stats">${wip?`<div class="sum-stat"><span class="sum-stat-lbl">In progress</span><span class="sum-stat-val" style="color:#1A4E96">${wip}</span></div>`:''} ${done?`<div class="sum-stat"><span class="sum-stat-lbl">Completing</span><span class="sum-stat-val" style="color:#0B5E3A">${done}</span></div>`:''} ${ss?`<div class="sum-stat"><span class="sum-stat-lbl">Steady state</span><span class="sum-stat-val" style="color:#3A2A88">${ss}</span></div>`:''} ${sunset?`<div class="sum-stat"><span class="sum-stat-lbl">Sunset/Closed</span><span class="sum-stat-val" style="color:#8B3A10">${sunset}</span></div>`:''}</div><div class="sum-budget-row"><span>Total budget</span><span class="sum-budget-val">${budgetCount?'R '+totalBudget.toFixed(1)+'M':'—'}</span></div></div>`;
+  }).join('');
+  document.getElementById('summaryRow').innerHTML=html;
+}
+
+// ══ HEATMAP ═════════════════════════════════════════
+const HM_COLORS={
+  cx:['cx-0','cx-1','cx-2','cx-3','cx-4','cx-5'],
+  ce:['ce-0','ce-1','ce-2','ce-3','ce-4','ce-5'],
+  ms:['ms-0','ms-1','ms-2','ms-3','ms-4','ms-5'],
+};
+const OBJ_INFO={
+  cx:{label:'① Client Experience',key:'cx',desc:'Initiatives directly improving client-facing experience'},
+  ce:{label:'② Cost Efficiency',key:'ce',desc:'Initiatives reducing operating costs and complexity'},
+  ms:{label:'③ Market Share',key:'ms',desc:'Initiatives enabling growth and new business capture'},
+};
+
+function statusToHeat(val){
+  const map={na:0,inv:1,wip:2,q4:3,q3:3,q2:3,q1:3,ss:4,sunset:1,closed:0};
+  return map[val]||0;
+}
+
+function renderHeatmap(){
+  const YRS=['26','27','28','29','30'];
+  const YEAR_LABELS=['2026','2027','2028','2029','2030'];
+
+  // 3 spotlight cards
+  const grid=document.getElementById('hmGrid');
+  const OBJ_KEYS=['cx','ce','ms'];
+  grid.innerHTML=OBJ_KEYS.map(obj=>{
+    const matching=data.filter(r=>getObjs(r).includes(obj));
+    const count=matching.length;
+    // per-year totals
+    const yearTotals=YRS.map(y=>{
+      return matching.reduce((s,r)=>s+statusToHeat(r['yr'+y]),0);
+    });
+    const maxVal=Math.max(...yearTotals,1);
+    const colorKey=HM_COLORS[obj];
+    const info=OBJ_INFO[obj];
+
+    // mini heatmap rows: each initiative × each year
+    let cellsHtml='';
+    matching.slice(0,8).forEach(r=>{
+      cellsHtml+=`<div class="hm-row">
+        <div class="hm-year-label" style="width:90px;text-align:left;font-size:9px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis">${r.name}</div>
+        <div class="hm-cells">`;
+      YRS.forEach((y,yi)=>{
+        const h=statusToHeat(r['yr'+y]);
+        const ci=Math.min(Math.round(h/4*5),5);
+        const s=sMap[r['yr'+y]]||sMap['na'];
+        cellsHtml+=`<div class="hm-cell ${colorKey[ci]}" title="${r.name} ${YEAR_LABELS[yi]}: ${s.label}"><span class="hm-num" style="font-size:9px">${s.label==='—'?'':s.label.replace('Complete ','').replace('In Progress','WIP').replace('Investigation','INV').replace('Steady State','SS').replace('Sunset','SUN').replace('Closed','CLS')}</span></div>`;
+      });
+      cellsHtml+='</div></div>';
+    });
+    if(matching.length>8)cellsHtml+=`<div style="font-size:10px;color:var(--text-muted);margin-top:6px;text-align:center">+${matching.length-8} more initiatives</div>`;
+
+    return `<div class="hm-card">
+      <div class="hm-card-header">
+        <div class="hm-obj-badge ${obj}">${info.label}</div>
+        <div class="hm-count">${count}</div>
+      </div>
+      <div style="font-size:11px;color:var(--text-muted);margin-bottom:12px">${info.desc}</div>
+      <div style="display:flex;gap:3px;margin-bottom:4px">
+        ${YEAR_LABELS.map((lbl,i)=>{
+          const v=yearTotals[i];const pct=Math.round(v/maxVal*100);
+          const ci=Math.min(Math.floor(pct/20),5);
+          return `<div style="flex:1;text-align:center"><div class="hm-cell ${colorKey[ci]}" style="height:40px;width:100%;display:flex;flex-direction:column;align-items:center;justify-content:center" title="${lbl}: intensity ${v}"><span style="font-size:14px;font-weight:700">${v}</span><span style="font-size:8px;opacity:0.7">${lbl}</span></div></div>`;
+        }).join('')}
+      </div>
+      <div style="margin-top:14px;border-top:1px solid var(--border-light);padding-top:12px">
+        <div style="font-size:10px;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:8px">Initiative breakdown</div>
+        ${cellsHtml}
+      </div>
+      <div class="hm-legend">
+        <span class="hm-legend-label">Low</span>
+        <div class="hm-legend-scale">
+          ${[0,1,2,3,4,5].map(i=>`<div class="hm-legend-box ${colorKey[i]}"></div>`).join('')}
+        </div>
+        <span class="hm-legend-label">High</span>
+      </div>
+    </div>`;
+  }).join('');
+
+  // Full matrix table
+  const tbody=document.getElementById('fullHmBody');
+  tbody.innerHTML=data.map((row,i)=>{
+    const objs=getObjs(row);
+    const chips=objs.map(o=>`<span class="obj-chip chip-${o}">${o.toUpperCase()}</span>`).join(' ');
+    const cells=YRS.map(y=>{
+      const st=row['yr'+y]||'na';const s=sMap[st]||sMap['na'];const h=statusToHeat(st);
+      // pick color based on first objective
+      const obj=objs[0]||'cx';const colorArr=HM_COLORS[obj];
+      const ci=Math.min(h,5);
+      return `<td style="text-align:center;padding:5px 6px"><div class="fhm-cell ${colorArr[ci]}" title="${s.label}" style="width:100%">${s.label==='—'?'<span style="color:#ccc">—</span>':s.label.replace('Complete ','Q').replace('In Progress','WIP').replace('Investigation','INV').replace('Steady State','SS').replace('Sunset','☀').replace('Closed','✕')}</div></td>`;
+    }).join('');
+    return `<tr><td style="padding:6px 10px;font-size:12px;font-weight:500;color:var(--text-primary)">${row.name}</td><td style="padding:6px 8px">${chips}</td>${cells}</tr>`;
+  }).join('');
+
+  // Coverage bar chart
+  const layers=[...new Set(data.map(r=>r.layer))];
+  const OBJ_KEYS2=['cx','ce','ms'];
+  const layerCounts=layers.map(l=>{
+    const lr=data.filter(r=>r.layer===l);
+    return {
+      layer:l,
+      cx:lr.filter(r=>getObjs(r).includes('cx')).length,
+      ce:lr.filter(r=>getObjs(r).includes('ce')).length,
+      ms:lr.filter(r=>getObjs(r).includes('ms')).length,
+    };
+  });
+  const shortLayer=l=>l.replace('Engagement Layer','Engage.').replace('Sales & Servicing','Sales').replace('Document Management','Doc Mgmt').replace('Decommissioning','Decomm.');
+  if(charts.coverage)charts.coverage.destroy();
+  const ctx=document.getElementById('coverageChart').getContext('2d');
+  charts.coverage=new Chart(ctx,{type:'bar',data:{
+    labels:layers.map(shortLayer),
+    datasets:[
+      {label:'Client Experience',data:layerCounts.map(l=>l.cx),backgroundColor:'#3AB89E',borderRadius:4},
+      {label:'Cost Efficiency',data:layerCounts.map(l=>l.ce),backgroundColor:'#8878D8',borderRadius:4},
+      {label:'Market Share',data:layerCounts.map(l=>l.ms),backgroundColor:'#E8A030',borderRadius:4},
+    ]
+  },options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{grid:{display:false},ticks:{font:{size:10}}},y:{grid:{color:'#EEF2F6'},ticks:{stepSize:1,font:{size:10}}}}}});
+}
+
+// ══ ANALYTICS ════════════════════════════════════════
+function renderAnalytics(){
+  const YRS=['26','27','28','29','30'];
+  const YEARS=['2026','2027','2028','2029','2030'];
+
+  // KPI
+  const totalInit=data.length;
+  const totalSS=data.filter(r=>r.yr29==='ss'||r.yr30==='ss').length;
+  const decomm=data.filter(r=>r.layer==='Decommissioning').length;
+  const aiInit=data.filter(r=>r.layer==='AI').length;
+  document.getElementById('kpiStrip').innerHTML=`
+    <div class="kpi-card"><div class="kpi-num">${totalInit}</div><div class="kpi-label">Total Initiatives</div><div class="kpi-delta kpi-up">↑ Active portfolio</div></div>
+    <div class="kpi-card"><div class="kpi-num">${totalSS}</div><div class="kpi-label">Reaching Steady State by 2029</div><div class="kpi-delta kpi-up">${Math.round(totalSS/totalInit*100)}% of portfolio</div></div>
+    <div class="kpi-card"><div class="kpi-num">${decomm}</div><div class="kpi-label">Systems Decommissioned</div><div class="kpi-delta" style="color:var(--amber)">Mid-2028 target</div></div>
+    <div class="kpi-card"><div class="kpi-num">${data.filter(r=>r.yr27!=='na'&&isComplete(r.yr27)).length}</div><div class="kpi-label">Completing in 2027</div><div class="kpi-delta kpi-up">Peak delivery year</div></div>
+  `;
+
+  // Delivery bar chart
+  const deliveryCounts=YRS.map(y=>data.filter(r=>isComplete(r['yr'+y])).length);
+  if(charts.delivery)charts.delivery.destroy();
+  const dc=document.getElementById('deliveryChart').getContext('2d');
+  charts.delivery=new Chart(dc,{type:'bar',data:{
+    labels:YEARS,
+    datasets:[{label:'Completing',data:deliveryCounts,backgroundColor:['#B0C4D8','#3AB89E','#8878D8','#C8963E','#1A3260'],borderRadius:6,borderSkipped:false}]
+  },options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{grid:{display:false},ticks:{font:{size:11}}},y:{grid:{color:'#EEF2F6'},ticks:{stepSize:1,font:{size:10}},beginAtZero:true}}}});
+
+  // Status donut 2026
+  const s26={};data.forEach(r=>{const st=r.yr26||'na';if(st!=='na')s26[st]=(s26[st]||0)+1});
+  const donutLabels=Object.keys(s26).map(k=>(sMap[k]||sMap['na']).label);
+  const donutData=Object.values(s26);
+  const donutColors=['#E0EEFF','#EEF0F2','#D6F5E8','#E8E4FF','#FEE8D8'];
+  const donutBorders=['#B5D0F8','#D0D8E0','#7FD9B3','#BDB0F5','#F5B080'];
+  if(charts.donut)charts.donut.destroy();
+  const dn=document.getElementById('statusDonut').getContext('2d');
+  charts.donut=new Chart(dn,{type:'doughnut',data:{labels:donutLabels,datasets:[{data:donutData,backgroundColor:donutColors,borderColor:donutBorders,borderWidth:1.5,hoverOffset:6}]},options:{responsive:true,maintainAspectRatio:false,cutout:'62%',plugins:{legend:{position:'right',labels:{font:{size:10},boxWidth:10,padding:8}}}}});
+
+  // Gantt
+  const statusColor={'wip':'#3B82F6','inv':'#94A3B8','q1':'#10B981','q2':'#0D9488','q3':'#059669','q4':'#047857','ss':'#7C3AED','sunset':'#F97316','closed':'#EF4444','na':'transparent'};
+  const gantt=document.getElementById('ganttWrap');
+  const quarters=['Q1','Q2','Q3','Q4'];
+  let gh=`<table class="tl-table"><thead><tr><th class="tl-label">Initiative</th><th class="tl-layer-label">Layer</th>`;
+  YEARS.forEach((yr,yi)=>{
+    quarters.forEach((q,qi)=>{
+      const cls=qi===0?'tl-yr-sep':'';
+      gh+=`<th class="tl-qcell ${cls}"><div class="tl-qhead">${qi===0?yr:''}<br>${q}</div></th>`;
+    });
+  });
+  gh+='</tr></thead><tbody>';
+  data.forEach(row=>{
+    const shortL=row.layer.replace('Engagement Layer','EL').replace('Sales & Servicing','S&S').replace('Document Management','DM').replace('Decommissioning','DCM');
+    gh+=`<tr><td class="tl-label" title="${row.name}">${row.name.length>28?row.name.slice(0,26)+'…':row.name}</td><td class="tl-layer-label">${shortL}</td>`;
+    YRS.forEach((y,yi)=>{
+      const st=row['yr'+y]||'na';const col=statusColor[st]||'transparent';
+      const s=sMap[st]||sMap['na'];
+      // spread across 4 quarter cells
+      quarters.forEach((q,qi)=>{
+        const cls=qi===0?'tl-yr-sep':'';
+        // for completion statuses, shade by quarter
+        let cellCol=col;
+        if(isComplete(st)){
+          const compQ=parseInt(st.replace('q',''));
+          if(qi+1<compQ)cellCol='#D1FAE5'; // lighter for earlier quarters
+          else if(qi+1===compQ)cellCol='#10B981'; // solid on completion quarter
+          else cellCol='#6EE7B7'; // slightly diff after
+        }
+        if(st==='na')cellCol='transparent';
+        gh+=`<td class="tl-qcell ${cls}" style="padding:3px 2px"><div class="tl-bar" style="background:${cellCol};opacity:${st==='na'?0:0.85}" title="${row.name} ${YEARS[yi]} ${q}: ${s.label}"></div></td>`;
+      });
+    });
+    gh+='</tr>';
+  });
+  gh+='</tbody></table>';
+  gantt.innerHTML=gh;
+
+  // Progress bars by layer
+  const layers=[...new Set(data.map(r=>r.layer))];
+  const pb=document.getElementById('progressBars');
+  const layerColors={'Engagement Layer':'#1AA88E','Sales & Servicing':'#E08A35','Product':'#3AB89E','PAS':'#8878D8','DATA':'#1A6AB5','AI':'#9B2A6A','Document Management':'#705A28','Decommissioning':'#B02A2A'};
+  pb.innerHTML=layers.map(l=>{
+    const lr=data.filter(r=>r.layer===l);
+    const ss=lr.filter(r=>r.yr29==='ss'||r.yr30==='ss').length;
+    const pct=lr.length?Math.round(ss/lr.length*100):0;
+    const col=layerColors[l]||'var(--teal)';
+    return `<div class="prog-item">
+      <div class="prog-label"><span class="prog-name">${l}</span><span class="prog-val">${ss}/${lr.length} · ${pct}%</span></div>
+      <div class="prog-track"><div class="prog-fill" style="width:${pct}%;background:${col}"></div></div>
+    </div>`;
+  }).join('');
+
+  // Decommission plan
+  const dp=document.getElementById('decommPlan');
+  const dcItems=data.filter(r=>r.layer==='Decommissioning');
+  dp.innerHTML=dcItems.map(r=>{
+    const phases=[
+      {yr:'2026',st:r.yr26},{yr:'2027',st:r.yr27},{yr:'2028',st:r.yr28},
+      {yr:'2029',st:r.yr29},{yr:'2030',st:r.yr30}
+    ];
+    return `<div style="margin-bottom:1rem;padding:1rem;background:var(--off-white);border-radius:var(--radius);border-left:3px solid var(--red)">
+      <div style="font-size:13px;font-weight:600;color:var(--text-primary);margin-bottom:6px">${r.name}</div>
+      <div style="font-size:11px;color:var(--text-secondary);margin-bottom:8px">${r.desc}</div>
+      <div style="display:flex;gap:4px">
+        ${phases.map(p=>{const s=sMap[p.st]||sMap['na'];return `<div style="flex:1;text-align:center"><div style="font-size:8px;color:var(--text-muted);margin-bottom:2px">${p.yr}</div><span class="badge ${s.cls}" style="font-size:9px;padding:2px 6px;min-width:40px">${s.label==='—'?'—':s.label.replace('Complete ','Q')}</span></div>`}).join('')}
+      </div>
+    </div>`;
+  }).join('');
+
+  // Radar chart — objective alignment per year
+  const objKeys=['cx','ce','ms'];
+  const objLabels=['Client Experience','Cost Efficiency','Market Share'];
+  const radarDatasets=YEARS.map((yr,yi)=>{
+    const y=YRS[yi];
+    const vals=objKeys.map(obj=>data.filter(r=>getObjs(r).includes(obj)&&isActive(r['yr'+y])&&r['yr'+y]!=='na').length);
+    const colors=['rgba(14,124,106,','rgba(91,75,168,','rgba(192,107,24,','rgba(26,50,96,','rgba(176,42,42,'];
+    return {label:yr,data:vals,borderColor:colors[yi]+'0.8)',backgroundColor:colors[yi]+'0.08)',borderWidth:2,pointRadius:4,pointHoverRadius:6};
+  });
+  if(charts.radar)charts.radar.destroy();
+  const rc=document.getElementById('radarChart').getContext('2d');
+  charts.radar=new Chart(rc,{type:'radar',data:{labels:objLabels,datasets:radarDatasets},options:{responsive:true,maintainAspectRatio:false,scales:{r:{beginAtZero:true,ticks:{stepSize:2,font:{size:9}},pointLabels:{font:{size:12,weight:'500'}},grid:{color:'#EEF2F6'}}},plugins:{legend:{position:'top',labels:{font:{size:11},boxWidth:12,padding:12}}}}});
+}
+
+// ══ TIMELINE ════════════════════════════════════════
+let tlLayerFilter = 'all';
+
+const LAYER_COLORS = {
+  'Engagement Layer':'#1A6AB5','Sales & Servicing':'#C06B18','Product':'#0E7C6A',
+  'PAS':'#5B4BA8','DATA':'#1A5C9E','AI':'#9B2A6A',
+  'Document Management':'#705A28','Decommissioning':'#B02A2A'
+};
+const LAYER_DOT_COLORS = {
+  'Engagement Layer':'#3A9AE8','Sales & Servicing':'#E8A030','Product':'#3AB89E',
+  'PAS':'#8878D8','DATA':'#4A8AD8','AI':'#D060A0',
+  'Document Management':'#B08040','Decommissioning':'#E05050'
+};
+
+// Map status+year to a quarter-based start/end within 20-quarter timeline
+// Timeline: 2026Q1=0 … 2030Q4=19
+function statusToSpan(row) {
+  const YRS = ['26','27','28','29','30'];
+  const spans = []; // {start, end, type, label}
+  let activeStart = null;
+  let lastType = null;
+
+  YRS.forEach((y, yi) => {
+    const st = row['yr'+y] || 'na';
+    const baseQ = yi * 4; // 0,4,8,12,16
+    if (st === 'na' || st === 'closed') {
+      if (activeStart !== null) { spans.push({start:activeStart, end:baseQ-1, type:lastType}); activeStart=null; }
+      if (st === 'closed') spans.push({start:baseQ, end:baseQ+3, type:'closed'});
+      return;
+    }
+    const type = ['q1','q2','q3','q4'].includes(st) ? 'completing' : st === 'ss' ? 'steady' : st === 'sunset' ? 'sunset' : st === 'inv' ? 'inv' : 'wip';
+    if (activeStart === null) { activeStart = baseQ; lastType = type; }
+    else if (type !== lastType) {
+      spans.push({start:activeStart, end:baseQ-1, type:lastType});
+      activeStart = baseQ; lastType = type;
+    }
+  });
+  if (activeStart !== null) spans.push({start:activeStart, end:19, type:lastType});
+
+  // Milestone: when does it "complete"?
+  const milestone = [];
+  YRS.forEach((y, yi) => {
+    const st = row['yr'+y] || 'na';
+    if (['q1','q2','q3','q4'].includes(st)) {
+      const q = parseInt(st.replace('q','')) - 1;
+      milestone.push({ qIdx: yi*4+q, label: row.name + ' — Complete '+st.toUpperCase()+' '+(2026+yi) });
+    }
+    if (st === 'ss' && (yi===0 || !['ss'].includes(row['yr'+YRS[yi-1]]||'na'))) {
+      milestone.push({ qIdx: yi*4, label: row.name + ' — Steady State '+(2026+yi), type:'ss' });
+    }
+    if (st === 'sunset') {
+      milestone.push({ qIdx: yi*4+1, label: row.name + ' — Sunset Mid '+(2026+yi), type:'sunset' });
+    }
+  });
+  return {spans, milestone};
+}
+
+const SPAN_COLORS = {
+  wip:'#3AB89E', inv:'#94A3B8', completing:'#10B981',
+  steady:'#8878D8', sunset:'#F97316', closed:'#EF4444'
+};
+
+// Exco review gates per year
+const REVIEW_GATES = [
+  {yr:2026, q:1, label:'Q1 Review — Programme Kick-off', date:'Mar 2026'},
+  {yr:2026, q:2, label:'Q2 Review — Delivery Confirmation', date:'Jun 2026'},
+  {yr:2026, q:3, label:'Q3 Review — Mid-year Assessment', date:'Sep 2026'},
+  {yr:2026, q:4, label:'Q4 Review — Year-end Sign-off', date:'Dec 2026'},
+  {yr:2027, q:1, label:'Q1 Review — 2027 Kick-off', date:'Mar 2027'},
+  {yr:2027, q:2, label:'Q2 Review — Product Wave 1 Complete?', date:'Jun 2027'},
+  {yr:2027, q:3, label:'Q3 Review — Engagement & Sales Complete?', date:'Sep 2027'},
+  {yr:2027, q:4, label:'Q4 Review — PAS Wave 1 Complete?', date:'Dec 2027'},
+  {yr:2028, q:2, label:'Mid-2028 — Decommission Gate: LCU + BPC', date:'Jun 2028'},
+  {yr:2028, q:3, label:'Q3 Review — Data & Docs Complete?', date:'Sep 2028'},
+  {yr:2028, q:4, label:'Q4 Review — Pre-Steady State Sign-off', date:'Dec 2028'},
+  {yr:2029, q:1, label:'Steady State Confirmation — All Systems', date:'Jan 2029'},
+  {yr:2029, q:4, label:'Q4 2029 — Benefits Realisation Review', date:'Dec 2029'},
+  {yr:2030, q:4, label:'Final Review — 5-Year Horizon Close', date:'Dec 2030'},
+];
+
+let tlFilterActive = 'all';
+
+function tlFilter(layer) {
+  tlFilterActive = layer;
+  document.querySelectorAll('.tl-filter-btn').forEach(b => b.classList.remove('on'));
+  const btn = document.getElementById('tlf-'+layer);
+  if (btn) btn.classList.add('on');
+  renderTimeline();
+}
+
+function renderTimeline() {
+  const YEARS = [2026,2027,2028,2029,2030];
+  const QUARTERS = ['Q1','Q2','Q3','Q4'];
+  const TOTAL_Q = 20;
+
+  const filtered = tlFilterActive === 'all' ? data : data.filter(r => r.layer === tlFilterActive);
+  const layers = [...new Set(filtered.map(r => r.layer))];
+
+  // Build the gantt HTML via canvas-style div layout
+  let html = '<div style="display:flex;min-width:1100px">';
+
+  // LEFT LABELS
+  html += '<div class="gantt-labels">';
+  html += '<div class="gantt-labels-top">Initiative</div>';
+
+  layers.forEach(layer => {
+    const rows = filtered.filter(r => r.layer === layer);
+    const col = LAYER_DOT_COLORS[layer] || '#888';
+    html += `<div class="gantt-section-row"><span class="gantt-section-name" style="color:${col}">${layer}</span></div>`;
+    rows.forEach(row => {
+      html += `<div class="gantt-label-row" style="height:38px"><span class="gantt-layer-dot" style="background:${col}"></span><span class="gantt-init-name" title="${row.name}">${row.name}</span></div>`;
+    });
+  });
+  html += '</div>';
+
+  // RIGHT GRID
+  html += '<div class="gantt-grid">';
+
+  // Year headers
+  html += '<div class="gantt-yr-headers">';
+  YEARS.forEach(yr => { html += `<div class="gantt-yr-head" style="flex:4">${yr}</div>`; });
+  html += '</div>';
+
+  // Quarter headers with review flags
+  html += '<div class="gantt-q-headers">';
+  YEARS.forEach((yr, yi) => {
+    QUARTERS.forEach((q, qi) => {
+      const gate = REVIEW_GATES.find(g => g.yr === yr && g.q === qi+1);
+      html += `<div class="gantt-q-cell${qi===0?' q1':''}" style="flex:1">`;
+      if (gate) html += `<div class="review-marker"><div class="review-flag"></div><div class="review-label">${gate.date}</div></div>`;
+      html += `<span style="margin-top:${gate?'14px':'0'}">${q}</span></div>`;
+    });
+  });
+  html += '</div>';
+
+  // Bar rows
+  html += '<div class="gantt-rows-wrap" style="position:relative">';
+
+  // Background Q grid lines (absolute, spanning all rows)
+  const pct = (q) => (q / TOTAL_Q * 100).toFixed(4) + '%';
+  const wPct = (1 / TOTAL_Q * 100).toFixed(4) + '%';
+
+  layers.forEach(layer => {
+    const rows = filtered.filter(r => r.layer === layer);
+    // Section spacer
+    html += `<div class="gantt-bar-row section-spacer"></div>`;
+    rows.forEach(row => {
+      const {spans, milestone} = statusToSpan(row);
+      html += `<div class="gantt-bar-row" style="position:relative;overflow:visible">`;
+      // Q grid
+      for (let q=0; q<TOTAL_Q; q++) {
+        html += `<div style="position:absolute;top:0;bottom:0;left:${pct(q)};width:${wPct};border-right:1px solid ${q%4===3?'#D8DDE5':'#EEF2F6'};pointer-events:none"></div>`;
+      }
+      // Bars
+      spans.forEach(sp => {
+        const left = pct(sp.start);
+        const width = ((sp.end - sp.start + 1) / TOTAL_Q * 100).toFixed(4) + '%';
+        const col = SPAN_COLORS[sp.type] || '#94A3B8';
+        const label = sp.type === 'wip' ? 'In Progress' : sp.type === 'inv' ? 'Investigation' : sp.type === 'completing' ? 'Delivering' : sp.type === 'steady' ? 'Steady State' : sp.type === 'sunset' ? 'Sunset' : 'Closed';
+        html += `<div class="gantt-bar" style="left:${left};width:${width};background:${col};top:8px" title="${row.name}: ${label}">${label}</div>`;
+      });
+      // Milestones
+      milestone.forEach(m => {
+        const left = ((m.qIdx + 0.5) / TOTAL_Q * 100).toFixed(4) + '%';
+        const col = m.type === 'ss' ? '#8878D8' : m.type === 'sunset' ? '#F97316' : '#C8963E';
+        html += `<div class="gantt-milestone" style="left:calc(${left} - 7px);top:12px;background:${col};border-radius:3px" title="${m.label}"><div class="milestone-tooltip">${m.label}</div></div>`;
+      });
+      html += '</div>';
+    });
+  });
+  html += '</div></div></div>'; // gantt-rows-wrap, gantt-grid, flex wrapper
+
+  document.getElementById('ganttMain').innerHTML = html;
+
+  // Milestone list by year
+  const mlBody = document.getElementById('mlBody');
+  mlBody.innerHTML = YEARS.map((yr, yi) => {
+    const y = String(yr).slice(2);
+    const YRS2 = ['26','27','28','29','30'];
+    const items = [];
+    data.forEach(row => {
+      const st = row['yr'+YRS2[yi]] || 'na';
+      if (['q1','q2','q3','q4'].includes(st)) {
+        items.push({name:row.name, layer:row.layer, q:st.toUpperCase(), type:'complete'});
+      }
+      if (st === 'ss' && (yi===0 || !['ss'].includes(row['yr'+YRS2[yi-1]]||'na'))) {
+        items.push({name:row.name, layer:row.layer, q:'SS', type:'steady'});
+      }
+      if (st === 'sunset') items.push({name:row.name, layer:row.layer, q:'MID', type:'sunset'});
+    });
+    const gates = REVIEW_GATES.filter(g => g.yr === yr);
+    const borderMap = {complete:'var(--teal)',steady:'var(--purple)',sunset:'var(--red)'};
+    const bgMap = {complete:'#EFF9F4',steady:'#F4F0FF',sunset:'#FFF0EE'};
+    const qBgMap = {complete:'#D6F5E8',steady:'#E8E4FF',sunset:'#FEE8D8'};
+    const qColMap = {complete:'#0B5E3A',steady:'#3A2A88',sunset:'#8B3A10'};
+    return `<div class="ml-year-col">
+      <div class="ml-year-title" style="border-bottom-color:${['#8EA4BC','#3AB89E','#8878D8','#C8963E','#1A3260'][yi]}">${yr}</div>
+      ${items.map(it=>`<div class="ml-item" style="border-left-color:${borderMap[it.type]||'var(--teal)'};background:${bgMap[it.type]||'#EFF9F4'}">
+        <div class="ml-item-title">${it.name}</div>
+        <div class="ml-item-sub">${it.layer}</div>
+        <span class="ml-item-q" style="background:${qBgMap[it.type]};color:${qColMap[it.type]}">${it.q}</span>
+      </div>`).join('')}
+      ${gates.map(g=>`<div style="margin-bottom:8px;padding:7px 10px;background:#F7F3FF;border-left:3px solid var(--gold);border-radius:var(--radius)"><div style="font-size:10px;font-weight:600;color:var(--navy)">▼ ${g.label}</div><div style="font-size:9px;color:var(--text-muted);margin-top:2px">${g.date}</div></div>`).join('')}
+    </div>`;
+  }).join('');
+
+  // Review gates strip
+  const rg = document.getElementById('reviewGates');
+  rg.innerHTML = `<div style="display:flex;gap:0;border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden">
+    ${YEARS.map((yr,yi)=>{
+      const gates = REVIEW_GATES.filter(g=>g.yr===yr);
+      const colors=['#EEF6FF','#EFF9F4','#F4F0FF','#FFF4E6','#F0F6FF'];
+      const bcolors=['#1A6AB5','#0E7C6A','#5B4BA8','#C06B18','#1A3260'];
+      return `<div style="flex:1;border-right:2px solid ${bcolors[yi]};padding:12px 10px;background:${colors[yi]}">
+        <div style="font-family:'DM Serif Display',serif;font-size:14px;color:${bcolors[yi]};margin-bottom:8px">${yr}</div>
+        ${gates.map(g=>`<div style="margin-bottom:6px;padding:5px 8px;background:white;border-radius:6px;border-left:2px solid var(--gold);cursor:pointer" onclick="showGateDetail(${g.yr},${g.q})" title="Click to view">
+          <div style="font-size:10px;font-weight:600;color:var(--navy)">▼ ${g.label}</div>
+          <div style="font-size:9px;color:var(--text-muted)">${g.date}</div>
+        </div>`).join('')}
+      </div>`;
+    }).join('')}
+  </div>`;
+}
+
+function showGateDetail(yr, q) {
+  const gate = REVIEW_GATES.find(g=>g.yr===yr&&g.q===q);
+  if (!gate) return;
+  const YRS = ['26','27','28','29','30'];
+  const yi = yr-2026;
+  const y = YRS[yi];
+  const due = data.filter(r=>{
+    const st=r['yr'+y]||'na';
+    return ['q1','q2','q3','q4'].includes(st)&&parseInt(st.replace('q',''))<=q;
+  });
+  const steady = data.filter(r=>(r['yr'+y]||'na')==='ss');
+  let msg = `Gate: ${gate.label}\n\nInitiatives completing by ${gate.date}:\n`;
+  due.forEach(r=>msg+=`  • ${r.name} (${r.layer})\n`);
+  if (steady.length) { msg+=`\nAlready in Steady State:\n`; steady.forEach(r=>msg+=`  • ${r.name}\n`); }
+  alert(msg);
+}
+
+function openModal(idx){
+  editIdx=idx;const isNew=idx===-1;
+  const row=isNew?{layer:'Product',name:'',desc:'',objs:[],yr26:'wip',yr27:'na',yr28:'na',yr29:'na',yr30:'na',b26:'',b27:'',b28:'',b29:'',b30:''}:data[idx];
+  document.getElementById('modalTitle').textContent=isNew?'Add New Initiative':'Edit Initiative';
+  document.getElementById('mLayer').value=row.layer||'Product';
+  document.getElementById('mName').value=row.name||'';
+  document.getElementById('mDesc').value=row.desc||'';
+  const objs=row.objs&&row.objs.length?row.objs:(DEFAULT_OBJS[row.name]||[]);
+  document.getElementById('mCX').checked=objs.includes('cx');
+  document.getElementById('mCE').checked=objs.includes('ce');
+  document.getElementById('mMS').checked=objs.includes('ms');
+  ['26','27','28','29','30'].forEach(yr=>{
+    document.getElementById('mS'+yr).innerHTML=STATUSES.map(s=>`<option value="${s.val}"${row['yr'+yr]===s.val?' selected':''}>${s.label}</option>`).join('');
+    document.getElementById('mB'+yr).value=row['b'+yr]||'';
+  });
+  document.getElementById('deleteBtn').style.display=isNew?'none':'';
+  document.getElementById('editModal').classList.add('open');
+}
+function closeModal(){document.getElementById('editModal').classList.remove('open');editIdx=-1}
+function saveModal(){
+  const objs=[];
+  if(document.getElementById('mCX').checked)objs.push('cx');
+  if(document.getElementById('mCE').checked)objs.push('ce');
+  if(document.getElementById('mMS').checked)objs.push('ms');
+  const row={layer:document.getElementById('mLayer').value,name:document.getElementById('mName').value,desc:document.getElementById('mDesc').value,objs};
+  ['26','27','28','29','30'].forEach(yr=>{row['yr'+yr]=document.getElementById('mS'+yr).value;row['b'+yr]=document.getElementById('mB'+yr).value});
+  if(editIdx===-1)data.push(row);else data[editIdx]={...data[editIdx],...row};
+  closeModal();renderTable();renderSummary();pushToCloud();
+}
+function deleteRow(){if(!confirm('Delete "'+data[editIdx].name+'"?'))return;data.splice(editIdx,1);closeModal();renderTable();renderSummary();pushToCloud()}
+function addRow(){openModal(-1)}
+function exportJSON(){const b=new Blob([JSON.stringify(data,null,2)],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='corporate_benefits_roadmap.json';a.click()}
+document.getElementById('editModal').addEventListener('click',function(e){if(e.target===this)closeModal()});
+
+// ══════════════════════════════════════════════════════
+// INTELLIGENCE TAB — All 5 Features
+// ══════════════════════════════════════════════════════
+
+// ── switchTab extension ────────────────────────────────
+const _origSwitchTab = window.switchTab;
+
+// ── AI Executive Summary ──────────────────────────────
+async function generateAISummary(){
+  const btn = document.getElementById('aiSummaryBtn');
+  const out = document.getElementById('aiSummaryOutput');
+  const tone = document.getElementById('aiTone').value;
+  if(!btn||!out) return;
+
+  btn.disabled=true; btn.textContent='⟳ Generating...';
+  out.textContent=''; out.className='ai-output ai-streaming';
+
+  const YRS=['26','27','28','29','30'];
+  const YEARS=[2026,2027,2028,2029,2030];
+  const counts={};
+  YEARS.forEach((yr,i)=>{
+    const y=YRS[i]; counts[yr]={wip:0,completing:0,ss:0,sunset:0,budgetR:0};
+    data.forEach(r=>{
+      const st=r['yr'+y]||'na';
+      if(st==='wip'||st==='inv') counts[yr].wip++;
+      else if(['q1','q2','q3','q4'].includes(st)) counts[yr].completing++;
+      else if(st==='ss') counts[yr].ss++;
+      else if(st==='sunset'||st==='closed') counts[yr].sunset++;
+      const v=parseFloat((r['b'+y]||'').toString().replace(/[Mm]/g,'').replace(/[^0-9.]/g,''));
+      if(!isNaN(v)) counts[yr].budgetR+=v;
+    });
+  });
+
+  const totalInits=data.length;
+  const ssBy2029=data.filter(r=>r.yr29==='ss'||r.yr30==='ss').length;
+  const completing2027=data.filter(r=>['q1','q2','q3','q4'].includes(r.yr27)).length;
+  const completing2028=data.filter(r=>['q1','q2','q3','q4'].includes(r.yr28)).length;
+  const totalBudget=YEARS.reduce((s,yr)=>s+counts[yr].budgetR,0);
+  const budgetStr=totalBudget>0?'R'+totalBudget.toFixed(1)+' million':'(budget to be confirmed)';
+  const today=new Date().toLocaleDateString('en-ZA',{year:'numeric',month:'long'});
+  const cxCount=data.filter(r=>(r.objs||[]).includes('cx')).length;
+  const ceCount=data.filter(r=>(r.objs||[]).includes('ce')).length;
+  const msCount=data.filter(r=>(r.objs||[]).includes('ms')).length;
+  const layerGroups={};
+  data.forEach(r=>{if(!layerGroups[r.layer])layerGroups[r.layer]=0;layerGroups[r.layer]++;});
+  const topLayer=Object.entries(layerGroups).sort((a,b)=>b[1]-a[1])[0];
+
+  const narratives={
+    executive:'Corporate Benefits Roadmap — Executive Summary\n'+today+'\n\nCorporate Benefits has committed to a comprehensive five-year technology transformation spanning '+totalInits+' initiatives across '+Object.keys(layerGroups).length+' delivery layers. The programme is anchored on three enterprise objectives — Client Experience ('+cxCount+' initiatives), Cost Efficiency ('+ceCount+' initiatives), and Market Share Growth ('+msCount+' initiatives) — and is designed to deliver a competitive, modern benefits platform by 2029.\n\n2026 marks the foundation year, with all '+counts[2026].wip+' initiatives in active delivery. The Flexor platform launch is the centrepiece of this year, consolidating product, quoting, billing, and PAS administration onto a single modern instance — replacing the legacy multi-system landscape.\n\n2027 is the peak delivery year, with '+completing2027+' initiatives scheduled for completion. The Self Service Portal, LHR/MBS Revamp, and CAL Group Risk products are among those reaching completion, delivering direct client-facing improvements and operational efficiency gains.\n\n2028 represents the consolidation milestone — '+completing2028+' further initiatives complete, and the critical decommissioning of LCU, BPC (FA) and BPC (Admin) is executed mid-year. This removes significant technical debt and ongoing maintenance costs.\n\nBy 2029, '+ssBy2029+' of '+totalInits+' initiatives are in steady state, achieving the programme target of a stable, optimised platform. The five-year investment envelope is estimated at '+budgetStr+'.\n\nThe programme positions Corporate Benefits as a digitally-enabled, client-centric organisation with a rationalised technology estate and the operational capacity to capture new market opportunities.',
+
+    detailed:'Corporate Benefits Programme — Detailed Analysis\n'+today+'\n\nPROGRAMME OVERVIEW\nThe roadmap encompasses '+totalInits+' strategic initiatives across '+Object.keys(layerGroups).length+' layers: '+Object.keys(layerGroups).join(', ')+'. The '+topLayer[0]+' layer carries the highest initiative volume ('+topLayer[1]+' initiatives).\n\nOBJECTIVE ALIGNMENT\n• Client Experience: '+cxCount+' initiatives — SSP, Contact Centre, LHR/MBS, Investment, Wellness, Financial Literacy\n• Cost Efficiency: '+ceCount+' initiatives — Flexor consolidation, CAL, ESP, Workflow STPs, Data Platform, Decommissioning\n• Market Share: '+msCount+' initiatives — Flexor Quotes, Annuities & CBond, SBG Fund, Employee Select Plan\n\nDELIVERY PHASING\n2026 — Foundation: '+counts[2026].wip+' initiatives in active delivery. Flexor platform, CAL rebuild, SSP, LHR, BCD Quotes and BAU regulatory work all commence.\n2027 — Scale: '+completing2027+' completions targeted. Product and Engagement layers largely stabilise. PAS Wave 1 completes Q4.\n2028 — Consolidate: '+completing2028+' completions. Data Platform, Document Management and OCR go live Q1. LCU, BPC (FA) and BPC (Admin) decommissioned mid-year.\n2029 — Steady State: '+ssBy2029+' initiatives achieve stable operations. Single Flexor instance in production.\n2030 — Optimise: Full portfolio optimisation. New capability wave assessed.\n\nFINANCIAL SUMMARY\nEstimated 5-year programme investment: '+budgetStr+'. Cost efficiency initiatives are expected to offset legacy maintenance spend through decommissioning savings from 2028 onwards.',
+
+    risk:'Corporate Benefits Roadmap — Risk & Assurance View\n'+today+'\n\nKEY PROGRAMME RISKS\n\n1. CRITICAL PATH — PAS Consolidation\nThe migration of Cpr Sel to Flexor and IFP are critical path items targeted for Q4 2027. Delay in either directly pushes the LCU and BPC decommission scheduled for mid-2028.\n\n2. SHARED DEPENDENCY — ODS/MI/Reports\nThe Operational Data Store underpins '+ceCount+' initiatives. Any delivery risk on ODS Q1 2028 cascades to MI, Reports, and 6 downstream workstreams. Recommend ODS be elevated to a standalone programme stream.\n\n3. CONCENTRATION RISK — 2027 Delivery Load\n'+completing2027+' initiatives are scheduled to complete in 2027, representing the peak delivery year. Resource and capacity constraints need confirmation by Q3 2026.\n\n4. DECOMMISSIONING RISK\nMid-2028 decommissioning assumes full data migration and client transition. Incomplete migration by June 2028 requires extended dual-running, increasing cost and complexity.\n\n5. SEEDS OF CHANGE — Emerging Initiatives\nWellness, Financial Literacy, SBG Fund and Document Management are currently not-started. These require business case finalisation to remain on the 2028 delivery track.\n\nMITIGATION RECOMMENDATIONS\n• Dedicated PAS migration workstream with weekly tracking from Q1 2026\n• Confirm ODS architecture and team by Q2 2026\n• Capacity review for 2027 peak by Q4 2026\n• Hard cut-off date for LCU/BPC migration: April 2028',
+
+    investor:'Corporate Benefits Roadmap — Investor Narrative\n'+today+'\n\nCorporate Benefits is executing a transformation that will reposition the business for growth, margin expansion, and digital leadership in the South African employee benefits market.\n\nTHE INVESTMENT CASE\nA '+totalInits+'-initiative programme consolidating a fragmented legacy landscape onto the Flexor platform — a single, modern, scalable instance supporting rapid product innovation and client self-service. Estimated investment: '+budgetStr+' over five years.\n\nVALUE CREATION LEVERS\n\n① Cost Efficiency ('+ceCount+' initiatives)\nElimination of LCU and two BPC instances mid-2028 removes infrastructure and maintenance overhead. Workflow automation and ODS consolidation reduce operational cost per transaction.\n\n② Revenue Protection & Growth ('+msCount+' initiatives)\nCAL Group Risk, Employee Select Plan, Annuities & CBond and BCD Quotes replacement address product gaps and distribution friction — directly supporting new business acquisition in SMME and institutional segments.\n\n③ Client Experience Uplift ('+cxCount+' initiatives)\nSSP and Contact Centre modernisation deliver a digital-first engagement model. LHR/MBS, Financial Literacy and Wellness expand the value proposition beyond traditional benefits administration.\n\nTIMELINE TO VALUE\n• 2027: First wave of client-facing improvements live\n• 2028: Legacy systems retired, cost base normalises\n• 2029: Full steady state, platform ready for next-generation launches\n• 2030: Competitive positioning secured'
+  };
+
+  const text=narratives[tone]||narratives.executive;
+  out.textContent='';
+  out.className='ai-output ai-streaming';
+  let i=0;
+  function typeNext(){
+    if(i<text.length){
+      out.textContent+=text.slice(i,Math.min(i+10,text.length));
+      out.scrollTop=out.scrollHeight;
+      i+=10;
+      setTimeout(typeNext,8);
+    } else {
+      out.className='ai-output slide-in';
+      btn.disabled=false; btn.textContent='✨ Generate Summary';
+    }
+  }
+  typeNext();
+}
+
+function copyAIOutput(){
+  const t = document.getElementById('aiSummaryOutput')?.textContent;
+  if(t) navigator.clipboard.writeText(t).then(()=>{ alert('Copied to clipboard!'); });
+}
+
+// ── Dependency Web (Canvas) ────────────────────────────
+const DEP_LINKS = [
+  {s:'Flexor',t:'Flexor Quotes',w:3},{s:'Flexor',t:'Flexor Billing',w:3},
+  {s:'Flexor',t:'CAL',w:2},{s:'Flexor',t:'Cpr Sel to Flexor',w:3},
+  {s:'Flexor',t:'IFP',w:2},{s:'Flexor',t:'Annuities',w:2},
+  {s:'SSP Front end',t:'Flexor',w:2},{s:'SSP Front end',t:'Contact Center Front end',w:1},
+  {s:'ODS',t:'MI',w:3},{s:'ODS',t:'Reports',w:3},
+  {s:'ODS',t:'Flexor',w:2},{s:'ODS',t:'SSP Front end',w:2},
+  {s:'LHR (Product)',t:'LHR (PAS)',w:2},
+  {s:'Cpr Sel to Flexor',t:'LCU Sunset',w:3},{s:'Cpr Sel to Flexor',t:'BPC (FA) Sunset',w:2},
+  {s:'CAL',t:'CAL Quotes',w:2},{s:'CAL',t:'CAL Billing',w:2},
+  {s:'BCD',t:'Flexor Quotes',w:1},
+  {s:'OCR',t:'Single location for documents',w:2},
+  {s:'Workflow (STPs)',t:'ODS',w:2},
+];
+
+let depNodes = [], depDragging = null, depOffX=0, depOffY=0, depScale=1, depPanX=0, depPanY=0;
+let depAnimFrame = null;
+
+function initDepWeb(){
+  const canvas = document.getElementById('depCanvas');
+  if(!canvas) return;
+  const wrap = document.getElementById('depWebWrap');
+  canvas.width = wrap.offsetWidth || 600;
+  canvas.height = wrap.offsetHeight || 340;
+
+  // Build node list from data + extra virtual nodes
+  const nodeNames = [...new Set([...DEP_LINKS.map(l=>l.s),...DEP_LINKS.map(l=>l.t)])];
+  const LAYER_COLORS = {'Engagement Layer':'#4A90E2','Sales & Servicing':'#E8A030','Product':'#3AB89E',
+    'PAS':'#8878D8','DATA':'#4A8AD8','AI':'#D060A0','Document Management':'#B08040','Decommissioning':'#E05050'};
+  const W=canvas.width, H=canvas.height;
+  depNodes = nodeNames.map((nm,i)=>{
+    const row = data.find(d=>d.name===nm)||data.find(d=>d.name===nm.replace('Flexor','Ignite'));
+    const layer = row ? row.layer : 'Product';
+    const col = LAYER_COLORS[layer] || '#888';
+    const angle = (i/nodeNames.length)*Math.PI*2;
+    const r = Math.min(W,H)*0.32;
+    return {nm, col, x:W/2+Math.cos(angle)*r*(0.6+Math.random()*0.4), y:H/2+Math.sin(angle)*r*(0.6+Math.random()*0.4), vx:0, vy:0, r:nm.length>12?7:9};
+  });
+  depPanX=0; depPanY=0; depScale=1;
+  drawDepWeb();
+  startDepSim();
+  addDepEvents(canvas);
+}
+
+function startDepSim(){
+  if(depAnimFrame) cancelAnimationFrame(depAnimFrame);
+  function tick(){
+    const W=document.getElementById('depCanvas')?.width||600;
+    const H=document.getElementById('depCanvas')?.height||340;
+    // Repulsion
+    for(let i=0;i<depNodes.length;i++){
+      for(let j=i+1;j<depNodes.length;j++){
+        const a=depNodes[i],b=depNodes[j];
+        const dx=b.x-a.x, dy=b.y-a.y;
+        const d=Math.max(Math.sqrt(dx*dx+dy*dy),1);
+        const f=800/(d*d);
+        a.vx-=dx/d*f; a.vy-=dy/d*f;
+        b.vx+=dx/d*f; b.vy+=dy/d*f;
+      }
+    }
+    // Attraction along links
+    DEP_LINKS.forEach(l=>{
+      const a=depNodes.find(n=>n.nm===l.s), b=depNodes.find(n=>n.nm===l.t);
+      if(!a||!b) return;
+      const dx=b.x-a.x, dy=b.y-a.y;
+      const d=Math.max(Math.sqrt(dx*dx+dy*dy),1);
+      const ideal=90, f=(d-ideal)*0.03*l.w;
+      a.vx+=dx/d*f; a.vy+=dy/d*f;
+      b.vx-=dx/d*f; b.vy-=dy/d*f;
+    });
+    // Centre gravity + damping + bounds
+    depNodes.forEach(n=>{
+      if(n===depDragging) return;
+      n.vx+=(W/2-n.x)*0.002; n.vy+=(H/2-n.y)*0.002;
+      n.vx*=0.85; n.vy*=0.85;
+      n.x+=n.vx; n.y+=n.vy;
+      n.x=Math.max(20,Math.min(W-20,n.x));
+      n.y=Math.max(20,Math.min(H-20,n.y));
+    });
+    drawDepWeb();
+    depAnimFrame=requestAnimationFrame(tick);
+  }
+  depAnimFrame=requestAnimationFrame(tick);
+}
+
+function drawDepWeb(){
+  const canvas=document.getElementById('depCanvas');
+  if(!canvas) return;
+  const ctx=canvas.getContext('2d');
+  const W=canvas.width, H=canvas.height;
+  ctx.clearRect(0,0,W,H);
+  ctx.fillStyle='#0B1E3D'; ctx.fillRect(0,0,W,H);
+  // Grid
+  ctx.strokeStyle='rgba(255,255,255,0.04)'; ctx.lineWidth=1;
+  for(let x=0;x<W;x+=40){ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,H);ctx.stroke();}
+  for(let y=0;y<H;y+=40){ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(W,y);ctx.stroke();}
+  // Links
+  DEP_LINKS.forEach(l=>{
+    const a=depNodes.find(n=>n.nm===l.s), b=depNodes.find(n=>n.nm===l.t);
+    if(!a||!b) return;
+    ctx.beginPath();
+    ctx.moveTo(a.x,a.y); ctx.lineTo(b.x,b.y);
+    ctx.strokeStyle=`rgba(200,150,62,${0.15+l.w*0.12})`;
+    ctx.lineWidth=l.w*0.8;
+    ctx.stroke();
+    // Arrow
+    const ang=Math.atan2(b.y-a.y,b.x-a.x);
+    const ex=b.x-Math.cos(ang)*(b.r+4), ey=b.y-Math.sin(ang)*(b.r+4);
+    ctx.beginPath();
+    ctx.moveTo(ex,ey);
+    ctx.lineTo(ex-7*Math.cos(ang-0.4),ey-7*Math.sin(ang-0.4));
+    ctx.lineTo(ex-7*Math.cos(ang+0.4),ey-7*Math.sin(ang+0.4));
+    ctx.closePath();
+    ctx.fillStyle=`rgba(200,150,62,${0.3+l.w*0.15})`;
+    ctx.fill();
+  });
+  // Nodes
+  depNodes.forEach(n=>{
+    ctx.beginPath();
+    ctx.arc(n.x,n.y,n.r+3,0,Math.PI*2);
+    ctx.fillStyle=n.col+'33'; ctx.fill();
+    ctx.beginPath();
+    ctx.arc(n.x,n.y,n.r,0,Math.PI*2);
+    ctx.fillStyle=n.col; ctx.fill();
+    ctx.strokeStyle='rgba(255,255,255,0.6)'; ctx.lineWidth=1.5;
+    ctx.stroke();
+    // Label
+    ctx.font=`bold 9px DM Sans,sans-serif`;
+    ctx.fillStyle='white';
+    ctx.textAlign='center';
+    const label=n.nm.length>14?n.nm.slice(0,13)+'…':n.nm;
+    ctx.fillText(label,n.x,n.y+n.r+12);
+  });
+}
+
+function addDepEvents(canvas){
+  function getNode(ex,ey){
+    const rect=canvas.getBoundingClientRect();
+    const x=(ex-rect.left)*(canvas.width/rect.width);
+    const y=(ey-rect.top)*(canvas.height/rect.height);
+    return {node:depNodes.find(n=>Math.hypot(n.x-x,n.y-y)<n.r+6), x, y};
+  }
+  canvas.addEventListener('mousedown',e=>{const {node,x,y}=getNode(e.clientX,e.clientY);if(node){depDragging=node;depOffX=node.x-x;depOffY=node.y-y;}});
+  canvas.addEventListener('mousemove',e=>{if(depDragging){const {x,y}=getNode(e.clientX,e.clientY);depDragging.x=x+depOffX;depDragging.y=y+depOffY;depDragging.vx=0;depDragging.vy=0;}});
+  canvas.addEventListener('mouseup',()=>{depDragging=null;});
+  canvas.addEventListener('mouseleave',()=>{depDragging=null;});
+}
+
+// ── Budget Burndown ────────────────────────────────────
+const BURN_BUDGETS = {2026:0,2027:0,2028:0,2029:0,2030:0};
+
+function renderBurndown(){
+  const wrap=document.getElementById('burndownWrap');
+  if(!wrap) return;
+  const YEARS=[2026,2027,2028,2029,2030];
+  const YRS=['26','27','28','29','30'];
+  const COLORS=['#8EA4BC','#3AB89E','#8878D8','#C8963E','#1A3260'];
+
+  wrap.innerHTML = YEARS.map((yr,i)=>{
+    const y=YRS[i];
+    // Sum allocated from initiative budgets
+    let allocated=0;
+    data.forEach(r=>{const v=parseFloat((r['b'+y]||'').toString().replace(/[Mm]/g,'').replace(/[^0-9.]/g,''));if(!isNaN(v))allocated+=v;});
+    const total=BURN_BUDGETS[yr]||0;
+    const pct=total>0?Math.min(allocated/total*100,100):0;
+    const over=total>0&&allocated>total;
+    return `<div class="burn-row">
+      <div class="burn-label">${yr}</div>
+      <div class="burn-bar-wrap">
+        <div class="burn-bar-fill" style="width:${pct}%;background:${over?'#E53935':COLORS[i]}">${allocated>0?'R'+allocated.toFixed(1)+'M':''}</div>
+        ${over?`<div style="position:absolute;right:6px;top:50%;transform:translateY(-50%);font-size:10px;color:#E53935;font-weight:700">OVER</div>`:''}
+      </div>
+      <input class="burn-input" type="text" value="${total||''}" placeholder="Total (M)" 
+        onchange="BURN_BUDGETS[${yr}]=parseFloat(this.value)||0;renderBurndown()" 
+        title="Enter total budget in R millions"/>
+    </div>`;
+  }).join('');
+
+  let grandTotal=0, grandAlloc=0;
+  YEARS.forEach((yr,i)=>{
+    const y=YRS[i];
+    grandTotal+=BURN_BUDGETS[yr]||0;
+    data.forEach(r=>{const v=parseFloat((r['b'+y]||'').toString().replace(/[Mm]/g,'').replace(/[^0-9.]/g,''));if(!isNaN(v))grandAlloc+=v;});
+  });
+  document.getElementById('burnTotal').innerHTML=`
+    <div style="display:flex;justify-content:space-between;padding-top:8px;border-top:1px solid var(--border-light)">
+      <span style="color:var(--text-muted);font-size:12px">5-year total budget</span>
+      <span style="font-family:'DM Serif Display',serif;font-size:1.1rem;color:var(--gold)">R ${grandTotal.toFixed(1)}M</span>
+    </div>
+    <div style="display:flex;justify-content:space-between;margin-top:4px">
+      <span style="color:var(--text-muted);font-size:12px">Allocated to initiatives</span>
+      <span style="font-size:13px;font-weight:600;color:${grandAlloc>grandTotal&&grandTotal>0?'var(--red)':'var(--teal)'}">R ${grandAlloc.toFixed(1)}M</span>
+    </div>`;
+}
+
+// ── Animated Timeline ──────────────────────────────────
+let animPlaying=false, animYear=2026, animTimer=null, animSpeedMs=1200, animSpeedIdx=0;
+const ANIM_SPEEDS=[{ms:1200,lbl:'1×'},{ms:600,lbl:'2×'},{ms:300,lbl:'4×'}];
+
+function buildAnimTable(yr){
+  const YRS=['26','27','28','29','30'];
+  const y=YRS[yr-2026];
+  const tbody=document.getElementById('animTableBody');
+  if(!tbody) return;
+  tbody.innerHTML=data.map(r=>{
+    const st=r['yr'+y]||'na';
+    const s=sMap[st]||sMap['na'];
+    const changed=st!=='na'&&st!=='wip';
+    return `<tr class="${changed?'just-changed':''}">
+      <td style="font-size:12px;font-weight:500">${r.name}</td>
+      <td style="font-size:11px;color:var(--text-muted)">${r.layer}</td>
+      <td><span class="badge ${s.cls}" style="font-size:10px;padding:3px 8px">${s.label}</span></td>
+    </tr>`;
+  }).join('');
+  setTimeout(()=>{tbody.querySelectorAll('.just-changed').forEach(r=>r.classList.remove('just-changed'));},800);
+}
+
+function updateAnimDisplay(){
+  const el=document.getElementById('animYrDisplay'); if(el) el.textContent=animYear;
+  const pf=document.getElementById('animProgressFill'); if(pf) pf.style.width=((animYear-2026)/4*100)+'%';
+  buildAnimTable(animYear);
+}
+
+function toggleAnimation(){
+  animPlaying=!animPlaying;
+  const btn=document.getElementById('animPlayBtn');
+  if(animPlaying){
+    if(animYear>=2030) animYear=2026;
+    btn.textContent='⏸ Pause'; btn.classList.add('playing');
+    animStep();
+  } else {
+    clearTimeout(animTimer);
+    btn.textContent='▶ Play'; btn.classList.remove('playing');
+  }
+}
+
+function animStep(){
+  if(!animPlaying) return;
+  updateAnimDisplay();
+  if(animYear<2030){
+    animYear++;
+    animTimer=setTimeout(animStep,animSpeedMs);
+  } else {
+    animPlaying=false;
+    const btn=document.getElementById('animPlayBtn');
+    if(btn){btn.textContent='▶ Play'; btn.classList.remove('playing');}
+  }
+}
+
+function resetAnimation(){
+  animPlaying=false; animYear=2026;
+  clearTimeout(animTimer);
+  const btn=document.getElementById('animPlayBtn');
+  if(btn){btn.textContent='▶ Play'; btn.classList.remove('playing');}
+  updateAnimDisplay();
+}
+
+function cycleAnimSpeed(){
+  animSpeedIdx=(animSpeedIdx+1)%ANIM_SPEEDS.length;
+  animSpeedMs=ANIM_SPEEDS[animSpeedIdx].ms;
+  const el=document.getElementById('animSpeed'); if(el) el.textContent=ANIM_SPEEDS[animSpeedIdx].lbl;
+}
+
+// ── PDF Export ─────────────────────────────────────────
+function refreshPDFPreview(){
+  const wrap=document.getElementById('pdfPreviewWrap'); if(!wrap) return;
+  const YRS=['26','27','28','29','30'], YEARS=[2026,2027,2028,2029,2030];
+  const counts={}; let totalBudget=0;
+  YEARS.forEach((yr,i)=>{
+    const y=YRS[i]; counts[yr]={wip:0,completing:0,ss:0,sunset:0};
+    data.forEach(r=>{
+      const st=r['yr'+y]||'na';
+      if(st==='wip'||st==='inv') counts[yr].wip++;
+      else if(['q1','q2','q3','q4'].includes(st)) counts[yr].completing++;
+      else if(st==='ss') counts[yr].ss++;
+      else if(st==='sunset'||st==='closed') counts[yr].sunset++;
+      const v=parseFloat((r['b'+y]||'').toString().replace(/[Mm]/g,'').replace(/[^0-9.]/g,''));
+      if(!isNaN(v)) totalBudget+=v;
+    });
+  });
+  const ssCount=data.filter(r=>r.yr29==='ss'||r.yr30==='ss').length;
+  const today=new Date().toLocaleDateString('en-ZA',{year:'numeric',month:'long',day:'numeric'});
+  wrap.innerHTML=`<div class="pdf-preview" id="pdfContent">
+    <div class="pdf-header">
+      <div style="position:absolute;top:0;right:0;bottom:0;width:40%;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.05));pointer-events:none"></div>
+      <div style="font-size:10px;color:rgba(255,255,255,0.5);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:8px">Confidential · Exco Planning View</div>
+      <h1>Corporate Benefit Roadmap</h1>
+      <p>Business Transformation 2026–2030 &nbsp;·&nbsp; As at ${today}</p>
+      <div style="margin-top:1rem;font-size:12px;color:rgba(255,255,255,0.6)">3 Enterprise Objectives: Client Experience · Cost Efficiency · Market Share</div>
+    </div>
+    <div class="pdf-kpi-row">
+      <div class="pdf-kpi"><div class="num">${data.length}</div><div class="lbl">Total initiatives</div></div>
+      <div class="pdf-kpi"><div class="num">${ssCount}</div><div class="lbl">Steady state by 2029</div></div>
+      <div class="pdf-kpi"><div class="num">3</div><div class="lbl">Systems decommissioned</div></div>
+      <div class="pdf-kpi"><div class="num">${totalBudget>0?'R'+totalBudget.toFixed(0)+'M':'TBC'}</div><div class="lbl">5-year budget</div></div>
+    </div>
+    <table style="width:100%;border-collapse:collapse;font-size:11px;margin-bottom:1.5rem">
+      <thead><tr>
+        ${YEARS.map(yr=>`<th style="padding:8px;text-align:center;background:#F7F8FA;border:1px solid #EEF2F6;font-size:12px;font-family:'DM Serif Display',serif">${yr}</th>`).join('')}
+      </tr></thead>
+      <tbody><tr>
+        ${YEARS.map(yr=>`<td style="padding:8px;text-align:center;border:1px solid #EEF2F6;vertical-align:top">
+          <div style="font-size:18px;font-weight:700;color:#0B1E3D;font-family:'DM Serif Display',serif">${counts[yr].completing||counts[yr].wip}</div>
+          <div style="font-size:9px;color:#8EA4BC;margin-top:2px">${counts[yr].completing?counts[yr].completing+' completing':'in progress'}</div>
+          ${counts[yr].ss?`<div style="font-size:9px;color:#5B4BA8;margin-top:2px">${counts[yr].ss} steady</div>`:''}
+          ${counts[yr].sunset?`<div style="font-size:9px;color:#B02A2A;margin-top:2px">${counts[yr].sunset} sunset</div>`:''}
+        </td>`).join('')}
+      </tbody>
+    </table>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1.5rem">
+      ${FG_POTS.filter(p=>p.id!=='new-horizons').map(p=>`<div style="padding:10px 14px;border-left:3px solid ${p.color};background:${p.bg};border-radius:6px">
+        <div style="font-size:11px;font-weight:700;color:${p.color}">${p.icon} ${p.name}</div>
+        <div style="font-size:10px;color:#5C6E84;margin-top:2px">${p.initiatives.filter(i=>!COMMON.includes(i)).join(' · ')}</div>
+      </div>`).join('')}
+    </div>
+    <div style="background:#FFF8F0;border:1px solid #F5C870;border-radius:8px;padding:12px 16px;font-size:11px;color:#5C4000">
+      <strong>Key Decommissions:</strong> LCU, BPC (FA) and BPC (Admin) sunset mid-2028 following Flexor platform consolidation. Single instance target achieved by end of 2028.
+    </div>
+    <div style="margin-top:1rem;font-size:10px;color:#B0BCCC;text-align:center;border-top:1px solid #EEF2F6;padding-top:10px">
+      Corporate Benefits Technology · Standard Bank Group · Confidential &amp; Commercially Sensitive
+    </div>
+  </div>`;
+}
+
+function exportExcoPDF(){
+  refreshPDFPreview();
+  setTimeout(()=>{
+    const el=document.getElementById('pdfContent');
+    if(!el){ alert('Preview not loaded. Click Refresh Preview first.'); return; }
+    const orig=document.body.innerHTML;
+    const printContent=el.outerHTML;
+    const w=window.open('','_blank');
+    w.document.write(`<!DOCTYPE html><html><head>
+      <title>Corporate Benefit Roadmap — Exco PDF</title>
+      <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+      <style>
+        *{box-sizing:border-box;margin:0;padding:0}
+        body{font-family:'DM Sans',sans-serif;padding:2rem;background:white;color:#0B1E3D}
+        .pdf-header{background:linear-gradient(135deg,#0B1E3D,#1A3260);color:white;padding:2rem;border-radius:12px;margin-bottom:1.5rem;position:relative;overflow:hidden}
+        .pdf-header h1{font-family:'DM Serif Display',serif;font-size:1.8rem;margin-bottom:4px}
+        .pdf-header p{font-size:12px;opacity:0.6;letter-spacing:0.08em;text-transform:uppercase}
+        .pdf-kpi-row{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:1.5rem}
+        .pdf-kpi{background:#F7F8FA;border-radius:10px;padding:1rem;text-align:center;border:1px solid #EEF2F6}
+        .pdf-kpi .num{font-family:'DM Serif Display',serif;font-size:1.8rem;color:#0B1E3D;line-height:1}
+        .pdf-kpi .lbl{font-size:10px;color:#8EA4BC;text-transform:uppercase;letter-spacing:0.05em;margin-top:4px}
+        @media print{@page{size:A4;margin:1.5cm}}
+      </style></head><body>${printContent}
+      <script>window.onload=()=>window.print()<\/script></body></html>`);
+    w.document.close();
+  },300);
+}
+
+// ── Wire into switchTab ────────────────────────────────
+function switchTab(tab){
+  document.querySelectorAll('.page-section').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('.nav-tab').forEach(t=>t.classList.remove('active'));
+  document.getElementById('section-'+tab).classList.add('active');
+  document.getElementById('navTab-'+tab).classList.add('active');
+  if(tab==='heatmap') renderHeatmap();
+  if(tab==='analytics') renderAnalytics();
+  if(tab==='timeline') renderTimeline();
+  if(tab==='fixgrow') renderFixGrow();
+  if(tab==='intelligence'){
+    renderBurndown();
+    buildAnimTable(animYear);
+    refreshPDFPreview();
+    setTimeout(initDepWeb,100);
+  }
+}
+window.switchTab = switchTab;
+
+
+// ══ TECH ENVIRONMENT ══════════════════════════════════
+
+function sleep(ms){ return new Promise(r=>setTimeout(r,ms)); }
+
+// Burst particles from button position
+function burstParticles(x, y){
+  const colors=['#1AA88E','#6EE7B7','#34D399','#A7F3D0','#ffffff','#0E7C6A'];
+  for(let i=0;i<28;i++){
+    const p=document.createElement('div');
+    p.className='te-particle';
+    const angle=Math.random()*360;
+    const dist=80+Math.random()*160;
+    const size=4+Math.random()*8;
+    p.style.cssText=`width:${size}px;height:${size}px;background:${colors[Math.floor(Math.random()*colors.length)]};left:${x}px;top:${y}px;--tx:${Math.cos(angle*Math.PI/180)*dist}px;--ty:${Math.sin(angle*Math.PI/180)*dist}px;animation-duration:${0.6+Math.random()*0.5}s;animation-delay:${Math.random()*0.1}s`;
+    document.body.appendChild(p);
+    setTimeout(()=>p.remove(), 1200);
+  }
+}
+
+// Ripple from button
+function rippleFrom(x, y){
+  const r=document.createElement('div');
+  r.className='te-ripple';
+  r.style.cssText=`left:${x}px;top:${y}px`;
+  document.body.appendChild(r);
+  setTimeout(()=>r.remove(), 1500);
+}
+
+// Scan line across grid
+function addScanLine(){
+  const grid=document.querySelector('.te-grid-wrap');
+  if(!grid) return;
+  const sl=document.createElement('div');
+  sl.className='te-scanline';
+  grid.style.position='relative';
+  grid.appendChild(sl);
+  setTimeout(()=>sl.remove(), 1700);
+}
+
+let teState='current', teAnimating=false;
+
+function teShow(state, event){
+  if(teAnimating && state==='future') return; // prevent double-click during animation
+  if(state===teState && state==='future') return;
+
+  if(state==='current'){
+    // Instant switch back
+    teState='current';
+    document.getElementById('teBtnCurrent').className='te-toggle-btn active';
+    document.getElementById('teBtnFuture').className='te-toggle-btn';
+    document.getElementById('teArrowText').textContent='Our current technology environment';
+    const banner=document.querySelector('.te-arrow-banner');
+    if(banner) banner.style.background='linear-gradient(90deg,#1050CC,#2878F5)';
+    document.querySelectorAll('.te-chip').forEach(chip=>{
+      const s=chip.dataset.state;
+      chip.style.transition='all 0.3s ease';
+      chip.style.display=(s==='current'||s==='both')?'inline-flex':'none';
+      chip.style.opacity='1'; chip.style.transform='scale(1)';
+      chip.style.filter=''; chip.classList.remove('glowing');
+    });
+    return;
+  }
+
+  // === FUTURE STATE — cinematic transition ===
+  teAnimating=true;
+  teState='future';
+  document.getElementById('teBtnCurrent').className='te-toggle-btn';
+  document.getElementById('teBtnFuture').className='te-toggle-btn future-active';
+
+  // Particle burst + ripple from button position
+  if(event){
+    const rect=event.target.getBoundingClientRect();
+    burstParticles(rect.left+rect.width/2, rect.top+rect.height/2);
+    rippleFrom(rect.left+rect.width/2, rect.top+rect.height/2);
+  }
+
+  // Phase 1 — Banner morphs
+  const banner=document.querySelector('.te-arrow-banner');
+  if(banner){
+    banner.style.transition='background 0.8s ease';
+    banner.style.background='linear-gradient(90deg,#B8860B,#DAA520)';
+    document.getElementById('teArrowText').textContent='⚡ Transforming...';
+  }
+
+  // Phase 2 — Row by row: sunset chips burn out with stagger
+  const rows=['frontend','finance','quotes','underwriting','workflow','pas','data'];
+  let delay=300;
+  rows.forEach((row, ri)=>{
+    const rowEl=document.getElementById('teRow-'+row);
+    if(!rowEl) return;
+    const sunsetChips=[...rowEl.querySelectorAll('[data-state="current"]')];
+    sunsetChips.forEach((chip,ci)=>{
+      setTimeout(()=>{
+        // Flash red first
+        chip.style.transition='none';
+        chip.style.boxShadow='0 0 20px rgba(239,68,68,0.9), 0 0 40px rgba(239,68,68,0.5)';
+        setTimeout(()=>{
+          chip.style.animation='sunsetFlame 0.7s ease forwards';
+          setTimeout(()=>{ chip.style.display='none'; chip.style.animation=''; chip.style.boxShadow=''; }, 680);
+        }, 80);
+      }, delay + ri*180 + ci*90);
+    });
+    delay += sunsetChips.length*90 + 180;
+  });
+
+  const totalSunsetTime = delay + 200;
+
+  // Phase 3 — Scan line sweeps down
+  setTimeout(()=>addScanLine(), totalSunsetTime - 400);
+
+  // Phase 4 — Banner goes teal
+  setTimeout(()=>{
+    if(banner){ banner.style.background='linear-gradient(90deg,#0E7C6A,#1AA88E)'; }
+    document.getElementById('teArrowText').textContent='✨ Revealing future state...';
+  }, totalSunsetTime);
+
+  // Phase 5 — Surviving apps glow
+  setTimeout(()=>{
+    rows.forEach((row, ri)=>{
+      const rowEl=document.getElementById('teRow-'+row);
+      if(!rowEl) return;
+      [...rowEl.querySelectorAll('[data-state="both"]')].forEach((chip,ci)=>{
+        setTimeout(()=>{
+          chip.style.animation='survivePulse 0.7s ease forwards';
+          chip.classList.add('glowing');
+          setTimeout(()=>chip.style.animation='', 750);
+        }, ri*100 + ci*80);
+      });
+    });
+  }, totalSunsetTime + 200);
+
+  // Phase 6 — New apps materialise with spring bounce
+  setTimeout(()=>{
+    let nd=0;
+    rows.forEach((row, ri)=>{
+      const rowEl=document.getElementById('teRow-'+row);
+      if(!rowEl) return;
+      const futureChips=[...rowEl.querySelectorAll('[data-state="future"]')];
+      futureChips.forEach((chip,ci)=>{
+        setTimeout(()=>{
+          chip.style.display='inline-flex';
+          chip.style.opacity='0'; chip.style.transform='scale(0) translateY(16px)';
+          chip.offsetHeight;
+          chip.style.transition='none';
+          // Spring animation via JS
+          let start=null;
+          function spring(ts){
+            if(!start) start=ts;
+            const t=Math.min((ts-start)/600,1);
+            const ease=1-Math.pow(1-t,3)*(1+2.5*t);
+            chip.style.opacity=String(Math.min(t*3,1));
+            chip.style.transform=`scale(${ease}) translateY(${(1-ease)*16}px)`;
+            if(t<1) requestAnimationFrame(spring);
+            else { chip.style.transform='scale(1)'; chip.style.opacity='1'; }
+          }
+          requestAnimationFrame(spring);
+        }, nd*110 + ri*60);
+        nd++;
+      });
+    });
+  }, totalSunsetTime + 600);
+
+  // Phase 7 — Final banner + done
+  setTimeout(()=>{
+    document.getElementById('teArrowText').textContent='Our ideal future technology environment';
+    teAnimating=false;
+  }, totalSunsetTime + 1600);
+}
+
+// Wire into switchTab
+const _prevSwitchTab2 = window.switchTab;
+function switchTab(tab){
+  document.querySelectorAll('.page-section').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('.nav-tab').forEach(t=>t.classList.remove('active'));
+  document.getElementById('section-'+tab).classList.add('active');
+  document.getElementById('navTab-'+tab).classList.add('active');
+  if(tab==='heatmap') renderHeatmap();
+  if(tab==='analytics') renderAnalytics();
+  if(tab==='timeline') renderTimeline();
+  if(tab==='fixgrow') renderFixGrow();
+  if(tab==='intelligence'){ renderBurndown(); buildAnimTable(animYear); refreshPDFPreview(); setTimeout(initDepWeb,100); }
+  if(tab==='techenv'){ setTimeout(()=>teShow('current'),100); }
+}
+window.switchTab = switchTab;
+
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
+// Boot: load from cloud (falls back to localStorage if not configured)
+loadFromCloud().then(()=>{ renderFixGrow(); });
+</script>
+</body>
+</html>

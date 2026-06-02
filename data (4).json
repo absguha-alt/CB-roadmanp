@@ -1,0 +1,595 @@
+[
+  {
+    "layer": "Engagement Layer",
+    "name": "SSP Front end",
+    "desc": "Self-service portal \u2014 client-facing digital front end",
+    "objs": [
+      "cx",
+      "ms"
+    ],
+    "yr26": "wip",
+    "yr27": "q2",
+    "yr28": "ss",
+    "yr29": "ss",
+    "yr30": "ss",
+    "b26": "",
+    "b27": "",
+    "b28": "",
+    "b29": "",
+    "b30": ""
+  },
+  {
+    "layer": "Engagement Layer",
+    "name": "Contact Center Front end",
+    "desc": "Agent desktop modernisation for contact centre",
+    "objs": [
+      "cx"
+    ],
+    "yr26": "wip",
+    "yr27": "q2",
+    "yr28": "ss",
+    "yr29": "ss",
+    "yr30": "ss",
+    "b26": "",
+    "b27": "",
+    "b28": "",
+    "b29": "",
+    "b30": ""
+  },
+  {
+    "layer": "Sales & Servicing",
+    "name": "Quotes",
+    "desc": "Digital quoting engine for new business",
+    "objs": [
+      "cx",
+      "ms"
+    ],
+    "yr26": "wip",
+    "yr27": "q2",
+    "yr28": "ss",
+    "yr29": "ss",
+    "yr30": "ss",
+    "b26": "",
+    "b27": "",
+    "b28": "",
+    "b29": "",
+    "b30": ""
+  },
+  {
+    "layer": "Sales & Servicing",
+    "name": "Billing",
+    "desc": "Automated billing and reconciliation",
+    "objs": [
+      "cx",
+      "ce"
+    ],
+    "yr26": "wip",
+    "yr27": "q2",
+    "yr28": "ss",
+    "yr29": "ss",
+    "yr30": "ss",
+    "b26": "",
+    "b27": "",
+    "b28": "",
+    "b29": "",
+    "b30": ""
+  },
+  {
+    "layer": "Sales & Servicing",
+    "name": "BCD",
+    "desc": "",
+    "objs": [
+      "cx",
+      "ce"
+    ],
+    "yr26": "wip",
+    "yr27": "na",
+    "yr28": "na",
+    "yr29": "na",
+    "yr30": "na",
+    "b26": "",
+    "b27": "",
+    "b28": "",
+    "b29": "",
+    "b30": ""
+  },
+  {
+    "layer": "Product",
+    "name": "Flexor",
+    "desc": "Core product platform modernisation (formerly Ignite)",
+    "objs": [
+      "cx",
+      "ms"
+    ],
+    "yr26": "wip",
+    "yr27": "q2",
+    "yr28": "ss",
+    "yr29": "ss",
+    "yr30": "ss",
+    "b26": "",
+    "b27": "",
+    "b28": "",
+    "b29": "",
+    "b30": ""
+  },
+  {
+    "layer": "Product",
+    "name": "CAL",
+    "desc": "Corporate Annuities Launch",
+    "objs": [
+      "ce"
+    ],
+    "yr26": "wip",
+    "yr27": "q3",
+    "yr28": "ss",
+    "yr29": "ss",
+    "yr30": "ss",
+    "b26": "",
+    "b27": "",
+    "b28": "",
+    "b29": "",
+    "b30": ""
+  },
+  {
+    "layer": "Product",
+    "name": "ESP",
+    "desc": "Employee Share Plan product integration",
+    "objs": [
+      "ce"
+    ],
+    "yr26": "wip",
+    "yr27": "q3",
+    "yr28": "ss",
+    "yr29": "ss",
+    "yr30": "ss",
+    "b26": "",
+    "b27": "",
+    "b28": "",
+    "b29": "",
+    "b30": ""
+  },
+  {
+    "layer": "Product",
+    "name": "LHR (Product)",
+    "desc": "Life and Health Risk \u2014 product layer",
+    "objs": [
+      "cx",
+      "ce"
+    ],
+    "yr26": "wip",
+    "yr27": "q1",
+    "yr28": "ss",
+    "yr29": "ss",
+    "yr30": "ss",
+    "b26": "",
+    "b27": "",
+    "b28": "",
+    "b29": "",
+    "b30": ""
+  },
+  {
+    "layer": "Product",
+    "name": "Staff Onboarding to SSP",
+    "desc": "Onboarding of staff members onto the Self Service Portal",
+    "objs": [
+      "cx",
+      "ce"
+    ],
+    "yr26": "wip",
+    "yr27": "q2",
+    "yr28": "ss",
+    "yr29": "ss",
+    "yr30": "ss",
+    "b26": "",
+    "b27": "",
+    "b28": "",
+    "b29": "",
+    "b30": ""
+  },
+  {
+    "layer": "Product",
+    "name": "Full Scale Self Servicing for Staff",
+    "desc": "Full scale self servicing capability for staff members",
+    "objs": [
+      "cx",
+      "ce"
+    ],
+    "yr26": "wip",
+    "yr27": "q3",
+    "yr28": "ss",
+    "yr29": "ss",
+    "yr30": "ss",
+    "b26": "",
+    "b27": "",
+    "b28": "",
+    "b29": "",
+    "b30": ""
+  },
+  {
+    "layer": "Product",
+    "name": "Payroll File Integration with LHR Compass",
+    "desc": "Integration of payroll file with LHR Compass system",
+    "objs": [
+      "ce"
+    ],
+    "yr26": "wip",
+    "yr27": "q2",
+    "yr28": "ss",
+    "yr29": "ss",
+    "yr30": "ss",
+    "b26": "",
+    "b27": "",
+    "b28": "",
+    "b29": "",
+    "b30": ""
+  },
+  {
+    "layer": "Product",
+    "name": "MBS Revamp",
+    "desc": "MBS system revamp \u2014 move to Infoslips",
+    "objs": [
+      "cx",
+      "ce"
+    ],
+    "yr26": "wip",
+    "yr27": "q3",
+    "yr28": "ss",
+    "yr29": "ss",
+    "yr30": "ss",
+    "b26": "",
+    "b27": "",
+    "b28": "",
+    "b29": "",
+    "b30": ""
+  },
+  {
+    "layer": "Product",
+    "name": "MIS Build",
+    "desc": "Management Information System build",
+    "objs": [
+      "ce"
+    ],
+    "yr26": "wip",
+    "yr27": "q4",
+    "yr28": "ss",
+    "yr29": "ss",
+    "yr30": "ss",
+    "b26": "",
+    "b27": "",
+    "b28": "",
+    "b29": "",
+    "b30": ""
+  },
+  {
+    "layer": "Product",
+    "name": "Investment",
+    "desc": "Investment product suite enhancements",
+    "objs": [
+      "cx",
+      "ms"
+    ],
+    "yr26": "wip",
+    "yr27": "q3",
+    "yr28": "ss",
+    "yr29": "ss",
+    "yr30": "ss",
+    "b26": "",
+    "b27": "",
+    "b28": "",
+    "b29": "",
+    "b30": ""
+  },
+  {
+    "layer": "Product",
+    "name": "Wellness",
+    "desc": "Wellness benefit integration and member portal",
+    "objs": [
+      "cx",
+      "ms"
+    ],
+    "yr26": "wip",
+    "yr27": "q1",
+    "yr28": "ss",
+    "yr29": "ss",
+    "yr30": "ss",
+    "b26": "",
+    "b27": "",
+    "b28": "",
+    "b29": "",
+    "b30": ""
+  },
+  {
+    "layer": "Product",
+    "name": "Financial Literacy",
+    "desc": "Financial literacy programme and digital content",
+    "objs": [
+      "cx",
+      "ms"
+    ],
+    "yr26": "wip",
+    "yr27": "q2",
+    "yr28": "ss",
+    "yr29": "ss",
+    "yr30": "ss",
+    "b26": "",
+    "b27": "",
+    "b28": "",
+    "b29": "",
+    "b30": ""
+  },
+  {
+    "layer": "Product",
+    "name": "SBG Fund",
+    "desc": "Standard Bank Group fund administration",
+    "objs": [
+      "ms"
+    ],
+    "yr26": "wip",
+    "yr27": "q1",
+    "yr28": "ss",
+    "yr29": "ss",
+    "yr30": "ss",
+    "b26": "",
+    "b27": "",
+    "b28": "",
+    "b29": "",
+    "b30": ""
+  },
+  {
+    "layer": "PAS",
+    "name": "Cpr Sel to Flexor",
+    "desc": "PAS consolidation \u2014 migrate onto single Flexor instance",
+    "objs": [
+      "ce"
+    ],
+    "yr26": "wip",
+    "yr27": "q4",
+    "yr28": "ss",
+    "yr29": "ss",
+    "yr30": "ss",
+    "b26": "",
+    "b27": "",
+    "b28": "",
+    "b29": "",
+    "b30": ""
+  },
+  {
+    "layer": "PAS",
+    "name": "IFP",
+    "desc": "Individual Financial Planning administration migration",
+    "objs": [
+      "cx",
+      "ms"
+    ],
+    "yr26": "wip",
+    "yr27": "q4",
+    "yr28": "ss",
+    "yr29": "ss",
+    "yr30": "ss",
+    "b26": "",
+    "b27": "",
+    "b28": "",
+    "b29": "",
+    "b30": ""
+  },
+  {
+    "layer": "PAS",
+    "name": "Annuities",
+    "desc": "Annuities policy administration on consolidated platform",
+    "objs": [
+      "cx",
+      "ms"
+    ],
+    "yr26": "wip",
+    "yr27": "na",
+    "yr28": "q1",
+    "yr29": "ss",
+    "yr30": "ss",
+    "b26": "",
+    "b27": "",
+    "b28": "",
+    "b29": "",
+    "b30": ""
+  },
+  {
+    "layer": "PAS",
+    "name": "LHR (PAS)",
+    "desc": "Life and Health Risk \u2014 policy admin migration",
+    "objs": [
+      "ce"
+    ],
+    "yr26": "wip",
+    "yr27": "na",
+    "yr28": "q1",
+    "yr29": "ss",
+    "yr30": "ss",
+    "b26": "",
+    "b27": "",
+    "b28": "",
+    "b29": "",
+    "b30": ""
+  },
+  {
+    "layer": "PAS",
+    "name": "Workflow (Integration/STP)",
+    "desc": "Workflow integration and straight-through processing automation",
+    "objs": [
+      "ce"
+    ],
+    "yr26": "wip",
+    "yr27": "na",
+    "yr28": "q1",
+    "yr29": "ss",
+    "yr30": "ss",
+    "b26": "",
+    "b27": "",
+    "b28": "",
+    "b29": "",
+    "b30": ""
+  },
+  {
+    "layer": "DATA",
+    "name": "ODS",
+    "desc": "Operational Data Store \u2014 unified data layer",
+    "objs": [
+      "ce"
+    ],
+    "yr26": "wip",
+    "yr27": "na",
+    "yr28": "q1",
+    "yr29": "ss",
+    "yr30": "ss",
+    "b26": "",
+    "b27": "",
+    "b28": "",
+    "b29": "",
+    "b30": ""
+  },
+  {
+    "layer": "DATA",
+    "name": "MI",
+    "desc": "Management Information reporting platform",
+    "objs": [
+      "ce",
+      "cx"
+    ],
+    "yr26": "wip",
+    "yr27": "na",
+    "yr28": "q1",
+    "yr29": "ss",
+    "yr30": "ss",
+    "b26": "",
+    "b27": "",
+    "b28": "",
+    "b29": "",
+    "b30": ""
+  },
+  {
+    "layer": "DATA",
+    "name": "Reports",
+    "desc": "Self-service and automated reports distribution",
+    "objs": [
+      "cx",
+      "ce"
+    ],
+    "yr26": "wip",
+    "yr27": "na",
+    "yr28": "q1",
+    "yr29": "ss",
+    "yr30": "ss",
+    "b26": "",
+    "b27": "",
+    "b28": "",
+    "b29": "",
+    "b30": ""
+  },
+  {
+    "layer": "AI",
+    "name": "OCR",
+    "desc": "AI-powered optical character recognition",
+    "objs": [
+      "ce"
+    ],
+    "yr26": "inv",
+    "yr27": "q1",
+    "yr28": "q1",
+    "yr29": "ss",
+    "yr30": "ss",
+    "b26": "",
+    "b27": "",
+    "b28": "",
+    "b29": "",
+    "b30": ""
+  },
+  {
+    "layer": "Document Management",
+    "name": "Single location for documents",
+    "desc": "Centralised document repository across all products",
+    "objs": [
+      "cx",
+      "ce"
+    ],
+    "yr26": "wip",
+    "yr27": "na",
+    "yr28": "q1",
+    "yr29": "ss",
+    "yr30": "ss",
+    "b26": "",
+    "b27": "",
+    "b28": "",
+    "b29": "",
+    "b30": ""
+  },
+  {
+    "layer": "Decommissioning",
+    "name": "LCU Sunset",
+    "desc": "Legacy LCU instance shutdown mid-2028",
+    "objs": [
+      "ce"
+    ],
+    "yr26": "na",
+    "yr27": "na",
+    "yr28": "sunset",
+    "yr29": "closed",
+    "yr30": "closed",
+    "b26": "",
+    "b27": "",
+    "b28": "",
+    "b29": "",
+    "b30": ""
+  },
+  {
+    "layer": "Decommissioning",
+    "name": "BPC (FA) Sunset",
+    "desc": "BPC for Financial Advisers \u2014 decommission mid-2028",
+    "objs": [
+      "ce"
+    ],
+    "yr26": "na",
+    "yr27": "na",
+    "yr28": "sunset",
+    "yr29": "closed",
+    "yr30": "closed",
+    "b26": "",
+    "b27": "",
+    "b28": "",
+    "b29": "",
+    "b30": ""
+  },
+  {
+    "layer": "Decommissioning",
+    "name": "BPC (Admin) Sunset",
+    "desc": "BPC for Operations/Admin \u2014 decommission mid-2028",
+    "objs": [
+      "ce"
+    ],
+    "yr26": "na",
+    "yr27": "na",
+    "yr28": "sunset",
+    "yr29": "closed",
+    "yr30": "closed",
+    "b26": "",
+    "b27": "",
+    "b28": "",
+    "b29": "",
+    "b30": ""
+  },
+  {
+    "layer": "DATA",
+    "name": "BAU",
+    "desc": "Business-as-usual regulatory and operational continuity initiatives",
+    "objs": [
+      "ce"
+    ],
+    "yr26": "wip",
+    "yr27": "wip",
+    "yr28": "ss",
+    "yr29": "ss",
+    "yr30": "ss",
+    "b26": "",
+    "b27": "",
+    "b28": "",
+    "b29": "",
+    "b30": ""
+  }
+]
